@@ -1,0 +1,72 @@
+<div class="account-pages mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <div class="text-center w-75 m-auto">
+                            <p class="text-muted mb-4 mt-3">Nhập địa chỉ và mật khẩu của bạn để truy cập bảng quản trị.</p>
+                        </div>
+    
+                        <form  role="form" class="parsley-examples" [formGroup] = "loginF" (ngSubmit)="onSubmit()"> 
+
+                            <div class="mb-2">
+                                <label for="username" class="form-label">Email<span class="text-danger">*</span></label>
+                                <input type="text" id="username" parsley-trigger="change" required
+                                        placeholder="Enter username" class="form-control"  formControlName="username">
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="password" class="form-label">Password<span class="text-danger">*</span></label>
+                                <input type="password" id="password" required class="form-control" placeholder="Enter password"  formControlName="password">
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <p class="text-muted-text text-end"> <a href="recover-password" class="text-muted ms-1">Quên mật khẩu?</a></p>
+                                    <input class="form-check-input" type="checkbox" id="checkbox-signin" checked>
+                                    <label class="form-check-label" for="checkbox-signin">
+                                        Nhớ tài khoản & mật khẩu
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="d-grid mb-0 text-center">
+                                <button class="btn btn-primary" type="submit"> Log In </button>
+                            </div>
+
+                        </form>
+                        <div class="text-center">
+                            <h5 class="mt-3 text-muted">Bạn có thể đăng nhập với</h5>
+                            <ul class="social-list list-inline mt-3 mb-0">
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="social-list-item border-purple text-purple"><i class="mdi mdi-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Không có tài khoản? <a href="register" class="text-primary fw-medium ms-1">Đăng Ký</a></p>
+                    </div> 
+                </div>
+            </div> 
+        </div>
+    </div>
+    </div>
+    <div class="container">
+    <footer class="footer footer-alt" style="text-align: center;">
+        <script>document.write(new Date().getFullYear())</script> &copy; <a href="" class="text-dark">2023 INSOLTECH</a> 
+    </footer>
+</div>
+    

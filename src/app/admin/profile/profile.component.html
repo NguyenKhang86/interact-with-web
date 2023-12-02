@@ -1,0 +1,186 @@
+<style>
+    .profileedit-none {
+        display: none;
+    }
+    #profileedit:checked ~ .profileedit-none {
+        display: block;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="m-2">
+                <h3 class="color">Thông Tin Cá Nhân</h3>
+            </div>
+        </div>
+    </div>     
+    <div class="">
+        <div class="row">
+            <div class="col-lg-12 col-xl-9">
+                <div class="card">
+                    <div class="" style="">
+                        <div class="border-1">
+                            <h3 class="color m-2">Cá Nhân</h3>
+                        </div>
+                        <div class="profile-block text-start m-2">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-sm p-0 m-0">
+                                    <tbody *ngFor="let file of userprofile">
+                                        <tr>
+                                            <th class="col-md-4" scope="row"><h4>Họ & Tên :</h4></th>
+                                            <td class="text-muted"><h4>{{file.fullname}}</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-md-4" scope="row"><h4>SĐT:</h4></th>
+                                            <td class="text-muted"><h4>{{file.phone}}</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-md-4" scope="row"><h4>Tuổi :</h4></th>
+                                            <td class="text-muted"><h4>{{file.gender}}</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-md-4" scope="row"><h4>Giới Tính :</h4></th>
+                                            <td class="text-muted"><h4>{{file.address}}</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-md-4" scope="row"><h4>Vị Trí :</h4></th>
+                                            <td class="text-muted"><h4>Cộng Tác Viên</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-md-4" scope="row"><h4>Số Tiền Đã Nạp :</h4></th>
+                                            <td class="text-muted"><h4>$100</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="col-md-4" scope="row"><h4>Số Dư Hiện Tại :</h4></th>
+                                            <td class="text-muted"><h4>{{file.coin}}</h4></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="text-center m-3">
+                            <button data-bs-toggle="modal" style="width: 100%; font-size: 16px;" data-bs-target="#profileEditfile"
+                            class="btn btn-sm btn-primary p-2 " (click)="onEditClick()" title="Thanh Toán"> UpDate Profile </button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-lg-12 col-xl-3">
+                <div class="text-center">
+                    <div class="card">
+                        <a href="#" class="icon-hover" style="">
+                            <h4 class="color icon-hover p-2 m-1">Quyền Lợi <i class="ri-user-3-fill"></i></h4>
+                        </a>
+                    </div> 
+    
+                    <div class="card">
+                        <a href="#" class="icon-hover" style="">
+                            <h4 class="color icon-hover p-2 m-1">Câu Hỏi Thường Gặp <i class="ri-questionnaire-line"></i></h4>
+                        </a>
+                    </div> 
+    
+                    <div class="card">
+                        <a href="#" class="icon-hover" style="">
+                            <h4 class="color icon-hover p-2 m-1">Điều Khoản Dịch Vụ <i class=" ri-shield-user-fill"></i></h4>
+                        </a>
+                    </div> 
+    
+                    <div class="card">
+                        <a href="#" class="icon-hover" style="">
+                            <h4 class="color icon-hover p-2 m-1"> Tư Vấn Viên <i class=" ri-headphone-fill"></i></h4>
+                        </a>
+                    </div> 
+
+                    <div class="card">
+                        <a href="#" class="icon-hover" style="">
+                            <h4 class="color icon-hover p-2 m-1"> Mã Giảm Giá <i class="ri-emotion-fill"></i></h4>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- Sửa -->
+<div class="modal fade" id="profileEditfile" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-1 p-2">
+                <h4 class="modal-title color" id="exampleModalToggleLabel">Sửa Thông Tin Cá Nhân</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <div class="text-start">
+                    <div class="table-responsive">
+                        <form  role="form" [formGroup]= "profileeditform" (ngSubmit)="profileedit()">
+                            <div>
+                                <div class="p-2">
+                                    <table class="table table-borderless table-sm m-0">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Họ & Tên :</th>
+                                                <td class="text-muted">
+                                                    <input type="text" class="form-control" style="width: 100%;" id="fullname" formControlName="fullname" placeholder="..."/>
+                                                </td> 
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">SĐT :</th>
+                                                <td class="text-muted">
+                                                    <input type="phonenumber" class="form-control" style="width: 100%;" id="phone" formControlName="phone" placeholder="..."/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Tuổi :</th>
+                                                <td class="text-muted">
+                                                    <input type="email" class="form-control" style="width: 100%;" id="gender" formControlName="gender" placeholder="..."/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Giới Tính :</th>
+                                                <td class="text-muted">
+                                                    <input class="form-control" list="icon-giơitinh-add" style="width: 100%;" id="address" formControlName="address" placeholder="..."/>
+                                                    <datalist id="icon-giơitinh-add">
+                                                        <option value="Nam"></option>
+                                                        <option value="Nữ"></option>
+                                                        <option value="Khác.."></option>
+                                                    </datalist>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+    
+                                <div class="modal-footer p-0" style=" border-top: 1px solid #0056C1;">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close"> Hủy </button>
+                                    <button class="btn btn-primary" type="submit"> Cập Nhật </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- xóa -->
+<div class="modal fade" id="DeleteBank" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-1">
+                <h4 class="modal-title color" id="exampleModalToggleLabel">Cảnh báo</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-1">Bạn có chắc chắn muốn xóa hết dữ liệu?</div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                    data-bs-dismiss="modal" (click)="Delete()">
+                    Xóa 
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

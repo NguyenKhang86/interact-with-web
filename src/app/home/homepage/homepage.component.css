@@ -1,0 +1,61 @@
+.btn-secondary {
+    background-color: seagreen;
+    /* margin: 14px 10px; */
+}
+.mt--12 {
+    margin-top: -12px;
+}
+.he-60 {
+    height: 60px;
+    cursor: pointer;
+}
+.menu-hove:hover {
+    background-color: #6c757d;
+}
+@keyframes colorChange {
+    0% { color: rgb(226, 19, 19); }
+    100% { color: rgb(226, 226, 16); }
+    200% { color: rgb(44, 240, 44); }
+    300% { color: rgb(240, 10, 190); }
+    400% { color: rgb(44, 11, 231); }
+}
+
+@keyframes flashAnimation {
+    0%, 49.99% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+.logo-lg, .logo-sm {
+    height: 45px !important;
+    margin-top: -14px;
+}
+.he-55 {
+    height: 45px !important;
+    margin: 0;
+}
+.navbar-custom {
+    height: 45px !important;
+}
+.logo-box, .logo, .logo-lg {
+    height: 45px !important;
+}
+.content-page {
+    padding: 50px 15px 65px 15px;
+}
+#flash {
+    animation: colorChange 1s infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+    font-size: 0.8em;
+    position: relative;
+    bottom: 1.2em;
+}
+.left-side-menu {
+    padding-top: calc(45px + 10px);
+}
+#flash span {
+    animation: flashAnimation 1s infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}

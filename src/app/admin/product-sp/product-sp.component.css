@@ -1,0 +1,53 @@
+.color {
+    color: #0056C1;
+}
+.bor-nav-item {
+    border-bottom: 1px solid #0056C1;
+}
+.bor-nav-maneybank {
+    border: 1px solid #0056C1;
+}
+.input-banner {
+    border: 1px solid #0056C1;
+    width: 40%; 
+    height: 30px;
+}
+.fe-shopping-cart:hover {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #0056C1;
+}
+/* .tr-hover:hover {
+    background-color: #dee2e6;
+} */
+.active {
+    color: black !important;
+    margin-bottom: -2px;
+    background-color: #fff;
+    border: 1px solid #0056C1;
+    border-bottom: 2px transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.doimauchu {
+    animation: doimauchu ease-in-out 1s infinite;
+}
+@keyframes doimauchu {
+    0% {
+        color: #333;
+    } 
+    25% {
+        color: #fff;
+    }
+    75% {
+        color: blue;
+    }
+}
+td {
+    vertical-align: middle !important;
+}
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}

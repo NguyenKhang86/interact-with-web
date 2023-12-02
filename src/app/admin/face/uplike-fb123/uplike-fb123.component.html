@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <div class="row">
+        <h2 class="color col-md-12 m-2">Tăng Like Bài Viết Facebook+</h2>
+        <div class="col-lg-9">
+            <div class="card">
+                <form role="form" class="parsley-examples" [formGroup] = "Orderform1" (ngSubmit)="onSubmitOrder()">
+                    <div >
+                        <div class="card-body border-1" style="display: flex;" >
+                            <div class="col-md-4">
+                                <h4 class="">Nhập Link bài Viết:</h4>
+                            </div>
+                            <div class="col-md-8">
+                                <input parsley-trigger="change" type="text" style="width: 100%;" id="sid" formControlName="sid" value="{{idfaccelike}}" hidden/>
+                                <input parsley-trigger="change" class="m-1 p-2" type="text" id="url" formControlName="url" placeholder="Nhập link bài viết tại đây" style="width: 100%; height: 35px;">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <p><span style="color: red;">-> </span> Vui lòng nhập đúng link bài viết và bật chế độ công khai trước khi mua.</p>
+                                        <p><span style="color: red;">-> </span> Vui lòng nhập đúng link bài viết và bật chế độ công khai trước khi mua.</p>
+                                        <p><span style="color: red;">-> </span> Vui lòng nhập đúng link bài viết và bật chế độ công khai trước khi mua.</p>
+                                        <p><span style="color: red;">-> </span> Vui lòng nhập đúng link bài viết và bật chế độ công khai trước khi mua.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div class="card-body border-1" style="display: flex;">
+                            <div class="col-md-4">
+                                <h4 class="">Đơn Giá : </h4>
+                            </div>
+                            <div class="col-md-8">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <p><input class="mr-2" type="checkbox"><span>  like bài viết facebook<span class=""> 10đ</span></span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div class="card-body border-1" style="display: flex;">
+                            <div class="col-md-4">
+                                <h4 class="">Số Lượng Tương Tác:</h4>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="number" value="100" class="p-2" id="quantity" formControlName="quantity" style="width: 100%; height: 35px;">
+                            </div>
+                        </div>
+        
+                        <div class="card-body pt-1 pb-1" style="display: flex; justify-content: space-between;">
+                            <div class="col-md-4">
+                                <!-- <h4 class=" p-1 mt-2">Tổng : <span>{{tongthanhtoan}}</span>Coin</h4> -->
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <h4 class=" p-0 m-0">
+                                    <a data-bs-toggle="modal" style=" font-size: 16px;" data-bs-target="#CheckOutShopping"
+                                        class="btn btn-sm btn-primary p-2" title="Thanh Toán" (click)="thanhtoan()"><i class=" bx bx-cart-alt me-1"></i>Thanh Toán </a>
+                                </h4>
+                            </div>
+                        </div> 
+
+                        
+                        <div class="modal fade" id="CheckOutShopping" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bor-nav-item p-2">
+                                        <h4 class="modal-title color" id="exampleModalToggleLabel">Thanh Toán</h4>
+                                        <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+                                    </div>
+                                    <div class="modal-body text-center bor-nav-item">
+                                        <h4 class="mb-2">Tổng Thanh Toán : <span>{{tongthanhtoan}}</span> COIN</h4>
+                                        <p class="mb-2">Mua <span>{{titlefaccelike}}</span> với giá :
+                                            <span>  {{pricefaccelike}} </span>
+                                            <span>  x </span>
+                                            <span> {{soluong}} </span>
+                                        </p>
+                                        <p class="mb-2">Nhấn OK Để Kết Thúc Mua Hàng</p>
+                                    </div>
+                                    <div class="modal-footer p-0">
+                                        <a type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Hủy</a>
+                                        <button style="width: 12%;" class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                                            data-bs-dismiss="modal">Ok</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card">
+        
+                <div class="col-md-12">
+                    <h4 class="text-center border-1 p-2">Video Hướng Dẫn Sử Dụng</h4>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HzfrfyRxX-Y?si=yXZy8PNEzQitLL3-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,279 @@
+<style>
+    /* td {
+    padding: 0px !important;
+   }
+   th {
+    padding-left: 0px !important;
+   } */
+    td {
+        vertical-align: middle !important;
+    }
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <h2 class="color col-md-12 m-2">Nạp Tiền Tài Khoản</h2>
+        <div class="col-lg-9 mb-2">
+            <div class="card m-0">
+                <div class="">
+                    <ul class="nav bor-nav-item p-1 pb-0">
+                        <li class="nav-item" style="margin-left: 10px;">
+                            <a class="nav-link active" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BankManey">Ngân hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BinnanceManey">Lịch Sử Nạp BINANCE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#lichsumuahang">Lịch Sử Đặt Hàng</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content twitter-bs-wizard-tab-content m-3 p-0">
+                        <div class="tab-pane active"  style="border: none" id="BankManey">
+                            <div class="column">
+                                <div class="pb-2">
+                                    <div class="col-12 p-0 m-0">
+                                        <div class="card-bodyp-0 col-12">
+                                            <h5>Bạn vui lòng chuyển khoản chính xác nội dung chuyển tiền bên dưới, hệ thống sẽ tự động cộng tiền cho bạn sau vài phút.
+                                                Nếu sau 10 phút từ khi tiền trong tài khoản của bạn bị trừ mà vẫn chưa được cộng tiền vui lòng <a href="#"><strong style="color: red; cursor: pointer;">liên hệ</strong></a> chúng tôi.</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="mb-2" style="display: flex; flex-wrap: wrap;">
+                                            <div class="col-lg-3 col-xl-3">
+                                                <h4 class="color" style="">Số Tài Khoản 1</h4>
+                                            </div>
+                                            <div class="col-lg-9 col-xl-9">
+                                                <div class="bor-nav-maneybank" style="display: flex;">
+                                                    <ul class="list-unstyled m-0 p-1 col-md-4" >
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Ngân Hàng :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Chủ Tài Khoản :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Số Tài Khoản :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Chi Nhánh :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Nội Dung :</h4></a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-unstyled m-0 p-1 col-md-4" >
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">VietComBank</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Nguyễn Văn A</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">123 456 789 12</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Yên Phong - Bắc Ninh</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Admin Chuyển tiền mã 123</h4></a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-unstyled m-0 p-1 col-md-4" >
+                                                        <li class="nav-item">
+                                                            <img style="width: 90%;" src="data:image/png;base64,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" alt="Mã QR">
+                                                            
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="mb-2" style="display: flex; flex-wrap: wrap;">
+                                            <div class="col-lg-3 col-xl-3">
+                                                <h4 class="color" style="">Số Tài Khoản 2</h4>
+                                            </div>
+                                            <div class="col-lg-9 col-xl-9">
+                                                <div class="bor-nav-maneybank" style="display: flex;">
+                                                    <ul class="list-unstyled m-0 p-1 col-md-4" >
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Ngân Hàng :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Chủ Tài Khoản :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Số Tài Khoản :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Chi Nhánh :</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Nội Dung :</h4></a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-unstyled m-0 p-1 col-md-4" >
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">VietComBank</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Nguyễn Văn BS</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">123 456 789 12</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Yên Phong - Bắc Ninh</h4></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link"><h4 class="p-1">Admin Chuyển tiền mã 123</h4></a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="list-unstyled m-0 p-1 col-md-4" >
+                                                        <li class="nav-item">
+                                                            <img style="width: 90%;" src="data:image/png;base64,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" alt="Mã QR">
+                                                            
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="tab-pane"  style="border: none" id="BinnanceManey">
+                            <div class="col-12">
+                                <div class="">
+                                    <ul class="nav m-0 col-md-12" style="display: flex; justify-content: space-between;">
+                                        <li class="nav-item">
+
+                                        </li>
+                                        <li class="nav-item text-md-end col-md-6">
+                                            <h5 class="header-title"> SHOW: <input class="p-1" type="number" value="10"></h5>
+                                        </li>
+                                    </ul>
+                                    <div class="">
+                                        <div class="table-responsive">
+                                            <table class="table table-centered mb-0" id="inline-editable">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Ngân hàng</th>
+                                                        <th>Số Tiền</th>
+                                                        <th>Hoạt Động</th>
+                                                        <th>Thành Coin</th>
+                                                        <th>Thời Gian</th>
+                                                        <th class="text-center">Tác Vụ</th>
+                                                    </tr>
+                                                </thead>
+                                            
+                                                <tbody>
+                                                    <tr class="tr-hover" *ngFor="let i of maney">
+                                                        <td>61</td>
+                                                        <td>61</td>
+                                                        <td>{{i.action}}</td>
+                                                        <td>{{i.coin}}</td>
+                                                        <td>{{i.created}}</td>
+                                                        <td class="text-center"><a class="bx bx-trash p-1" href="#" title="Xóa"></a></td>
+                                                    </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="tab-pane"  style="border: none" id="lichsumuahang">
+                            <div class="col-12">
+                                <div class="">
+                                    <ul class="nav  m-0 col-md-12" style="display: flex; justify-content: space-between;">
+                                        <li class="nav-item">
+
+                                        </li>
+                                        <li class="nav-item text-md-end col-md-6">
+                                            <h5 class="header-title"> SHOW: <input class="p-1" type="number" value="20"></h5>
+                                        </li>
+                                    </ul>
+                                    <div class="">
+                                        <div class="table-responsive">
+                                            <table class="table table-centered mb-0" id="inline-editable">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Hình Thức Mua</th>
+                                                        <th>Số Lượng</th>
+                                                        <th>Đơn Giá</th>
+                                                        <th>Thanh Toán</th>
+                                                        <th>Trạng Thái</th>
+                                                        <th>Thời Gian</th>
+                                                        <th class="text-center">Tác Vụ</th>
+                                                    </tr>
+                                                </thead>
+                                            
+                                                <tbody>
+                                                    <tr class="tr-hover" *ngFor="let i of lichsumuahang">
+                                                        <td>{{i.title}}</td>
+                                                        <td>{{i.quantity}}</td>
+                                                        <td>{{i.price}}<span>coin</span></td>
+                                                        <td>{{i.money}}</td>
+                                                        <td>{{i.status}}</td>
+                                                        <td>{{i.created}}</td>
+                                                        <td class="text-center"><a  class="bx bx-trash p-1" href="" title="Xóa"></a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card text-center">
+                <div class="p-2 m-3">
+                    <img src="assets/default/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                    <p class="text-muted m-0">Xin Chào!</p>
+                    <h4 class="bor-nav-item color m-0">{{username}}</h4>
+                    <div class="text-start mt-3">
+                        <div class="table-responsive">
+                            <table class="table table-borderless table-sm">
+                                <tbody *ngFor="let file of userprofile">
+                                    <tr>
+                                        <th scope="row">Họ & Tên :</th>
+                                        <td class="text-muted">{{file.fullname}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Ngày Tham Gia :</th>
+                                        <td class="text-muted">12/3/1234</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Vị Trí :</th>
+                                        <td class="text-muted">Cộng Tác Viên</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tổng Đã Nạp :</th>
+                                        <td class="text-muted">$ <span>100</span></td>
+                                    </tr>
+                                    <tr class="font-20 color">
+                                        <th scope="row">Số Dư Hiện Tại:</th>
+                                        <td>$<span class=""> {{file.coin}} </span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

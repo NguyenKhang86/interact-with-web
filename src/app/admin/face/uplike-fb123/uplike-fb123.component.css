@@ -1,0 +1,20 @@
+.color {
+    color: #0056C1;
+}
+.bor-nav-item {
+    border-bottom: 1px solid #0056C1;
+}
+.bor-nav-maneybank {
+    border: 1px solid #0056C1;
+}
+.input-banner {
+    border: 1px solid #0056C1;
+    width: 40%; 
+    height: 30px;
+}
+.tr-hover:hover {
+    background-color: #dee2e6;
+}
+.border-1 {
+    border-bottom: 1px solid #0056C1;
+}

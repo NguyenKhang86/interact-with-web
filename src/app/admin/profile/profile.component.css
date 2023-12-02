@@ -1,0 +1,21 @@
+.w-100 {
+    width: 100%;
+}
+.color {
+    color: #0056C1;
+}
+.display-block:hover ~ .display-none {
+    display: block;
+}
+.icon-hover:hover {
+    background-color: #0056C1;
+    cursor: pointer;
+    color: #fff;
+}
+.display-none {
+    display: none;
+}
+.border-1 {
+    border-bottom: 1px solid #0056C1;
+    
+}

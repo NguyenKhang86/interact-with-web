@@ -5,7 +5,17 @@ import { Inject, Injectable, Renderer2 } from "@angular/core";
     providedIn: 'root'
 })
 export class LoadefaultService {
+  
     constructor( private renderer2: Renderer2, @Inject(DOCUMENT) private _document : any) {}
+
+    ngOnInit(): void {
+      document.body.setAttribute('data-bs-spy', 'scroll');
+      document.body.setAttribute('data-bs-target', '.sticky');
+      document.body.setAttribute('data-bs-offset', '70');
+      this.loadBody();
+      this.loadScript();
+      this.loadCss();
+    }
 
       loadBody() {
         document.body.setAttribute('class', 'loading');
@@ -13,9 +23,9 @@ export class LoadefaultService {
     
       loadCss() {
         const styles = [
-          'assets/default/css/bootstrap.min.css',
-          'assets/default/css/app.min.css',
-          'assets/default/css/icons.min.css' 
+          'assets/css/bootstrap.min.css',
+          'assets/css/app.min.css',
+          'assets/css/icons.min.css' 
         ];
     
         for (const style of styles) {
@@ -29,8 +39,10 @@ export class LoadefaultService {
     
       loadScript() {
         const scripts = [
-          'assets/default/js/vendor.min.js',
-          'assets/default/js/app.min.js'
+          'assets/js/vendor.min.js',
+          "assets/libs/parsleyjs/parsley.min.js",
+          "assets/js/pages/form-validation.init.js",
+          'assets/js/app.min.js'
         ];
         for (const item of scripts) {
           const script = this.renderer2.createElement('script');

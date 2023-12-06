@@ -16,60 +16,42 @@ export class AdminhomepageComponent implements OnInit{
   username!: string;
   Menuform!: FormGroup;
   menu!: Menu[];
-  userprofile!: UserProfile[];
+  userprofile!: UserProfile;
+  
 
-  constructor(
+  constructor( 
     private ever: ApiDataservice,
     private formBuilder: FormBuilder,
     private renderer2: Renderer2, 
     @Inject(DOCUMENT) private _document : any
-  ) {}
+   ) {}
   ngOnInit(): void {
-    document.body.setAttribute('data-bs-spy', 'scroll');
-    document.body.setAttribute('data-bs-target', '.sticky');
-    document.body.setAttribute('data-bs-offset', '70');
-    this.loadCss();
-    this.username = localStorage.getItem('username') || '';
-
+    this.loadScript();
+    this.userprofile = new UserProfile;
+    this.GetAccountMenu();
+    this.ProfileInfo();    
+  }
+  public GetAccountMenu() {
     this.ever.get('Account/Menu').subscribe( res => {
       this.menu = res;
   })
-
-  this.ever.get('Account/Info').subscribe( res => {
-    this.userprofile = res
-  })
-
+  }
+  logout() {
+    this.ever.deleteCookie(ApiDataservice.CookieName)
+    window.location.href = 'login';
+  }
+  public ProfileInfo(){
+    this.ever.get('Account/Info').subscribe( res => {
+      this.userprofile = res;
+    })
   }
 
-  // nhúng
-  loadBody() {
-    document.body.setAttribute('class', 'loading');
-  }
-  
-  private loadCss() {
-    const styles = [
-      'assets/default/css/bootstrap.min.css',
-      'assets/default/css/app.min.css',
-      'assets/default/css/icons.min.css' 
-    ];
-    
-    for (const style of styles) {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('type', 'text/css');
-      link.setAttribute('href', style);
-      document.head.appendChild(link);
-    }
-  }
-  
-  private loadScript() {
+  loadScript() {
     const scripts = [
-      'assets/default/js/vendor.min.js',
-      'assets/default/libs/parsleyjs/parsley.min.js',
-      'assets/default/js/pages/form-validation.init.js',
-      'assets/default/js/app.min.js'
+          "assets/libs/parsleyjs/parsley.min.js",
+          'assets/js/app.min.js',
     ];
-    for (const item of scripts) {
+    for (let item of scripts) {
       const script = this.renderer2.createElement('script');
       script.type = 'text/javascript';
       script.src = item;

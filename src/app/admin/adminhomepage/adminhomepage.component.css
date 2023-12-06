@@ -117,3 +117,9 @@
     border-radius: 50%;
     padding: 4px;
 }
+.menu-profile-lg {
+    /* display: none; */
+}
+#menu-profile-id:checked ~ .menu-profile-lg {
+    display: block;
+}

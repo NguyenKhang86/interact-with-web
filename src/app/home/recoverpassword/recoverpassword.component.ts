@@ -22,44 +22,19 @@ export class RecoverpasswordComponent {
   ) {}
 
   ngOnInit(): void {
-    document.body.setAttribute('data-bs-spy', 'scroll');
-    document.body.setAttribute('data-bs-target', '.sticky');
-    document.body.setAttribute('data-bs-offset', '70');
     this.loadScript();
-    this.loadCss();
-
-
     this.loginF = this.formBuilder.group({
       email: [''],
-      platfrom: ['app']
+      platfrom: ['web']
     })
   }
-  loadBody() {
-    document.body.setAttribute('class', 'loading');
+  onSubmit() {
+
   }
-  
-  private loadCss() {
-    const styles = [
-      'assets/default/css/bootstrap.min.css',
-      'assets/default/css/app.min.css',
-      'assets/default/css/icons.min.css' 
-    ];
-    
-    for (const style of styles) {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('type', 'text/css');
-      link.setAttribute('href', style);
-      document.head.appendChild(link);
-    }
-  }
-  
   private loadScript() {
     const scripts = [
-      'assets/default/js/vendor.min.js',
-      'assets/default/libs/parsleyjs/parsley.min.js',
-      'assets/default/js/pages/form-validation.init.js',
-      'assets/default/js/app.min.js'
+      "assets/libs/parsleyjs/parsley.min.js",
+      "assets/js/pages/form-validation.init.js",
     ];
     for (const item of scripts) {
       const script = this.renderer2.createElement('script');
@@ -68,17 +43,5 @@ export class RecoverpasswordComponent {
       const body = this._document.getElementsByTagName('body')[0];
       this.renderer2.appendChild(body, script);
     }
-  }
-  onSubmit() {
-    this.ever.post('Account/login', this.loginF.value).subscribe( res => {
-      if (res.status == false) {
-        alert('Tài khoản hoặc mật khẩu sai, xin vui lòng thử lại !')
-      } else {
-        this.ever.setCookie(ApiDataservice.CookieName,res.data,30,"/");
-        localStorage.setItem('username', this.loginF.value.username);
-        window.location.href = 'dich-vu-san-pham';
-      }
-
-    })
   }
 }

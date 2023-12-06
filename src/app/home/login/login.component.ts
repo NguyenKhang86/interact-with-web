@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, Renderer2 } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ApiDataservice } from 'src/app/service/api-dataservice';
 
 @Component({
@@ -14,6 +15,7 @@ export class LoginComponent {
   public loginF!: FormGroup;
   
   constructor(
+    private toastr: ToastrService,
     private ever: ApiDataservice,
     private formBuilder: FormBuilder,
     private renderer2: Renderer2, 
@@ -21,59 +23,32 @@ export class LoginComponent {
   ) {}
 
   ngOnInit(): void {
-    document.body.setAttribute('data-bs-spy', 'scroll');
-    document.body.setAttribute('data-bs-target', '.sticky');
-    document.body.setAttribute('data-bs-offset', '70');
     this.loadScript();
-    this.loadCss();
-
-
     this.loginF = this.formBuilder.group({
       username: [''],
       password: [''],
-      platfrom: ['app']
+      platfrom: ['web']
     })
+  }
+  get f() {
+    return this.loginF.controls;
   }
   onSubmit() {
     this.ever.post('Account/login', this.loginF.value).subscribe( res => {
       if (res.status == false) {
-        alert('Tài khoản hoặc mật khẩu sai, xin vui lòng thử lại !')
+        this.toastr.error('Tài Khoản Hoặc Mật Khẩu Sai, Xin Vui Lòng Thử lại.')
       } else {
         this.ever.setCookie(ApiDataservice.CookieName,res.data,30,"/");
         localStorage.setItem('username', this.loginF.value.username);
-        alert('Đăng nhập thành công.')
         window.location.href = 'service-getbyplatfrom';
       }
     })
   }
 
-
-  loadBody() {
-    document.body.setAttribute('class', 'loading');
-  }
-  
-  private loadCss() {
-    const styles = [
-      'assets/default/css/bootstrap.min.css',
-      'assets/default/css/app.min.css',
-      'assets/default/css/icons.min.css' 
-    ];
-    
-    for (const style of styles) {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('type', 'text/css');
-      link.setAttribute('href', style);
-      document.head.appendChild(link);
-    }
-  }
-  
   private loadScript() {
     const scripts = [
-      'assets/default/js/vendor.min.js',
-      'assets/default/libs/parsleyjs/parsley.min.js',
-      'assets/default/js/pages/form-validation.init.js',
-      'assets/default/js/app.min.js'
+      "assets/libs/parsleyjs/parsley.min.js",
+      "assets/js/pages/form-validation.init.js",
     ];
     for (const item of scripts) {
       const script = this.renderer2.createElement('script');

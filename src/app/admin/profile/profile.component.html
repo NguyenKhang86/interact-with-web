@@ -19,41 +19,37 @@
         <div class="row">
             <div class="col-lg-12 col-xl-9">
                 <div class="card">
-                    <div class="" style="">
+                    <div class="">
                         <div class="border-1">
                             <h3 class="color m-2">Cá Nhân</h3>
                         </div>
                         <div class="profile-block text-start m-2">
                             <div class="table-responsive">
                                 <table class="table table-borderless table-sm p-0 m-0">
-                                    <tbody *ngFor="let file of userprofile">
+                                    <tbody>
                                         <tr>
                                             <th class="col-md-4" scope="row"><h4>Họ & Tên :</h4></th>
-                                            <td class="text-muted"><h4>{{file.fullname}}</h4></td>
+                                            <td class="text-muted"><h4>{{userprofile.fullname}}</h4></td>
                                         </tr>
                                         <tr>
                                             <th class="col-md-4" scope="row"><h4>SĐT:</h4></th>
-                                            <td class="text-muted"><h4>{{file.phone}}</h4></td>
+                                            <td class="text-muted"><h4>{{userprofile.phone}}</h4></td>
                                         </tr>
                                         <tr>
                                             <th class="col-md-4" scope="row"><h4>Tuổi :</h4></th>
-                                            <td class="text-muted"><h4>{{file.gender}}</h4></td>
+                                            <td class="text-muted"><h4>{{userprofile.gender}}</h4></td>
                                         </tr>
                                         <tr>
                                             <th class="col-md-4" scope="row"><h4>Giới Tính :</h4></th>
-                                            <td class="text-muted"><h4>{{file.address}}</h4></td>
+                                            <td class="text-muted"><h4>{{userprofile.address}}</h4></td>
                                         </tr>
                                         <tr>
                                             <th class="col-md-4" scope="row"><h4>Vị Trí :</h4></th>
                                             <td class="text-muted"><h4>Cộng Tác Viên</h4></td>
                                         </tr>
                                         <tr>
-                                            <th class="col-md-4" scope="row"><h4>Số Tiền Đã Nạp :</h4></th>
-                                            <td class="text-muted"><h4>$100</h4></td>
-                                        </tr>
-                                        <tr>
                                             <th class="col-md-4" scope="row"><h4>Số Dư Hiện Tại :</h4></th>
-                                            <td class="text-muted"><h4>{{file.coin}}</h4></td>
+                                            <td class="text-muted"><h4>{{userprofile.money}}</h4></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -70,31 +66,31 @@
             <div class="col-lg-12 col-xl-3">
                 <div class="text-center">
                     <div class="card">
-                        <a href="#" class="icon-hover" style="">
+                        <a href="#" class="icon-hover">
                             <h4 class="color icon-hover p-2 m-1">Quyền Lợi <i class="ri-user-3-fill"></i></h4>
                         </a>
                     </div> 
     
                     <div class="card">
-                        <a href="#" class="icon-hover" style="">
+                        <a href="#" class="icon-hover">
                             <h4 class="color icon-hover p-2 m-1">Câu Hỏi Thường Gặp <i class="ri-questionnaire-line"></i></h4>
                         </a>
                     </div> 
     
                     <div class="card">
-                        <a href="#" class="icon-hover" style="">
+                        <a href="#" class="icon-hover">
                             <h4 class="color icon-hover p-2 m-1">Điều Khoản Dịch Vụ <i class=" ri-shield-user-fill"></i></h4>
                         </a>
                     </div> 
     
                     <div class="card">
-                        <a href="#" class="icon-hover" style="">
+                        <a href="#" class="icon-hover">
                             <h4 class="color icon-hover p-2 m-1"> Tư Vấn Viên <i class=" ri-headphone-fill"></i></h4>
                         </a>
                     </div> 
 
                     <div class="card">
-                        <a href="#" class="icon-hover" style="">
+                        <a href="#" class="icon-hover">
                             <h4 class="color icon-hover p-2 m-1"> Mã Giảm Giá <i class="ri-emotion-fill"></i></h4>
                         </a>
                     </div> 
@@ -155,7 +151,7 @@
     
                                 <div class="modal-footer p-0" style=" border-top: 1px solid #0056C1;">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close"> Hủy </button>
-                                    <button class="btn btn-primary" type="submit"> Cập Nhật </button>
+                                    <button class="btn btn-primary" type="submit" data-bs-dismiss="modal" aria-label="Close"> Cập Nhật </button>
                                 </div>
                             </div>
                         </form>

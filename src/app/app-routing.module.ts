@@ -14,19 +14,20 @@ import { UpliketiktokComponent } from './admin/tiktok/upliketiktok/upliketiktok.
 import { RecoverpasswordComponent } from './home/recoverpassword/recoverpassword.component';
 import { UpviewFbComponent } from './admin/face/upview-fb/upview-fb.component';
 import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.component';
+import { PageNotFoundComponentComponent } from './admin/page-not-found-component/page-not-found-component.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomepageComponent},
+  {path: '', component: HomepageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'recover-password', component: RecoverpasswordComponent},
   {path: 'register', component: RegisterComponent},
 
 
+
+  
   {path: '', component: AdminhomepageComponent,
   children: [
-    {path: '', redirectTo: 'dich-vu-san-pham', pathMatch: 'full'},
-    {path: 'adminhomepage', component: AdminhomepageComponent},
+    {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'},
     {path: 'profile', component: ProfileComponent},
     {path: 'changepassword', component: ChangepasswordComponent},
     {path: 'deposit-money', component: DepositMoneyComponent},
@@ -36,9 +37,8 @@ const routes: Routes = [
     {path: 'shopping', component: ShoppingCartComponent},
     {path: 'service-getbyplatfrom', component: ProductSpComponent},
     {path: 'like-tt', component: UpliketiktokComponent},
-
-
-  ]
+    {path: '**', component: PageNotFoundComponentComponent},
+  ],
  },
 ];
 

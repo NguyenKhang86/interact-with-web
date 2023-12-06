@@ -3,20 +3,20 @@
 </style>
 <div class="container-fluid">
     <div class="row">
-        <h2 class="color col-md-12 m-2">Dịch Vụ & Sản Phẩm (<span>Đơn Vị <strong>/ BINO</strong></span>)</h2>
+        <h2 class="color col-md-12 m-2">Dịch Vụ & Sản Phẩm</h2>
         <div class="col-lg-9">
             <div class="card">
                 <div class="m-2">
                     <ul class="nav bor-nav-item ps-2">
-                        <li class="nav-item" *ngFor="let servicegetby of servicegetby">
-                            <a class="nav-link" data-bs-toggle="tab" href="#Product{{servicegetby.id}}" aria-expanded="false" aria-controls="Product">{{servicegetby.platfrom}} +</a>
+                        <li class="nav-item" *ngFor="let menu of menu">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Product{{menu.id}}" aria-expanded="false" aria-controls="Product">{{menu.platfrom}} +</a>
                         </li>
                     </ul>
-                    <div *ngFor="let servicegetby of servicegetby">
+                    <div *ngFor="let menu of menu">
                         <div class="tab-content p-0">
-                            <div class="tab-pane mt-3" id="Product{{servicegetby.id}}" style="border: none;">
+                            <div class="tab-pane mt-3" id="Product{{menu.id}}" style="border: none;">
                                 <div class="col-12">
-                                    <h4 class="color m-1">Dịch Vụ {{servicegetby.platfrom}}</h4>
+                                    <h4 class="color m-1">Dịch Vụ {{menu.platfrom}}</h4>
                                     <div class="table-responsive">
                                         <table class="table table-centered mb-0" id="inline-editable">
                                             <thead class="table-light">
@@ -29,68 +29,16 @@
                                             </thead>
                                         
                                             <tbody>
-                                                <!-- <tr class="tr-hover">
-                                                    <td class="text-center">
-                                                        <a href="up-like-facebook" title="Shoppping">
-                                                            <i class="fe-shopping-cart p-2" ></i>
-                                                        </a>
-                                                    </td>
-                                                    <td>Tăng Biểu Cảm</td>
-                                                    <td>
-                                                        <ul class="">
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">
-                                                                    Biểu Tượng Like 
-                                                                    <i class="fa-solid fa-thumbs-up ml-1"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">
-                                                                    Biểu Tượng Mặt Cười 
-                                                                    <i class="fa-solid fa-face-laugh-squint ml-1"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">
-                                                                    Biểu Tượng Buồn 
-                                                                    <i class="fa-solid fa-face-sad-cry ml-1"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">
-                                                                    Biểu Tượng Khõ Ở
-                                                                    <i class="fa-solid fa-face-angry ml-1"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
-                                                    <td rowspan="10" style="z-index: 1;">
-                                                        <ul class="">
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">Lever 1: <span  class="color">10đ</span>/Ngày (<strong>Giá bình dân</strong>)</a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">Lever 1: <span  class="color">20đ</span>/Ngày (<strong>Giá tầm trung</strong>)</a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">Lever 1: <span  class="color">30đ</span>/Ngày (<strong >Giá cao cấp</strong>)</a>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link">Lever 1: <span  class="color">60đ</span>/Ngày (<strong class="doimauchu"> VIP </strong>)</a>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
-                                                
-                                                </tr> -->
-    
-                                                <tr class="tr-hover" *ngFor="let service of servicegetby.service">
+                                              
+                                                <tr class="tr-hover" *ngFor="let menu of menu.service">
                                                     <th class="text-center">
-                                                        <a href="{{service.path}}" title="Shoppping">
+                                                        <a href="{{menu.path}}" title="Shoppping">
                                                             <i class="fe-shopping-cart p-2" ></i>
                                                         </a>
                                                     </th>
-                                                    <td>{{service.title}}</td>
-                                                    <td>{{service.path}}</td>
+                                                    <td>{{menu.title}}</td>
+                                                    <td>{{menu.path}}</td>
+                                                    <td>{{menu.price}}</td>
                                                 </tr>
                                             
                                             </tbody>
@@ -107,16 +55,16 @@
         <div class="col-lg-3">
             <div class="card text-center">
                 <div class="p-2 m-1">
-                    <img src="assets/default/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                    <p class="text-muted m-0">Xin Chào!</p>
+                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                    <p class="m-0 p-0">welcome !!!</p>
                     <h4 class="bor-nav-item color m-0">{{username}}</h4>
                     <div class="text-start mt-3">
                         <div class="table-responsive">
                             <table class="table table-borderless table-sm">
-                                <tbody *ngFor="let file of userprofile">
+                                <tbody>
                                     <tr>
                                         <th scope="row">Họ & Tên :</th>
-                                        <td class="text-muted">{{file.fullname}}</td>
+                                        <td class="text-muted">{{userprofile.fullname}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Ngày Tham Gia :</th>
@@ -132,7 +80,7 @@
                                     </tr>
                                     <tr class="font-20 color">
                                         <th scope="row">Số Dư Hiện Tại:</th>
-                                        <td>$<span class="">{{file.coin}} </span></td>
+                                        <td>$<span class="">{{userprofile.money}} </span></td>
                                     </tr>
                                 </tbody>
                             </table>

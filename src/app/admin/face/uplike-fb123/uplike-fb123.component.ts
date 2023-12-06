@@ -1,7 +1,8 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Renderer2 } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Menu, ServiceId } from 'src/app/model/access';
+import { Menu } from 'src/app/model/access';
 import { ApiDataservice } from 'src/app/service/api-dataservice';
 
 @Component({
@@ -11,105 +12,63 @@ import { ApiDataservice } from 'src/app/service/api-dataservice';
 })
 export class UplikeFb123Component {
 
+  fblike!: any;
+  dongia!: any;
   a!: any;
   b!: any;
   tongthanhtoan!: number;
   soluong!: number;
   Orderform1!: FormGroup;
   menu!: Menu[];
-  idfaccelike!: ServiceId[];
-  pricefaccelike!: ServiceId[];
-  titlefaccelike!: ServiceId[];
   
   constructor(
+    private toastr: ToastrService,
     private ever: ApiDataservice,
     private formBuilder: FormBuilder,
-    private renderer2: Renderer2, 
-    @Inject(DOCUMENT) private _document : any
   ) {}
 
   ngOnInit(): void {
-    document.body.setAttribute('data-bs-spy', 'scroll');
-    document.body.setAttribute('data-bs-target', '.sticky');
-    document.body.setAttribute('data-bs-offset', '70');
-    this.loadScript();
-    this.loadCss();
-
     this.Orderform1 = this.formBuilder.group({
       id: [''],
       sid: [''],
       url: [''],
       quantity: 0,
     })
+    this.GetAccountMenuID();
+  }
 
-    this.ever.get('Account/Menu').subscribe( res => {
-      this.ever.get(`Id?Id=${res[0].service[0].id}`).subscribe( res => {
-        // console.log(res);
+  private GetAccountMenuID() {
+    this.ever.get('Account/Menu').subscribe( red => {
+      this.ever.get(`Id?Id=${red[0].service[0].id}`).subscribe( res => {
         this.Orderform1 = this.formBuilder.group({
           id: [''],
           sid: [res.id],
           url: [''],
           quantity: 100,
         })
-        this.b = res.price;
-        // this.a = this.Orderform1.value.quantity;
-        // this.tongthanhtoan = this.soluong*this.b;
-
-        this.pricefaccelike = res.price;
-        this.titlefaccelike = res.title;
+        // this.b = res.price;
       })
+      this.fblike = red[0].service[0].title;
+      this.dongia = red[0].service[0].price;
     })
-  } 
+  }
 
   thanhtoan() {
     var a = this.Orderform1.value.quantity;
     this.soluong = a;
-    this.tongthanhtoan = this.soluong*this.b;
+    this.tongthanhtoan = this.soluong*this.dongia;
   }
 
   onSubmitOrder() {
     this.ever.post('Order/Add', this.Orderform1.value).subscribe( red => {
       if (red.status == false) {
-        alert('Mời Nhập Đầy Đủ Thông Tin')
+        this.toastr.error('Nội Dung Không Hợp Lệ, Xin Vui Lòng Thử lại.')
+      } else if (this.soluong >= 1000) {
+        this.toastr.error('Đơn Hàng Quá Lớn, Xin Vui Lòng Nhập Lại.')
       } else {
-        alert('hello')
-        window.location.href = 'Facebook-like';
+        this.toastr.success('Thanh Toán Thành Công.')
+        this.GetAccountMenuID();
       } 
     })
-  }
-
-//  nhúng
-  loadBody() {
-    document.body.setAttribute('class', 'loading');
-  }
-  
-  private loadCss() {
-    const styles = [
-      'assets/default/css/bootstrap.min.css',
-      'assets/default/css/app.min.css',
-      'assets/default/css/icons.min.css' 
-    ];
-    
-    for (const style of styles) {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('type', 'text/css');
-      link.setAttribute('href', style);
-      document.head.appendChild(link);
-    }
-  }
-  
-  private loadScript() {
-    const scripts = [
-      'assets/default/js/vendor.min.js',
-      'assets/default/js/app.min.js'
-    ];
-    for (const item of scripts) {
-      const script = this.renderer2.createElement('script');
-      script.type = 'text/javascript';
-      script.src = item;
-      const body = this._document.getElementsByTagName('body')[0];
-      this.renderer2.appendChild(body, script);
-    }
   }
 }

@@ -9,10 +9,10 @@ import { LoadefaultService } from 'src/app/service/loadefault.service';
 
 })
 export class CollaboratorsComponent {
-  constructor(private load: LoadefaultService) {}
+  constructor(
+    private load: LoadefaultService,
+    ) {}
   ngOnInit(): void {
-    this.load.loadBody();
-    this.load.loadCss();
-    this.load.loadScript();
+ 
   }
 }

@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +45,11 @@ import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.com
     FormsModule,
     ReactiveFormsModule,  
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

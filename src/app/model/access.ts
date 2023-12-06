@@ -1,25 +1,25 @@
 export class UserProfile {
     fullname!: string;
+    address!: string;
     gender!: string;
     phone!: string;
-    address!: string;
-    coin!: string;
+    money!: 0;
 }
 export class ChangePassword {
     oldPassword!: string;
     newPassword!: string;
 }
-export class Transaction {
-    id!: string;
-    coin!: 0;
-    paid!: 0;
-}
-export class HistoryBank {
-    id!: string;
-    coin!: 0;
-    action!: string;
-    created!: string;
-}
+// export class Transaction {
+//     id!: string;
+//     coin!: 0;
+//     paid!: 0;
+// }
+// export class HistoryBank {
+//     id!: string;
+//     coin!: 0;
+//     action!: string;
+//     created!: string;
+// }
 export class Order {
     id!: string;
     quantity!: 0;
@@ -35,11 +35,7 @@ export class Service1 {
     id!: string;
     title!: string;
     path!: string;
-}
-export class ServiceGetByPlatfrom {
-    id!: string;
-    platfrom!: string;
-    service!: Service2[];
+    price!: string;
 }
 export class Service2 {
     id!: string;
@@ -79,7 +75,7 @@ export class lichsumuahang {
 // Nạp Ruta Tiền
 export class Transaction01 {
     id!: string;
-    coin!: 0;
+    money!: 0;
     action!: string;
     created!: string;
 }

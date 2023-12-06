@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ApiDataservice } from 'src/app/service/api-dataservice';
 import { LoadefaultService } from 'src/app/service/loadefault.service';
 
@@ -15,6 +16,7 @@ export class ChangepasswordComponent {
   changePasswordForm!: FormGroup;
   
   constructor(
+    private toastr: ToastrService,
     private ever: ApiDataservice,
     private formBuilder: FormBuilder,
     private renderer2: Renderer2, 
@@ -22,62 +24,33 @@ export class ChangepasswordComponent {
   ) {}
 
   ngOnInit(): void {
-    document.body.setAttribute('data-bs-spy', 'scroll');
-    document.body.setAttribute('data-bs-target', '.sticky');
-    document.body.setAttribute('data-bs-offset', '70');
     this.loadScript();
-    this.loadCss();
-    
     this.changePasswordForm = this.formBuilder.group({
       oldPassword: [''],
       newPassword: ['']
     })
   }
-  loadBody() {
-    document.body.setAttribute('class', 'loading');
+  public changePassword() {
+    this.ever.put('Account/ChangePassword', this.changePasswordForm.value).subscribe( res => {
+      if (res.status == false) {
+        this.toastr.error('Mật khẩu không chính xác,  xin vui lòng thử lại !.')
+      } else {
+        window.location.href = 'service-getbyplatfrom';
+      }
+    })
   }
-  
-  private loadCss() {
-    const styles = [
-      'assets/default/css/bootstrap.min.css',
-      'assets/default/css/app.min.css',
-      'assets/default/css/icons.min.css' 
-    ];
-    
-    for (const style of styles) {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'stylesheet');
-      link.setAttribute('type', 'text/css');
-      link.setAttribute('href', style);
-      document.head.appendChild(link);
-    }
-  }
-  
-  private loadScript() {
+
+  loadScript() {
     const scripts = [
-      'assets/default/js/vendor.min.js',
-      'assets/default/libs/parsleyjs/parsley.min.js',
-      'assets/default/js/pages/form-validation.init.js',
-      'assets/default/js/app.min.js'
+      'assets/libs/parsleyjs/parsley.min.js',
+      'assets/js/pages/form-validation.init.js',
     ];
-    for (const item of scripts) {
+    for (let item of scripts) {
       const script = this.renderer2.createElement('script');
       script.type = 'text/javascript';
       script.src = item;
       const body = this._document.getElementsByTagName('body')[0];
       this.renderer2.appendChild(body, script);
     }
-  }
-
-  public changePassword() {
-    this.ever.put('Account/ChangePassword', this.changePasswordForm.value).subscribe( res => {
-      if (res.status == false) {
-        alert('Mật khẩu không đúng, xin vui lòng thử lại !')
-      } else {
-        this.ever.setCookie(ApiDataservice.CookieName,res.data,30,"/");
-        alert('Thay đổi mật khẩu thành công.')
-        window.location.href = 'changepassword';
-      }
-    })
   }
 }

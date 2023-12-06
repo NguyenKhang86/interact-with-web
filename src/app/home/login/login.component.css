@@ -7,3 +7,6 @@
 .color {
     color: #0056C1;
 }
+.text-muted:hover {
+    color: #0056C1 !important;
+}

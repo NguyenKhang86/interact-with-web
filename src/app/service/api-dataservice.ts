@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
+import { CookieOptions, CookieService } from "ngx-cookie-service";
 
 @Injectable({
     providedIn: 'root'
@@ -10,15 +11,14 @@ export class ApiDataservice {
   static AccessTokenJwt: string = '';
   public static CookieName: string = "MyCookie";
   public headersOptions: any
-  cookie: any;
 
-  constructor( private http: HttpClient) {
+  constructor( private http: HttpClient, private cook: CookieService) {
       ApiDataservice.AccessTokenJwt = this.getCookie(ApiDataservice.CookieName)
-  const headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${ApiDataservice.AccessTokenJwt}`
-  });
-  this.headersOptions = { headers: headers };
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${ApiDataservice.AccessTokenJwt}`
+      });
+      this.headersOptions = { headers: headers };
   }
 
   public setCookie(name: string, value: string, expireDays: number, path: string = '') {
@@ -43,13 +43,11 @@ export class ApiDataservice {
       }
       return '';
   }
-  
-  public static apiKey: string = "";
 
-  public deleteCookie(name: string) {
-    this.cookie.deleteAll('/admin');
-    this.cookie.deleteAll('/');
-  }
+  // Xóa cookki khi đăng xuất k nhận thồn tin nào
+    public deleteCookie(name: string) {
+      this.cook.deleteAll(name);
+    }
 
     // GET
     get(url: string): Observable<any> {
@@ -67,4 +65,6 @@ export class ApiDataservice {
      delete(id: number): Observable<any> {
       return this.http.put<any>(this.host + id, this.headersOptions)
     }
+
+    
 }

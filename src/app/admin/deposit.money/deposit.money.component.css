@@ -32,3 +32,8 @@ ul {
     padding: 0px;
     margin: 0px;
 }
+.bx-trash:hover {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #0056C1;
+}

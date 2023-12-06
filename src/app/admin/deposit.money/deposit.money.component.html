@@ -175,13 +175,16 @@
                                                 </thead>
                                             
                                                 <tbody>
-                                                    <tr class="tr-hover" *ngFor="let i of maney">
+                                                    <tr class="tr-hover" *ngFor="let i of moneybank">
                                                         <td>61</td>
                                                         <td>61</td>
                                                         <td>{{i.action}}</td>
-                                                        <td>{{i.coin}}</td>
+                                                        <td>{{i.money}}</td>
                                                         <td>{{i.created}}</td>
-                                                        <td class="text-center"><a class="bx bx-trash p-1" href="#" title="Xóa"></a></td>
+                                                        <td class="text-center">
+                                                            <a class="bx bx-trash p-1" href="" data-bs-target="#Delete" data-bs-toggle="modal"
+                                                            data-bs-dismiss="modal" title="Xóa"></a>
+                                                        </td>
                                                     </tr>
                                             </table>
                                         </div>
@@ -220,11 +223,14 @@
                                                     <tr class="tr-hover" *ngFor="let i of lichsumuahang">
                                                         <td>{{i.title}}</td>
                                                         <td>{{i.quantity}}</td>
-                                                        <td>{{i.price}}<span>coin</span></td>
+                                                        <td>{{i.price}}</td>
                                                         <td>{{i.money}}</td>
                                                         <td>{{i.status}}</td>
                                                         <td>{{i.created}}</td>
-                                                        <td class="text-center"><a  class="bx bx-trash p-1" href="" title="Xóa"></a></td>
+                                                        <td class="text-center">
+                                                            <a class="bx bx-trash p-1" href="" data-bs-target="#Delete" data-bs-toggle="modal"
+                                                            data-bs-dismiss="modal" title="Xóa"></a>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -241,16 +247,16 @@
         <div class="col-lg-3">
             <div class="card text-center">
                 <div class="p-2 m-3">
-                    <img src="assets/default/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                    <p class="text-muted m-0">Xin Chào!</p>
+                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                    <p class="m-0 p-0">welcome !!!</p>
                     <h4 class="bor-nav-item color m-0">{{username}}</h4>
                     <div class="text-start mt-3">
                         <div class="table-responsive">
                             <table class="table table-borderless table-sm">
-                                <tbody *ngFor="let file of userprofile">
+                                <tbody>
                                     <tr>
                                         <th scope="row">Họ & Tên :</th>
-                                        <td class="text-muted">{{file.fullname}}</td>
+                                        <td class="text-muted">{{userprofile.fullname}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Ngày Tham Gia :</th>
@@ -266,13 +272,33 @@
                                     </tr>
                                     <tr class="font-20 color">
                                         <th scope="row">Số Dư Hiện Tại:</th>
-                                        <td>$<span class=""> {{file.coin}} </span></td>
+                                        <td>$<span class=""> {{userprofile.money}} </span></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- xóa -->
+<div class="modal fade" id="Delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bor-nav-item">
+                <h4 class="modal-title color" id="exampleModalToggleLabel">Cảnh báo</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bor-nav-item">Bạn có chắc chắn muốn xóa hết dữ liệu?</div>
+            <div class="modal-footer p-0">
+                <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                    data-bs-dismiss="modal" (click)="Delete()">
+                    Xóa 
+                </button>
             </div>
         </div>
     </div>

@@ -15,6 +15,7 @@ import { RecoverpasswordComponent } from './home/recoverpassword/recoverpassword
 import { UpviewFbComponent } from './admin/face/upview-fb/upview-fb.component';
 import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.component';
 import { PageNotFoundComponentComponent } from './admin/page-not-found-component/page-not-found-component.component';
+import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -25,7 +26,7 @@ const routes: Routes = [
 
 
   
-  {path: '', component: AdminhomepageComponent,
+  {path: '', component: AdminhomepageComponent, canActivate: [ AlwaysAuthGuardGuard ], canActivateChild: [AlwaysAuthGuardGuard],
   children: [
     {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'},
     {path: 'profile', component: ProfileComponent},

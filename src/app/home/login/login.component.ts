@@ -13,6 +13,7 @@ import { ApiDataservice } from 'src/app/service/api-dataservice';
 export class LoginComponent {
   
   public loginF!: FormGroup;
+  role!: number;
   
   constructor(
     private toastr: ToastrService,
@@ -45,7 +46,13 @@ export class LoginComponent {
     })
   }
 
-  private loadScript() {
+  public postLogin() {
+    this.ever.post('Account/login', this.loginF.value).subscribe( res => {
+      return res.role;
+    })
+  }
+
+  public loadScript() {
     const scripts = [
       "assets/libs/parsleyjs/parsley.min.js",
       "assets/js/pages/form-validation.init.js",

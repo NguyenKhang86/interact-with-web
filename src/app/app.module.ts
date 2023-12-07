@@ -22,6 +22,7 @@ import { ProductSpComponent } from './admin/product-sp/product-sp.component';
 import { RecoverpasswordComponent } from './home/recoverpassword/recoverpassword.component';
 import { UpviewFbComponent } from './admin/face/upview-fb/upview-fb.component';
 import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.component';
+import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,9 @@ import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.com
       
     })
   ],
-  providers: [],
+  providers: [
+    AlwaysAuthGuardGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

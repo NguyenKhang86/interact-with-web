@@ -43,6 +43,9 @@ export class ApiDataservice {
       }
       return '';
   }
+  public logedIn() {
+    return localStorage.getItem
+  }
 
   // Xóa cookki khi đăng xuất k nhận thồn tin nào
     public deleteCookie(name: string) {

@@ -26,7 +26,7 @@ const routes: Routes = [
 
 
   
-  {path: '', component: AdminhomepageComponent, canActivate: [ AlwaysAuthGuardGuard ], canActivateChild: [AlwaysAuthGuardGuard],
+  {path: '', component: AdminhomepageComponent,
   children: [
     {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'},
     {path: 'profile', component: ProfileComponent},
@@ -39,7 +39,7 @@ const routes: Routes = [
     {path: 'service-getbyplatfrom', component: ProductSpComponent},
     {path: 'like-tt', component: UpliketiktokComponent},
     {path: '**', component: PageNotFoundComponentComponent},
-  ],
+  ], canActivate: [ AlwaysAuthGuardGuard ], canActivateChild: [AlwaysAuthGuardGuard],
  },
 ];
 

@@ -43,7 +43,7 @@ export class LoginComponent {
         localStorage.setItem('username', this.loginF.value.username);
         window.location.href = 'service-getbyplatfrom';
       }
-      this.ever.setCookie(ApiDataservice.RoleCookliName,res.role,30,"/");
+      this.ever.setCookie(ApiDataservice.RoleCookieName,res.role,30,"/");
     })
   }
 

@@ -8,14 +8,15 @@ import { CookieOptions, CookieService } from "ngx-cookie-service";
 })
 export class ApiDataservice {
   public host:string = 'https://api.mmo-soft.com/';
+  static AccessRole: string = '';
   static AccessTokenJwt: string = '';
   public static CookieName: string = "MyCookie";
-  public static RoleCookliName: string = "RoleCookli";
+  public static RoleCookieName: string = "role";
   public headersOptions: any
 
   constructor( private http: HttpClient, private cook: CookieService) {
-      ApiDataservice.AccessTokenJwt = this.getCookie(ApiDataservice.CookieName)
-      ApiDataservice.AccessTokenJwt = this.getCookie(ApiDataservice.RoleCookliName)
+      ApiDataservice.AccessRole = this.getCookie(ApiDataservice.RoleCookieName);
+      ApiDataservice.AccessTokenJwt = this.getCookie(ApiDataservice.CookieName);
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${ApiDataservice.AccessTokenJwt}`
@@ -41,7 +42,7 @@ export class ApiDataservice {
       c = ca[i].replace(/^\s+/g, '');
       if (c.indexOf(cookieName) == 0) {
           return c.substring(cookieName.length, c.length);
-      }
+        }
       }
       return '';
   }

@@ -48,11 +48,9 @@ export class AdminhomepageComponent implements OnInit{
 
   loadScript() {
     const scripts = [
-      "assets/libs/parsleyjs/parsley.min.js",
-      "assets/js/pages/form-validation.init.js",
-      'assets/js/app.min.js'
-      // 'assets/js/vendor.min.js',
-      // "assets/libs/parsleyjs/parsley.min.js",
+      "/assets/libs/parsleyjs/parsley.min.js",
+      // "/assets/js/pages/form-validation.init.js",
+      "/assets/js/app.min.js"
     ];
     for (let item of scripts) {
       const script = this.renderer2.createElement('script');

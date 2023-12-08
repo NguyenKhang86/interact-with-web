@@ -11,9 +11,6 @@ import { LoadefaultService } from 'src/app/service/loadefault.service';
 export class ShoppingCartComponent {
   constructor(private load: LoadefaultService) {}
   ngOnInit(): void {
-    this.load.loadBody();
-    this.load.loadCss();
-    this.load.loadScript();
   }
   add() {}
 }

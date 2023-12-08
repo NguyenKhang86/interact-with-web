@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit{
   }
 
   onEditClick() {
-    this.ever.get('Account/Info').subscribe( res => {      
+    this.ever.get('Account/Info').subscribe( res => {
       this.profileeditform = this.formBuilder.group({
         fullname: [res.fullname],
         gender: [res.gender],

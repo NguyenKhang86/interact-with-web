@@ -24,7 +24,6 @@ export class ChangepasswordComponent {
   ) {}
 
   ngOnInit(): void {
-    this.loadScript();
     this.changePasswordForm = this.formBuilder.group({
       oldPassword: [''],
       newPassword: ['']
@@ -38,19 +37,5 @@ export class ChangepasswordComponent {
         window.location.href = 'service-getbyplatfrom';
       }
     })
-  }
-
-  loadScript() {
-    const scripts = [
-      'assets/libs/parsleyjs/parsley.min.js',
-      'assets/js/pages/form-validation.init.js',
-    ];
-    for (let item of scripts) {
-      const script = this.renderer2.createElement('script');
-      script.type = 'text/javascript';
-      script.src = item;
-      const body = this._document.getElementsByTagName('body')[0];
-      this.renderer2.appendChild(body, script);
-    }
   }
 }

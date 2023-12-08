@@ -10,10 +10,12 @@ export class ApiDataservice {
   public host:string = 'https://api.mmo-soft.com/';
   static AccessTokenJwt: string = '';
   public static CookieName: string = "MyCookie";
+  public static RoleCookliName: string = "RoleCookli";
   public headersOptions: any
 
   constructor( private http: HttpClient, private cook: CookieService) {
       ApiDataservice.AccessTokenJwt = this.getCookie(ApiDataservice.CookieName)
+      ApiDataservice.AccessTokenJwt = this.getCookie(ApiDataservice.RoleCookliName)
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${ApiDataservice.AccessTokenJwt}`

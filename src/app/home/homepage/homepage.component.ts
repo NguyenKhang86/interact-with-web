@@ -15,6 +15,19 @@ export class HomepageComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-
+    this.loadScript();
+  }
+  loadScript() {
+    const scripts = [
+      "/assets/libs/parsleyjs/parsley.min.js",
+      "/assets/js/app.min.js"
+    ];
+    for (let item of scripts) {
+      const script = this.renderer2.createElement('script');
+      script.type = 'text/javascript';
+      script.src = item;
+      const body = this._document.getElementsByTagName('body')[0];
+      this.renderer2.appendChild(body, script);
+    }
   }
 }

@@ -113,13 +113,17 @@
     }
 }
 .fe-user {
-    background-color: #333;
+    border: 1px solid #fff;
     border-radius: 50%;
     padding: 4px;
 }
-.menu-profile-lg {
-    /* display: none; */
-}
 #menu-profile-id:checked ~ .menu-profile-lg {
     display: block;
+}
+.card {
+    box-shadow: 0 0 2px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+.bor-nav-item {
+    border-bottom: 2px solid #0056C1;
 }

@@ -13,7 +13,6 @@ import { ApiDataservice } from 'src/app/service/api-dataservice';
 export class LoginComponent {
   
   public loginF!: FormGroup;
-  role!: number;
   
   constructor(
     private toastr: ToastrService,
@@ -30,9 +29,6 @@ export class LoginComponent {
       password: [''],
       platfrom: ['web']
     })
-  }
-  get f() {
-    return this.loginF.controls;
   }
   onSubmit() {
     this.ever.post('Account/login', this.loginF.value).subscribe( res => {
@@ -51,6 +47,7 @@ export class LoginComponent {
     const scripts = [
       "assets/libs/parsleyjs/parsley.min.js",
       "assets/js/pages/form-validation.init.js",
+      "assets/js/app.min.js"
     ];
     for (const item of scripts) {
       const script = this.renderer2.createElement('script');

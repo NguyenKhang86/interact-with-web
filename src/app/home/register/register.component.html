@@ -30,13 +30,16 @@
                                 </div>
                           
                                 <div class="mb-2">
-                                    <label for="password" class="form-label">Password<span class="text-danger">*</span></label>
-                                    <div class=" input-group-merge">
-                                        <input type="password" id="password" class="form-control" placeholder="Enter password" required formControlName="password">
-                                     
+                                    <label for="password" class="form-label">Password</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="password" id="password" class="form-control" placeholder="Enter your password"  formControlName="password">
+                                        
+                                        <div class="input-group-text" data-password="false">
+                                            <span class="password-eye"></span>
+                                        </div>
                                     </div>
-
                                 </div>
+    
                                 <div class="mb-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="checkbox-signup">

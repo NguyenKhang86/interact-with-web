@@ -11,7 +11,7 @@ export class ApiDataservice {
   static AccessRole: string = '';
   static AccessTokenJwt: string = '';
   public static CookieName: string = "MyCookie";
-  public static RoleCookieName: string = "role";
+  public static RoleCookieName: string = "Role";
   public headersOptions: any
 
   constructor( private http: HttpClient, private cook: CookieService) {
@@ -50,7 +50,7 @@ export class ApiDataservice {
     return localStorage.getItem
   }
 
-  // Xóa cookki khi đăng xuất k nhận thồn tin nào
+  // Xóa cookki khi đăng xuất k nhận thông tin token 
     public deleteCookie(name: string) {
       this.cook.deleteAll(name);
     }
@@ -71,6 +71,4 @@ export class ApiDataservice {
      delete(id: number): Observable<any> {
       return this.http.put<any>(this.host + id, this.headersOptions)
     }
-
-    
 }

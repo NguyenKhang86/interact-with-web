@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -48,11 +49,10 @@ import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      
-    })
+    ToastrModule.forRoot({ })
   ],
   providers: [
+    CookieService,
     AlwaysAuthGuardGuard
   ],
   bootstrap: [AppComponent]

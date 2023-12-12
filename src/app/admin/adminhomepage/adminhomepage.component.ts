@@ -13,12 +13,12 @@ import { LoadefaultService } from 'src/app/service/loadefault.service';
 })
 export class AdminhomepageComponent implements OnInit{
 
+  tokken: string = '';
   username!: string;
   Menuform!: FormGroup;
   menu!: Menu[];
   userprofile!: UserProfile;
   
-
   constructor( 
     private ever: ApiDataservice,
     private formBuilder: FormBuilder,
@@ -26,26 +26,27 @@ export class AdminhomepageComponent implements OnInit{
     @Inject(DOCUMENT) private _document : any
    ) {}
   ngOnInit(): void {
-    this.loadScript();
     this.userprofile = new UserProfile;
+    this.loadScript();
     this.GetAccountMenu();
-    this.ProfileInfo();    
+    this.GetAccountInfo();
+    this.tokken = this.ever.getCookie(ApiDataservice.AccessRole)
   }
   public GetAccountMenu() {
     this.ever.get('Account/Menu').subscribe( res => {
       this.menu = res;
-  })
+    })
   }
   logout() {
     this.ever.deleteCookie(ApiDataservice.CookieName)
     window.location.href = 'login';
   }
-  public ProfileInfo(){
+  public GetAccountInfo() {
+    // thông tin cá nhân
     this.ever.get('Account/Info').subscribe( res => {
       this.userprofile = res;
     })
   }
-
   loadScript() {
     const scripts = [
       "/assets/libs/parsleyjs/parsley.min.js",

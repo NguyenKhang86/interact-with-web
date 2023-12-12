@@ -16,12 +16,12 @@
 </style>
 <div class="container-fluid">
     <div class="row">
-        <h2 class="color col-md-12 m-2">Nạp Tiền Tài Khoản</h2>
-        <div class="col-lg-9 mb-2">
-            <div class="card m-0">
-                <div class="">
+        <h2 class="color title m-0 p-2" style="font-weight: 400;">Nạp Tiền Tài Khoản</h2>
+        <div class="col-lg-9">
+            <div class="card border-top">
+                <div class="m-2 mt-0">
                     <ul class="nav bor-nav-item p-1 pb-0">
-                        <li class="nav-item" style="margin-left: 10px;">
+                        <li class="nav-item">
                             <a class="nav-link active" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BankManey">Ngân hàng</a>
                         </li>
                         <li class="nav-item">
@@ -31,7 +31,7 @@
                             <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#lichsumuahang">Lịch Sử Đặt Hàng</a>
                         </li>
                     </ul>
-                    <div class="tab-content twitter-bs-wizard-tab-content m-3 p-0">
+                    <div class="tab-content twitter-bs-wizard-tab-content m-3 mb-0 p-0">
                         <div class="tab-pane active"  style="border: none" id="BankManey">
                             <div class="column">
                                 <div class="pb-2">
@@ -245,14 +245,14 @@
         </div>
 
         <div class="col-lg-3">
-            <div class="card text-center">
-                <div class="p-2 m-3">
+            <div class="card text-center border-top">
+                <div class="p-2 m-1">
                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                     <p class="m-0 p-0">welcome !!!</p>
                     <h4 class="bor-nav-item color m-0">{{username}}</h4>
                     <div class="text-start mt-3">
                         <div class="table-responsive">
-                            <table class="table table-borderless table-sm">
+                            <table class="table table-borderless table-sm m-0">
                                 <tbody>
                                     <tr>
                                         <th scope="row">Họ & Tên :</th>
@@ -272,14 +272,14 @@
                                     </tr>
                                     <tr class="font-20 color">
                                         <th scope="row">Số Dư Hiện Tại:</th>
-                                        <td>$<span class=""> {{userprofile.money}} </span></td>
+                                        <td>$<span class="">{{userprofile.money}} </span></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </div>

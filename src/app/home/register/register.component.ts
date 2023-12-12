@@ -46,6 +46,7 @@ export class RegisterComponent implements OnInit{
     const scripts = [
       "assets/libs/parsleyjs/parsley.min.js",
       "assets/js/pages/form-validation.init.js",
+      "assets/js/app.min.js"
     ];
     for (const item of scripts) {
       const script = this.renderer2.createElement('script');

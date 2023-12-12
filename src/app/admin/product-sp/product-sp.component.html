@@ -3,11 +3,11 @@
 </style>
 <div class="container-fluid">
     <div class="row">
-        <h2 class="color col-md-12 m-2">Dịch Vụ & Sản Phẩm</h2>
+        <h2 class="color title m-0 p-2" style="font-weight: 400;">Bảng Giá Sản Phẩm</h2>
         <div class="col-lg-9">
-            <div class="card">
-                <div class="m-2">
-                    <ul class="nav bor-nav-item ps-2">
+            <div class="card border-top">
+                <div class="m-2 mt-0">
+                    <ul class="nav bor-nav-item p-1 pb-0">
                         <li class="nav-item" *ngFor="let menu of menu">
                             <a class="nav-link" data-bs-toggle="tab" href="#Product{{menu.id}}" aria-expanded="false" aria-controls="Product">{{menu.platfrom}} +</a>
                         </li>
@@ -29,7 +29,7 @@
                                             </thead>
                                         
                                             <tbody>
-                                              
+                                            
                                                 <tr class="tr-hover" *ngFor="let menu of menu.service">
                                                     <th class="text-center">
                                                         <a href="{{menu.path}}" title="Shoppping">
@@ -53,14 +53,14 @@
         </div>
 
         <div class="col-lg-3">
-            <div class="card text-center">
+            <div class="card text-center border-top">
                 <div class="p-2 m-1">
                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                     <p class="m-0 p-0">welcome !!!</p>
                     <h4 class="bor-nav-item color m-0">{{username}}</h4>
                     <div class="text-start mt-3">
                         <div class="table-responsive">
-                            <table class="table table-borderless table-sm">
+                            <table class="table table-borderless table-sm m-0">
                                 <tbody>
                                     <tr>
                                         <th scope="row">Họ & Tên :</th>

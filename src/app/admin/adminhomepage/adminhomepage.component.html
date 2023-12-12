@@ -1,37 +1,23 @@
 <script>
-    
-    let Menu_Sm = document.querySelector('.menu-profile-sm');
-    let Menu_Lg = document.querySelector('.menu-profile-lg');
-    let Menu_Sm_id = document.querySelector('#menu-profile-id');
-
-    Menu_Sm_id.onclick = function() {
-        Menu_Sm.classList.toggle('hide');
-        Menu_Lg.classList.toggle('expand');
-    }
-  
 </script>
 <div id="wrapper">
     <div class="navbar-custom">
         <div class="container-fluid">
-            <ul class="list-unstyled topnav-menu float-end mb-0 he-60" style="margin-right: 30px; margin-top: -14px;">
-
-                <li class="dropdown d-none d-lg-inline-block menu-hover" title="Giỏ Hàng">
-                    <a class="nav-link waves-effect waves-light" href="shopping">
-                        <i class=""></i>
-                        <span class="badge bg-danger rounded-circle noti-icon-badge">3 </span>
-                    </a>
-                </li>
+            <ul class="list-unstyled topnav-menu float-end mb-0 he-60" style="margin-right: 60px; margin-top: -14px;">
 
                 <li class="dropdown d-none d-lg-inline-block menu-hover" data-toggle="fullscreen" >
-                    <a class="nav-link arrow-none waves-effect waves-light" title="phóng to & thu nhỏ">
-                        <i class="fe-maximize noti-icon font-18"></i>
+                    <a class="nav-link waves-effect waves-light he-60" title="phóng to & thu nhỏ">
+                        <i class="fe-maximize noti-icon font-18 p-1"></i>
                     </a>
                 </li>
 
-                <li class="dropdown notification-list topbar-dropdown p-0 font-18" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"
+                <li class="dropdown d-none d-lg-inline-block menu-hover p-0"
                  title="ngôn ngữ">
-                    <a class="nav-link arrow-none waves-effect waves-light">
-                        <img src="https://st.quantrimang.com/photos/image/2021/09/05/Co-Vietnam.png" alt="user-image" height="16">
+                    <a class="nav-link waves-effect waves-light font-14 he-60" data-bs-toggle="dropdown">
+                        <span class="font-16" style="border: 1px solid #fff; margin-right: 4px;">
+                            <i class="fa-solid fa-language p-1" style=""></i>
+                        </span>
+                        <span class="">Select Language</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
                         <a href="javascript:void(0);" class="dropdown-item">
@@ -50,34 +36,20 @@
                     </div>
                 </li>
 
-                <li class="dropdown notification-list topbar-dropdown p-0">
-                    <a class="nav-link nav-user me-0 waves-effect waves-light he-55 font-13" style="height: 60px !important;" data-bs-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
-                        <span><i class="fe-user"></i></span>
-                        <span class="pro-user-name">
-                            {{ username }}
-                            <i class="mdi mdi-chevron-down"></i> 
-                        </span>
+                <li class="dropdown d-none d-lg-inline-block menu-hover p-0">
+                    <a class="nav-link waves-effect waves-light he-60 font-13" data-bs-toggle="dropdown" >
+                        <i class="fe-user"></i>
+                        <span class="menu-arrow" style="position: static !important;"></span> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12">
-                        <div class="bor-nav-item ps-2">
-                            <h6 class="color">Welcom !!!</h6>
-                        </div>
                         <a routerLink="profile" class="dropdown-item notify-item">
                             <i class="ri-account-circle-line"></i>
                             <span>Hồ sơ cá nhân</span>
                         </a>
-                        <a class="dropdown-item notify-item right-bar-toggle" style="cursor: pointer;">
-                            <i class="ri-settings-3-line"></i>
-                            <span>Cài đặt</span>
-                        </a>
                       
-                        <a routerLink="upgrade" class="dropdown-item notify-item">
+                        <a routerLink="#" class="dropdown-item notify-item">
                             <i class=" ri-bank-card-line"></i>
                             <span>Nâng cấp tài khoản <span id="flash">Up</span> </span>
-                        </a>
-                        <a routerLink="changepassword" class="dropdown-item notify-item">
-                            <i class="ri-lock-line"></i>
-                            <span>Đổi mật khẩu</span>
                         </a>
                         <div class="bor-nav-item"></div>
                         <a routerLink="#" class="dropdown-item notify-item" (click)="logout()">
@@ -91,7 +63,7 @@
 
             <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
                 <li class="he-55">
-                    <button id="menu-profile-id" class="button-menu-mobile waves-effect waves-light he-55">
+                    <button class="button-menu-mobile waves-effect waves-light he-55">
                         <div class="menu-hover" style="margin-top: -16px; height: 60px;">
                             <i class="fe-menu font-18"></i>
                         </div>
@@ -101,9 +73,8 @@
         </div>
     </div>
     <div class="left-side-menu" style="padding-top: 55px !important;">
-        <!-- LOGO -->
         <div class="logo-box">
-            <a routerLink="service-getbyplatfrom" class="logo logo-light text-center">
+            <a routerLink="service-getbyplatfrom" class="logo logo-light text-center" title="trang chủ">
                 <span class="logo-sm">
                     <img src="assets/images/users/avatar-1.jpg" height="24">
                 </span>
@@ -114,38 +85,26 @@
         </div>
         <div class="h-100" >
             <div id="sidebar-menu">
-                <div class="menu-profile text-center bor-nav-item">
-                    <!-- <div class="menu-profile-sm mb-1" title="Đến trang cá nhân">
-                        <a routerLink="profile" style="color: #333 !important;">
-                            <img src="assets/images/users/avatar-1.jpg" alt="user-img" class="rounded-circle avatar-md">
-                        </a>
-                    </div> -->
-
-                    <div class="menu-profile-lg mb-1" title="Đến trang cá nhân">
-                        <a routerLink="profile" style="color: #333 !important;">
-                            <img src="assets/images/users/avatar-1.jpg" alt="user-img" class="rounded-circle avatar-md">
-                            <div class="dropdown color">
-                                <p class="m-0 p-0">welcome !!!</p>
-                                <a class="text-reset dropdown-toggle m-0 d-block"
-                                    data-bs-toggle="dropdown"> 
-                                    {{userprofile.fullname}} 
-                                </a>
-                                <p class="text-reset m-0">Số Dư: <span>{{userprofile.money}}</span></p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
                 <ul id="side-menu">
+                    <li class="bor-nav-item">
+                        <a routerLink="profile" class="m-1 p-0">
+                            <i class="fa-solid fa-circle-user p-2"></i>
+                            <a>
+                                <span  class="color"> {{userprofile.fullname}} </span>
+                               <span><h5 class="p-0 m-2 color">Số Dư : <span style="float: right;"> {{userprofile.money}} </span></h5></span>
+                            </a>
+                        </a>
+                    </li>
                     <li>
                         <a routerLink="service-getbyplatfrom">
-                            <i class="fa-solid fa-folder"></i>
+                            <i class=" ri-qr-code-line"></i>
                             <span> Dịch Vụ </span>
                         </a>
                     </li>
 
                     <li>
                         <a routerLink="deposit-money">
-                            <i class="fa-solid fa-folder"></i>
+                            <i class=" ri-refund-line"></i>
                             <span> Nạp BINANCE </span>
                         </a>
                     </li>
@@ -180,16 +139,16 @@
         </div>
     </div>
     <div class="content-page">
-        <div class="row"><div class="col-12" style="height: 10px;"></div>
+        <div class="row"><div class="col-12" style="height: 0px;"></div>
     </div>
 
         <router-outlet></router-outlet>
        
-        <footer class="footer" style="padding: 4px 10px; position: fixed;">
+        <footer class="footer card m-0">
             <div class="container-fluid">
                 <div class="row font-12">
                     <div class="col-md-6">
-                        <script>document.write(new Date().getFullYear())</script> &copy; <a href="">2023 INSOLTECH</a>
+                        <script>document.write(new Date().getFullYear())</script> &copy; <a href="#" class="font-16">2023 INSOLTECH</a>
                     </div>
                     <div class="col-md-6">
                         <div class="text-md-end footer-links d-none d-sm-block">
@@ -201,7 +160,7 @@
                 </div>
             </div>
         </footer>
-    <div>
+    <!-- <div>
         <div class="navbar-hotro chuyendonghotro-1 p-2" title="Nhân Viên Tư Vấn 24/7">
             <div class="chuyendonghotro-2">
                 <a class="menu-hotro" href="#">
@@ -209,7 +168,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
         

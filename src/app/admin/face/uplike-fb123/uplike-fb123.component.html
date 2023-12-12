@@ -2,7 +2,7 @@
     <div class="row">
         <h2 class="color col-md-12 m-2">Tăng Like Bài Viết Facebook+</h2>
         <div class="col-lg-9">
-            <div class="card">
+            <div class="card border-top">
                 <form role="form" class="parsley-examples" [formGroup] = "Orderform1" (ngSubmit)="onSubmitOrder()">
                     <div >
                         <div class="card-body border-1" style="display: flex;" >
@@ -58,7 +58,6 @@
                                 </h4>
                             </div>
                         </div> 
-
                         
                         <div class="modal fade" id="CheckOutShopping" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
@@ -90,12 +89,31 @@
         </div>
 
         <div class="col-lg-3">
-            <div class="card">
-        
-                <!-- <div class="col-md-12">
+            <div class="card border-top">
+                <div class="col-md-12">
                     <h4 class="text-center border-1 p-2">Video Hướng Dẫn Sử Dụng</h4>
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HzfrfyRxX-Y?si=yXZy8PNEzQitLL3-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div> -->
+                </div>
+            </div>
+
+            <div class="card border-top">
+                <div class="col-md-12">
+                    <h4 class="text-center border-1 p-2">Câu Hỏi Thường Gặp</h4>
+                    <ul class="list-group-item p-2">
+                        <a data-toggle="collapse" data-target="#wrong-link">Sao tôi lại nhập sai link?</a>
+                        <div id="wrong-link" class="collapse">
+
+                        </div>
+                    </ul>
+                    <ul class="list-group-item p-2">
+                        <a data-toggle="collapse" data-target="#guarantee">Có chế độ bảo hành không?</a>
+                        <div id="guarantee" class="collapse"></div>
+                    </ul>
+                    <ul class="list-group-item p-2">
+                        <a data-toggle="collapse" data-target="#quantity">Mua số lượng lớn có giảm giá không?</a>
+                        <div id="quantity" class="collapse"></div>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

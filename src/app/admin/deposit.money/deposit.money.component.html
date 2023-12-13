@@ -246,11 +246,14 @@
 
         <div class="col-lg-3">
             <div class="card text-center border-top">
-                <div class="p-2 m-1">
-                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                    <p class="m-0 p-0">welcome !!!</p>
-                    <h4 class="bor-nav-item color m-0">{{username}}</h4>
-                    <div class="text-start mt-3">
+                <div class="">
+                    <div class="modal-colored-header p-1" style="height: 82px; background-color: #0056C1;">
+                        <p class="m-0 p-0 modal-colored-header">welcome !!!</p>
+                        <h4 class="m-0 modal-colored-header">{{username}}</h4>
+                    </div>
+                    <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
+                            class="rounded-circle avatar-md" style="margin-top: -36px;">
+                    <div class="text-start p-2 m-1">
                         <div class="table-responsive">
                             <table class="table table-borderless table-sm m-0">
                                 <tbody>
@@ -266,11 +269,7 @@
                                         <th scope="row">Vị Trí :</th>
                                         <td class="text-muted">Cộng Tác Viên</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">Tổng Đã Nạp :</th>
-                                        <td class="text-muted">$ <span>100</span></td>
-                                    </tr>
-                                    <tr class="font-20 color">
+                                    <tr class="color">
                                         <th scope="row">Số Dư Hiện Tại:</th>
                                         <td>$<span class="">{{userprofile.money}} </span></td>
                                     </tr>
@@ -280,6 +279,48 @@
                     </div>
                 </div>
             </div> 
+            <div class="card">
+                <div class="border-top border-1">
+                    <div class="border-1">
+                        <h4 class="m-2">Cấp Bậc</h4>
+                    </div>
+                    <div class="card-body p-0" style="display: flex;">
+                        <div class="col-md-4 m-2" style="background-color: purple; border: 1px solid purple; border-radius: 5px;">
+                            <h4 class="text-center p-3" style="color: #fff;">Lever 1 </h4>
+                        </div>
+                        <div class="col-md-8 m-2">
+                            <h5>Tân Thủ Sơ Cấp</h5>
+                            <h5>Hạng Nick : </h5>
+                            <h5>1,0000 <span>Nick</span></h5>
+                        </div>
+                    </div>
+                    <div class="card-body p-0" style="display: flex;">
+                        <div class="col-md-4 m-2" style="background-color: green; border: 1px solid green; border-radius: 5px;">
+                            <h4 class="text-center p-3" style="color: #fff;">Lever 2 </h4>
+                        </div>
+                        <div class="col-md-8 m-2">
+                            <h5>Hạng Trung Cấp</h5>
+                            <h5>Hạng Nick : </h5>
+                            <h5>5,0000 <span>Nick</span></h5>
+                        </div>
+                    </div>
+                    <div class="card-body p-0" style="display: flex;">
+                        <div class="col-md-4 m-2" style="background-color: #0056C1; border: 1px solid #0056C1; border-radius: 5px;">
+                            <h4 class="text-center p-3" style="color: #fff;">Lever 3 </h4>
+                        </div>
+                        <div class="col-md-8 m-2">
+                            <h5>Hạng VIP</h5>
+                            <h5>Hạng Nick : </h5>
+                            <h5>10,0000 <span>Nick</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-danger m-1">
+                    <h4 class="text-danger p-1"><i class="fa-solid fa-triangle-exclamation"></i>  Chú Ý  </h4>
+                    <p>- Hệ thống sẽ tự động cập nhật sau khoang 5 phút kể từ khi tài khoản thay đổi hoặc thêm thông tin.</p>
+                    <p>- Mỗi Levers sẽ có bảng giá riêng cho từng dịch vụ và nhiều ưu đãi đặc biệt khác.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

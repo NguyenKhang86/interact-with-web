@@ -41,19 +41,19 @@
                         <i class="fe-user"></i>
                         <span class="menu-arrow" style="position: static !important;"></span> 
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12">
+                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12"  style="background-color: rgb(245, 247, 245); box-shadow: 0 0 3px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.2);">
+                        <p class="border-1 p-1 m-0">WelCom Back!!!</p>
                         <a routerLink="profile" class="dropdown-item notify-item">
                             <i class="ri-account-circle-line"></i>
                             <span>Hồ sơ cá nhân</span>
                         </a>
-                      
-                        <a routerLink="#" class="dropdown-item notify-item">
+                        <a routerLink="javascript:void(0)" class="dropdown-item notify-item">
                             <i class=" ri-bank-card-line"></i>
-                            <span>Nâng cấp tài khoản <span id="flash">Up</span> </span>
+                            <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
                         </a>
-                        <div class="bor-nav-item"></div>
+                        <div class="border-1"></div>
                         <a routerLink="#" class="dropdown-item notify-item" (click)="logout()">
-                            <i class=" bx bx-log-out"></i>
+                            <i class="bx bx-log-out"></i>
                             <span>Đăng xuất</span>
                         </a>
                     </div>
@@ -86,37 +86,53 @@
         <div class="h-100" >
             <div id="sidebar-menu">
                 <ul id="side-menu">
-                    <li class="bor-nav-item">
-                        <a routerLink="profile" class="m-1 p-0">
-                            <i class="fa-solid fa-circle-user p-2"></i>
-                            <a>
-                                <span  class="color"> {{userprofile.fullname}} </span>
-                               <span><h5 class="p-0 m-2 color">Số Dư : <span style="float: right;"> {{userprofile.money}} </span></h5></span>
-                            </a>
+                    <div class="text-center">
+                        <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
+                            class="rounded-circle avatar-md" style="">
+                    </div>
+                    <li class="border-1" data-bs-toggle="dropdown">
+                        <a class=" m-1 p-0" style="cursor: pointer;">
+                            <span class="text-center"><h5> {{userprofile.fullname}} </h5></span>
+                            <span><h5 class="p-1 m-0">Số Dư : <span style="float: right;"> {{userprofile.money}} </span></h5></span>
+                            <div class="dropdown-menu user-pro-dropdown" style="background-color: rgb(245, 247, 245); box-shadow: 0 0 3px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.2);">
+                                <p class="border-1 p-1 m-0">WelCom Back!!!</p>
+                                <a routerLink="profile" class="dropdown-item notify-item">
+                                    <i class="ri-account-circle-line"></i>
+                                    <span>Hồ sơ cá nhân</span>
+                                </a>
+                                <a routerLink="javascript:void(0)" class="dropdown-item notify-item border-1">
+                                    <i class=" ri-bank-card-line"></i>
+                                    <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
+                                </a>
+                                <a routerLink="javascript:void(0);" class="dropdown-item notify-item" (click)="logout()">
+                                    <i class="fe-log-out me-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
                         </a>
                     </li>
-                    <li>
+                    <li class="menu-hover-a">
                         <a routerLink="service-getbyplatfrom">
                             <i class=" ri-qr-code-line"></i>
                             <span> Dịch Vụ </span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="menu-hover-a">
                         <a routerLink="deposit-money">
                             <i class=" ri-refund-line"></i>
                             <span> Nạp BINANCE </span>
                         </a>
                     </li>
 
-                    <li *ngFor="let menu of menu">
+                    <li class="menu-hover-a" *ngFor="let menu of menu">
                         <a href="#Dashboards{{menu.id}}" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Dashboards">
                             <span> {{menu.platfrom}} </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="Dashboards{{menu.id}}">
                             <ul class="nav-second-level">
-                                <li *ngFor="let service of menu.service">
+                                <li class="menu-hover-li" *ngFor="let service of menu.service">
                                     <a [routerLink]=[service.path]> {{service?.title}} </a>
                                 </li>
                     
@@ -125,10 +141,17 @@
                       
                     </li>
 
-                    <li>
+                    <li class="menu-hover-a">
                         <a routerLink="user-collaborators">
-                            <i class="fa-solid fa-users"></i>
+                            <i class="fe-users"></i>
                             <span> Cộng Tác Viên </span>
+                        </a>
+                    </li>
+
+                    <li class="menu-hover-a">
+                        <a routerLink="javascript:void(0)">
+                            <i class="bx bx-shield-quarter"></i>
+                            <span> Điều Khoản & Dịch Vụ </span>
                         </a>
                     </li>
 

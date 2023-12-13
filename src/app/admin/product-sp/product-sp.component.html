@@ -9,14 +9,14 @@
                 <div class="m-2 mt-0">
                     <ul class="nav bor-nav-item p-1 pb-0">
                         <li class="nav-item" *ngFor="let menu of menu">
-                            <a class="nav-link" data-bs-toggle="tab" href="#Product{{menu.id}}" aria-expanded="false" aria-controls="Product">{{menu.platfrom}} +</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#Product{{menu.id}}" aria-expanded="false" aria-controls="Product"> {{menu.platfrom}} </a>
                         </li>
                     </ul>
                     <div *ngFor="let menu of menu">
                         <div class="tab-content p-0">
                             <div class="tab-pane mt-3" id="Product{{menu.id}}" style="border: none;">
                                 <div class="col-12">
-                                    <h4 class="color m-1">Dịch Vụ {{menu.platfrom}}</h4>
+                                    <h4 class="m-1">Dịch Vụ {{menu.platfrom}}</h4>
                                     <div class="table-responsive">
                                         <table class="table table-centered mb-0" id="inline-editable">
                                             <thead class="table-light">
@@ -79,7 +79,7 @@
                                     </tr>
                                     <tr class="color">
                                         <th scope="row">Số Dư Hiện Tại:</th>
-                                        <td>$<span class="">{{userprofile.money}} </span></td>
+                                        <td>$<span class="ps-1">{{userprofile.money}} </span></td>
                                     </tr>
                                 </tbody>
                             </table>

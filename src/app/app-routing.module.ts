@@ -20,7 +20,7 @@ import { PageNotFoundComponentComponent } from './admin/page-not-found-component
 import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
 
 const routes: Routes = [
-  {path: 'home', component: HomepageComponent},
+  {path: '', component: HomepageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'recover-password', component: RecoverpasswordComponent},
   {path: 'register', component: RegisterComponent},

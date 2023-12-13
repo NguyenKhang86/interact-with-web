@@ -24,6 +24,7 @@ import { RecoverpasswordComponent } from './home/recoverpassword/recoverpassword
 import { UpviewFbComponent } from './admin/face/upview-fb/upview-fb.component';
 import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.component';
 import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
+import { TermsServicesComponent } from './admin/terms-services/terms-services.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
     RecoverpasswordComponent,
     UpviewFbComponent,
     UplikeFb123Component,
+    TermsServicesComponent,
   ],
   imports: [
     BrowserModule,

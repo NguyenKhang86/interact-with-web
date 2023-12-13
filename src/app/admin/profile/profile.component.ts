@@ -42,7 +42,7 @@ export class ProfileComponent implements OnInit{
       phone: [''],
       money: 0,
     })    
-    // thông tin cá nhân
+    // check thông tin cá nhân
     this.checklogin()
   }
 
@@ -78,7 +78,6 @@ export class ProfileComponent implements OnInit{
     if (this.kientra == '') {
       window.location.href = 'login';
     } 
-    
   }
   public changePassword() {
     this.ever.put('Account/ChangePassword', this.changePasswordForm.value).subscribe( res => {

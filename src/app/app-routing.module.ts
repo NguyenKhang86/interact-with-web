@@ -18,6 +18,7 @@ import { UpviewFbComponent } from './admin/face/upview-fb/upview-fb.component';
 import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.component';
 import { PageNotFoundComponentComponent } from './admin/page-not-found-component/page-not-found-component.component';
 import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
+import { TermsServicesComponent } from './admin/terms-services/terms-services.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -58,6 +59,9 @@ const routes: Routes = [
     },
     {
       path: 'like-tt', component: UpliketiktokComponent
+    },
+    {
+      path: 'terms-services', component: TermsServicesComponent
     },
     {
       path: '**', component: PageNotFoundComponentComponent

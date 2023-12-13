@@ -3,15 +3,15 @@
 <div id="wrapper">
     <div class="navbar-custom">
         <div class="container-fluid">
-            <ul class="list-unstyled topnav-menu float-end mb-0 he-60" style="margin-right: 60px; margin-top: -14px;">
+            <ul class="list-unstyled topnav-menu float-end mb-0 he-60" style="margin-right: 30px; margin-top: -14px;">
 
                 <li class="dropdown d-none d-lg-inline-block menu-hover" data-toggle="fullscreen" >
-                    <a class="nav-link waves-effect waves-light he-60" title="phóng to & thu nhỏ">
+                    <a class="nav-link waves-effect waves-light he-60"  title="phóng to & thu nhỏ">
                         <i class="fe-maximize noti-icon font-18 p-1"></i>
                     </a>
                 </li>
 
-                <li class="dropdown d-none d-lg-inline-block menu-hover p-0"
+                <li class="dropdown d-lg-inline-block menu-hover p-0"
                  title="ngôn ngữ">
                     <a class="nav-link waves-effect waves-light font-14 he-60" data-bs-toggle="dropdown">
                         <span class="font-16" style="border: 1px solid #fff; margin-right: 4px;">
@@ -19,41 +19,41 @@
                         </span>
                         <span class="">Select Language</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end card-1-1">
-                        <div class="col-md-12" style="width: 100%; height: 140px;">
-                            <a href="javascript:void(0);" class="dropdown-item col-md-3">
-                                <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Đức</span>
+                    <div class="dropdown-menu dropdown-menu-end card-1-1 mt-2">
+                        <div class="col-md-12 m-1" style="display: flex; flex-wrap: wrap; width: 300px;">
+                            <a href="javascript:void(0);" class="col-md-6 p-1 menu-left">
+                                <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle" style="color: #333;">Đức</span>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item col-md-3">
-                                <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Ý</span>
+                            <a href="javascript:void(0);" class="col-md-6 p-1 menu-left">
+                                <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"  style="color: #333;">Tây Ban Nha nha</span>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item col-md-3">
-                                <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Tây Ban Nha</span>
+                            <a href="javascript:void(0);" class="col-md-6 p-1 menu-left">
+                                <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"  style="color: #333;">Ý</span>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item col-md-3">
-                                <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Nga</span>
+                            <a href="javascript:void(0);" class="col-md-6 p-1 menu-left">
+                                <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle"  style="color: #333;">Nga</span>
                             </a>
                         </div>
                     </div>
                 </li>
 
                 <li class="dropdown d-none d-lg-inline-block menu-hover p-0">
-                    <a class="nav-link waves-effect waves-light he-60 font-13" data-bs-toggle="dropdown" >
+                    <a class="nav-link waves-effect waves-light he-60 font-13" data-bs-toggle="dropdown">
                         <i class="fe-user"></i>
                         <span class="menu-arrow" style="position: static !important;"></span> 
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12 card-1-1">
+                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12 card-1-1 mt-2">
                         <p class="border-1 p-1 m-0">WelCom Back!!!</p>
-                        <a routerLink="profile" class="dropdown-item notify-item">
+                        <a routerLink="profile" class="dropdown-item notify-item menu-left">
                             <i class="ri-account-circle-line"></i>
                             <span>Hồ sơ cá nhân</span>
                         </a>
-                        <a routerLink="javascript:void(0)" class="dropdown-item notify-item">
+                        <a routerLink="javascript:void(0)" class="dropdown-item notify-item menu-left">
                             <i class=" ri-bank-card-line"></i>
                             <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
                         </a>
                         <div class="border-1"></div>
-                        <a routerLink="#" class="dropdown-item notify-item" (click)="logout()">
+                        <a routerLink="#" class="dropdown-item notify-item menu-left" (click)="logout()">
                             <i class="bx bx-log-out"></i>
                             <span>Đăng xuất</span>
                         </a>
@@ -95,46 +95,46 @@
                         <a class=" m-1 p-0" style="cursor: pointer;">
                             <span class="text-center"><h5> {{userprofile.fullname}} </h5></span>
                             <span><h5 class="p-1 m-0">Số Dư : <span style="float: right;"> {{userprofile.money}} </span></h5></span>
-                            <div class="dropdown-menu user-pro-dropdown card-1-1">
+                            <div class="dropdown-menu user-pro-dropdown card-1-1 mt-1">
                                 <p class="border-1 p-1 m-0">WelCom Back!!!</p>
-                                <a routerLink="profile" class="dropdown-item notify-item">
+                                <a routerLink="profile" class="dropdown-item notify-item menu-left">
                                     <i class="ri-account-circle-line"></i>
                                     <span>Hồ sơ cá nhân</span>
                                 </a>
-                                <a routerLink="javascript:void(0)" class="dropdown-item notify-item border-1">
+                                <a routerLink="javascript:void(0)" class="dropdown-item notify-item border-1 menu-left">
                                     <i class=" ri-bank-card-line"></i>
                                     <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
                                 </a>
-                                <a routerLink="javascript:void(0);" class="dropdown-item notify-item" (click)="logout()">
+                                <a routerLink="javascript:void(0);" class="dropdown-item notify-item menu-left" (click)="logout()">
                                     <i class="fe-log-out me-1"></i>
                                     <span>Logout</span>
                                 </a>
                             </div>
                         </a>
                     </li>
-                    <li class="menu-hover-a">
-                        <a routerLink="service-getbyplatfrom">
+                    <li class="">
+                        <a class="menu-left" routerLink="service-getbyplatfrom">
                             <i class=" ri-qr-code-line"></i>
                             <span> Dịch Vụ </span>
                         </a>
                     </li>
 
-                    <li class="menu-hover-a">
-                        <a routerLink="deposit-money">
+                    <li class="">
+                        <a class="menu-left" routerLink="deposit-money">
                             <i class=" ri-refund-line"></i>
                             <span> Nạp Tiền </span>
                         </a>
                     </li>
 
-                    <li class="menu-hover-a" *ngFor="let menu of menu">
-                        <a href="#Dashboards{{menu.id}}" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Dashboards">
+                    <li class="" *ngFor="let menu of menu">
+                        <a class="menu-left" href="#Dashboards{{menu.id}}" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Dashboards">
                             <span> {{menu.platfrom}} </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="Dashboards{{menu.id}}">
-                            <ul class="nav-second-level">
+                            <ul class="nav-second-level p-2">
                                 <li class="menu-hover-li" *ngFor="let service of menu.service">
-                                    <a [routerLink]=[service.path]> {{service?.title}} </a>
+                                    <a class="menu-left" [routerLink]=[service.path]> {{service?.title}} </a>
                                 </li>
                     
                             </ul>
@@ -142,15 +142,15 @@
                       
                     </li>
 
-                    <li class="menu-hover-a">
-                        <a routerLink="user-collaborators">
+                    <li class="">
+                        <a class="menu-left" routerLink="user-collaborators">
                             <i class="fe-users"></i>
                             <span> Cộng Tác Viên </span>
                         </a>
                     </li>
 
                     <li class="menu-hover-a">
-                        <a routerLink="javascript:void(0)">
+                        <a class="menu-left" routerLink="terms-services">
                             <i class="bx bx-shield-quarter"></i>
                             <span> Điều Khoản & Dịch Vụ </span>
                         </a>

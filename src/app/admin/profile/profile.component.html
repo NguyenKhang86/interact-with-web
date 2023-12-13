@@ -52,7 +52,7 @@
                         <form  role="form" class="parsley-examples m-3 mt-1 mb-1" [formGroup] = "changePasswordForm" (ngSubmit)="changePassword()"> 
 
                             <div class="mb-2">
-                                <label for="oldPassword" class="form-label">Password</label>
+                                <label for="oldPassword" class="form-label">Mật Khẩu Cũ<span class="text-danger">*</span></label>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="oldPassword" class="form-control" placeholder="Enter Password" formControlName="oldPassword">
                                     

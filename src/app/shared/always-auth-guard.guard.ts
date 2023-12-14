@@ -23,7 +23,7 @@ export class AlwaysAuthGuardGuard implements CanActivate, CanActivateChild {
       return true;
     } else {
       alert("Bạn không có quyền xem trang này");
-      // this.router.navigate(['login'])
+      this.router.navigate(['login'])
       // window.location.href = 'login';  
       return false;
     }

@@ -19,7 +19,7 @@
         <h2 class="color title m-0 p-2" style="font-weight: 400;">Nạp Tiền Tài Khoản</h2>
         <div class="col-lg-9">
             <div class="card border-top">
-                <div class="m-2 mt-0">
+                <div class="m-0 mb-1">
                     <ul class="nav bor-nav-item p-1 pb-0">
                         <li class="nav-item">
                             <a class="nav-link active" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BankManey">Ngân hàng</a>
@@ -28,7 +28,7 @@
                             <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BinnanceManey">Lịch Sử Nạp BINANCE</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#lichsumuahang">Lịch Sử Đặt Hàng</a>
+                            <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#PurchaseHistory">Lịch Sử Đặt Hàng</a>
                         </li>
                     </ul>
                     <div class="tab-content twitter-bs-wizard-tab-content m-3 mb-0 p-0">
@@ -178,7 +178,10 @@
                                                     <tr class="tr-hover" *ngFor="let i of moneybank">
                                                         <td>61</td>
                                                         <td>61</td>
-                                                        <td>{{i.action}}</td>
+                                                        <!-- <td>{{i.action}}</td> -->
+                                                        <td>
+                                                            <span class="badge p-1" style="color: #fff; background-color: #0056C1;">{{i.action}}</span>
+                                                        </td>
                                                         <td>{{i.money}}</td>
                                                         <td>{{i.created}}</td>
                                                         <td class="text-center">
@@ -193,7 +196,7 @@
                             </div>
                         </div>
                     
-                        <div class="tab-pane"  style="border: none" id="lichsumuahang">
+                        <div class="tab-pane"  style="border: none" id="PurchaseHistory">
                             <div class="col-12">
                                 <div class="">
                                     <ul class="nav  m-0 col-md-12" style="display: flex; justify-content: space-between;">
@@ -213,8 +216,8 @@
                                                         <th>Số Lượng</th>
                                                         <th>Đơn Giá</th>
                                                         <th>Thanh Toán</th>
-                                                        <th>Trạng Thái</th>
                                                         <th>Thời Gian</th>
+                                                        <th>Trạng Thái</th>
                                                         <th class="text-center">Tác Vụ</th>
                                                     </tr>
                                                 </thead>
@@ -225,8 +228,12 @@
                                                         <td>{{i.quantity}}</td>
                                                         <td>{{i.price}}</td>
                                                         <td>{{i.money}}</td>
-                                                        <td>{{i.status}}</td>
                                                         <td>{{i.created}}</td>
+                                                        <td>
+                                                            <span id="myColor" class="badge p-1" style="color: #fff; background-color: #0056C1;">Thành Công {{i.status}}</span>
+                                                            <!-- <span id="myColor" class="badge p-1" style="color: #fff; background-color: #04AA6D;">Đang Sử Lý</span>
+                                                            <span id="myColor" class="badge p-1" style="color: #fff; background-color: #DC3545;">Thất Bại</span> -->
+                                                        </td>
                                                         <td class="text-center">
                                                             <a class="bx bx-trash p-1" href="" data-bs-target="#Delete" data-bs-toggle="modal"
                                                             data-bs-dismiss="modal" title="Xóa"></a>
@@ -279,52 +286,20 @@
                     </div>
                 </div>
             </div> 
+
             <div class="card">
                 <div class="border-top bor-nav-item">
-                    <div class="bor-nav-item">
-                        <h4 class="m-2">Cấp Bậc</h4>
-                    </div>
-                    <div class="card-body p-0" style="display: flex;">
-                        <div class="col-md-4 m-2" style="background-color: purple; border: 1px solid purple; border-radius: 5px;">
-                            <h4 class="text-center p-3" style="color: #fff;">Lever 1 </h4>
-                        </div>
-                        <div class="col-md-8 m-2">
-                            <h5>Tân Thủ Sơ Cấp</h5>
-                            <h5>Hạng Nick : </h5>
-                            <h5>1,0000 <span>Nick</span></h5>
-                        </div>
-                    </div>
-                    <div class="card-body p-0" style="display: flex;">
-                        <div class="col-md-4 m-2" style="background-color: green; border: 1px solid green; border-radius: 5px;">
-                            <h4 class="text-center p-3" style="color: #fff;">Lever 2 </h4>
-                        </div>
-                        <div class="col-md-8 m-2">
-                            <h5>Hạng Trung Cấp</h5>
-                            <h5>Hạng Nick : </h5>
-                            <h5>5,0000 <span>Nick</span></h5>
-                        </div>
-                    </div>
-                    <div class="card-body p-0" style="display: flex;">
-                        <div class="col-md-4 m-2" style="background-color: #0056C1; border: 1px solid #0056C1; border-radius: 5px;">
-                            <h4 class="text-center p-3" style="color: #fff;">Lever 3 </h4>
-                        </div>
-                        <div class="col-md-8 m-2">
-                            <h5>Hạng VIP</h5>
-                            <h5>Hạng Nick : </h5>
-                            <h5>10,0000 <span>Nick</span></h5>
-                        </div>
-                    </div>
+                    <h4 class="text-center m-2"><i class="fa-solid fa-triangle-exclamation"></i> Lưu Ý </h4>
                 </div>
-                <div class="text-danger m-1">
-                    <h4 class="text-danger p-1"><i class="fa-solid fa-triangle-exclamation"></i>  Chú Ý  </h4>
-                    <p>- Hệ thống sẽ tự động cập nhật sau khoang 5 phút kể từ khi tài khoản thay đổi hoặc thêm thông tin.</p>
-                    <p>- Mỗi Levers sẽ có bảng giá riêng cho từng dịch vụ và nhiều ưu đãi đặc biệt khác.</p>
+                <div class=" m-2">
+                    <p>- Không cài 2 đơn cùng 1 Link ( ID ) tại 1 thời điểm. Vui lòng đợi đơn cũ chạy xong để tránh bị thiếu.</p>
+                    <p>- Vui lòng lấy đúng ID Bài viết, mở Công khai all đều Like được và kiểm tra kỹ trước khi tạo đơn hàng.  Bài viết đã chỉnh sửa có thể không chạy. Vui lòng cân nhắc.</p>
+                    <p>- Nhập ID lỗi hoặc Không mở Công khai nút Like trong thời gian chạy hoặc Xóa Bài viết đi thì hệ thống không hoàn lại tiền.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- xóa -->
 <div class="modal fade" id="Delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">

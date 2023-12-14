@@ -1,0 +1,37 @@
+.w-100 {
+    width: 100%;
+}
+.color {
+    color: #0056C1;
+}
+.display-block:hover ~ .display-none {
+    display: block;
+}
+.icon-hover:hover {
+    background-color: #0056C1;
+    cursor: pointer;
+    color: #fff;
+}
+.display-none {
+    display: none;
+}
+.border-1 {
+    border-bottom: 1px solid #0056C1;
+}
+.card {
+    box-shadow: 0 0 2px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+.border-top {
+    border-top: 3px solid #0056C1 !important;
+}
+.input-group-text {
+    padding: 0 15px;
+}
+.color {
+    color: #0056C1;
+}
+.card {
+    box-shadow: 0 0 2px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}

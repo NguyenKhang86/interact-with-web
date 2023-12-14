@@ -5,22 +5,24 @@
         <div class="container-fluid">
             <ul class="list-unstyled topnav-menu float-end mb-0 he-60" style="margin-right: 30px; margin-top: -14px;">
 
-                <li class="dropdown d-none d-lg-inline-block menu-hover" data-toggle="fullscreen" >
-                    <a class="nav-link waves-effect waves-light he-60"  title="phóng to & thu nhỏ">
+                <li class="dropdown d-none d-lg-inline-block menu-hover">
+                    <a class="nav-link waves-effect waves-light he-60"  data-toggle="fullscreen" title="phóng to & thu nhỏ">
                         <i class="fe-maximize noti-icon font-18 p-1"></i>
                     </a>
                 </li>
 
-                <li class="dropdown d-lg-inline-block menu-hover p-0"
-                 title="ngôn ngữ">
+                <li class="dropdown notification-list topbar-dropdown p-0" title="ngôn ngữ">
                     <a class="nav-link waves-effect waves-light font-14 he-60" data-bs-toggle="dropdown">
                         <span class="font-16" style="border: 1px solid #fff; margin-right: 4px;">
                             <i class="fa-solid fa-language p-1" style=""></i>
                         </span>
                         <span class="">Select Language</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end card-1-1 mt-2">
-                        <div class="col-md-12 m-1" style="display: flex; flex-wrap: wrap; width: 300px;">
+                    <div class="dropdown-menu dropdown-menu-end card-1-1">
+                        <div class="col-md-12 m-1" style="display: flex; flex-wrap: wrap; width: 350px;">
+                            <a href="javascript:void(0);" class="col-md-6 p-1 menu-left">
+                                <img src="https://minsocial.vn/assets/images/s3_groups/vietnamese.svg" alt="user-image" class="me-1" height="14"> <span class="align-middle" style="color: #333;">Việt Nam</span>
+                            </a>
                             <a href="javascript:void(0);" class="col-md-6 p-1 menu-left">
                                 <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle" style="color: #333;">Đức</span>
                             </a>
@@ -37,20 +39,101 @@
                     </div>
                 </li>
 
+                <li class="dropdown notification-list topbar-dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light he-60" data-bs-toggle="dropdown">
+                        <i class="fe-bell noti-icon"></i>
+                        <span class="badge bg-danger rounded-circle noti-icon-badge">5</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+                        <div class="dropdown-item noti-title border-1">
+                            <h5 class="m-0">
+                                <span class="float-end">
+                                    <a routerLink="#javascript:void(0);" class="text-dark">
+                                        <small>Xem Thêm</small>
+                                    </a>
+                                </span>Thông báo
+                            </h5>
+                        </div>
+                        <div class="noti-scroll border-1" data-simplebar>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                                <div class="notify-icon bg-soft-primary text-primary">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                </div>
+                                <p class="notify-details">Doug Dukes commented on Admin Dashboard
+                                    <small class="text-muted">1 min ago</small>
+                                </p>
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon">
+                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                                <p class="notify-details">Mario Drummond</p>
+                                <p class="text-muted mb-0 user-msg">
+                                    <small>Hi, How are you? What about our next meeting</small>
+                                </p>
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon">
+                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                                <p class="notify-details">Karen Robinson</p>
+                                <p class="text-muted mb-0 user-msg">
+                                    <small>Wow ! this admin looks good and awesome design</small>
+                                </p>
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-soft-warning text-warning">
+                                    <i class="mdi mdi-account-plus"></i>
+                                </div>
+                                <p class="notify-details">New user registered.
+                                    <small class="text-muted">5 hours ago</small>
+                                </p>
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                </div>
+                                <p class="notify-details">Caleb Flakelar commented on Admin
+                                    <small class="text-muted">4 days ago</small>
+                                </p>
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-secondary">
+                                    <i class="mdi mdi-heart"></i>
+                                </div>
+                                <p class="notify-details">Carlos Crouch liked
+                                    <b>Admin</b>
+                                    <small class="text-muted">13 days ago</small>
+                                </p>
+                            </a>
+                        </div>
+                        <a class="dropdown-item text-center">
+                            Xem Thêm
+                            <i class="fa-solid fa-angles-right"></i>
+                        </a>
+                    </div>
+                </li>
+
                 <li class="dropdown d-none d-lg-inline-block menu-hover p-0">
                     <a class="nav-link waves-effect waves-light he-60 font-13" data-bs-toggle="dropdown">
                         <i class="fe-user"></i>
                         <span class="menu-arrow" style="position: static !important;"></span> 
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12 card-1-1 mt-2">
+                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12 card-1-1">
                         <p class="border-1 p-1 m-0">WelCom Back!!!</p>
                         <a routerLink="profile" class="dropdown-item notify-item menu-left">
                             <i class="ri-account-circle-line"></i>
                             <span>Hồ sơ cá nhân</span>
                         </a>
+                        <a class="dropdown-item notify-item menu-left right-bar-toggle">
+                            <i class=" fe-settings"></i>
+                            <span>Cài Đặt</span>
+                        </a>
                         <a routerLink="javascript:void(0)" class="dropdown-item notify-item menu-left">
                             <i class=" ri-bank-card-line"></i>
                             <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
+                        </a>
+                        <a routerLink="changepassword" class="dropdown-item notify-item menu-left">
+                            <i class="ri-account-circle-line"></i>
+                            <span>Đổi Mật Khẩu</span>
                         </a>
                         <div class="border-1"></div>
                         <a routerLink="#" class="dropdown-item notify-item menu-left" (click)="logout()">
@@ -66,9 +149,15 @@
                 <li class="he-55">
                     <button class="button-menu-mobile waves-effect waves-light he-55">
                         <div class="menu-hover" style="margin-top: -16px; height: 60px;">
-                            <i class="fe-menu font-18"></i>
+                            <i class="ri-indent-decrease font-18"></i>
                         </div>
                     </button>
+<!-- 
+                    <button class="button-menu-mobile waves-effect waves-light he-55">
+                        <div class="menu-hover" style="margin-top: -16px; height: 60px;">
+                            <i class="ri-indent-increase font-18"></i>
+                        </div>
+                    </button> -->
                 </li>
             </ul>
         </div>
@@ -84,23 +173,30 @@
                 </span>
             </a>
         </div>
-        <div class="h-100" >
+        <div class="h-100 menuitem-active" data-simplebar>
             <div id="sidebar-menu">
                 <ul id="side-menu">
                     <div class="text-center">
                         <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
                             class="rounded-circle avatar-md" style="">
                     </div>
+                    
                     <li class="border-1" data-bs-toggle="dropdown">
                         <a class=" m-1 p-0" style="cursor: pointer;">
-                            <span class="text-center"><h5> {{userprofile.fullname}} </h5></span>
-                            <span><h5 class="p-1 m-0">Số Dư : <span style="float: right;"> {{userprofile.money}} </span></h5></span>
+
+                            <span class="">
+                                <span class="text-center"><p class="mb-0 pt-1"> Khách Hàng </p></span>
+                                <span class="text-center"><h5 class="m-0"> {{userprofile.fullname}} </h5></span>
+                                <span><h5 class="p-1 m-0">Số Dư : <span style="float: right;"> {{userprofile.money}} </span></h5></span>
+                            </span>
+
                             <div class="dropdown-menu user-pro-dropdown card-1-1 mt-1">
                                 <p class="border-1 p-1 m-0">WelCom Back!!!</p>
                                 <a routerLink="profile" class="dropdown-item notify-item menu-left">
                                     <i class="ri-account-circle-line"></i>
                                     <span>Hồ sơ cá nhân</span>
                                 </a>
+                          
                                 <a routerLink="javascript:void(0)" class="dropdown-item notify-item border-1 menu-left">
                                     <i class=" ri-bank-card-line"></i>
                                     <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
@@ -112,27 +208,22 @@
                             </div>
                         </a>
                     </li>
-                    <li class="">
-                        <a class="menu-left" routerLink="service-getbyplatfrom">
-                            <i class=" ri-qr-code-line"></i>
-                            <span> Dịch Vụ </span>
-                        </a>
-                    </li>
+                    <li class="menu-title mt-1 p-2 color pb-0">Menu</li>
 
                     <li class="">
-                        <a class="menu-left" routerLink="deposit-money">
-                            <i class=" ri-refund-line"></i>
-                            <span> Nạp Tiền </span>
+                        <a class="menu-left" routerLink="#">
+                            <i class="ri-home-2-line"></i>
+                            <span> Trang Chủ </span>
                         </a>
                     </li>
-
+            
                     <li class="" *ngFor="let menu of menu">
                         <a class="menu-left" href="#Dashboards{{menu.id}}" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Dashboards">
                             <span> {{menu.platfrom}} </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="Dashboards{{menu.id}}">
-                            <ul class="nav-second-level p-2">
+                            <ul class="nav-second-level p-2 pt-0 pb-0">
                                 <li class="menu-hover-li" *ngFor="let service of menu.service">
                                     <a class="menu-left" [routerLink]=[service.path]> {{service?.title}} </a>
                                 </li>
@@ -140,6 +231,22 @@
                             </ul>
                         </div>
                       
+                    </li>
+
+                    <li class="menu-title mt-1 p-2 color pb-0">Tiện ích</li>
+
+                    <li class="">
+                        <a class="menu-left" routerLink="service-getbyplatfrom">
+                            <i class="ri-briefcase-5-line"></i>
+                            <span> Dịch Vụ </span>
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a class="menu-left" routerLink="deposit-money">
+                            <i class=" ri-bank-line"></i>
+                            <span> Nạp Tiền </span>
+                        </a>
                     </li>
 
                     <li class="">
@@ -156,6 +263,15 @@
                         </a>
                     </li>
 
+                    <li class="menu-title mt-1 p-2 color pb-0">Hỗ trợ</li>
+
+                    <li class="">
+                        <a class="menu-left" routerLink="#">
+                            <i class="fas fa-headset"></i>
+                            <span> Hõ Trơ Viên </span>
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -168,7 +284,7 @@
 
         <router-outlet></router-outlet>
        
-        <footer class="footer card m-0">
+        <footer class="footer card m-0" style="background-color: #fff; box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2), 0 1px 3px 1px rgba(0,0,0,0.2);">
             <div class="container-fluid">
                 <div class="row font-12">
                     <div class="col-md-6">
@@ -194,5 +310,209 @@
         </div>
     </div> -->
 </div>
+<!-- 
+<div class="right-bar">
+    <div data-simplebar class="h-100">
+        <ul class="nav nav-tabs nav-bordered nav-justified" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link py-2" data-bs-toggle="tab" href="#chat-tab" role="tab">
+                    <i class="mdi mdi-message-text-outline d-block font-22 my-1"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content pt-0">
+            <div class="tab-pane" id="chat-tab" role="tabpanel">
+                <h6 class="fw-medium px-3 mt-3 text-uppercase">Thông Báo</h6>
 
-        
+                <div class="p-2 pb-4">
+                    <a href="javascript: void(0);" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                            <div class="position-relative me-2">
+                                <span class="user-status online"></span>
+                                <img src="assets/images/users/avatar-2.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                            </div>
+                            <div class="flex-1 overflow-hidden">
+                                <h6 class="mt-0 mb-1 font-14">Jackson Therry</h6>
+                                <div class="font-13 text-muted">
+                                    <p class="mb-0 text-truncate">Everyone realizes why a new common language.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="javascript: void(0);" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                            <div class="position-relative me-2">
+                                <span class="user-status away"></span>
+                                <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                            </div>
+                            <div class="flex-1 overflow-hidden">
+                                <h6 class="mt-0 mb-1 font-14">Charles Deakin</h6>
+                                <div class="font-13 text-muted">
+                                    <p class="mb-0 text-truncate">The languages only differ in their grammar.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="javascript: void(0);" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                            <div class="position-relative me-2">
+                                <span class="user-status online"></span>
+                                <img src="assets/images/users/avatar-5.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                            </div>
+                            <div class="flex-1 overflow-hidden">
+                                <h6 class="mt-0 mb-1 font-14">Ryan Salting</h6>
+                                <div class="font-13 text-muted">
+                                    <p class="mb-0 text-truncate">If several languages coalesce the grammar of the resulting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="javascript: void(0);" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                            <div class="position-relative me-2">
+                                <span class="user-status online"></span>
+                                <img src="assets/images/users/avatar-6.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                            </div>
+                            <div class="flex-1 overflow-hidden">
+                                <h6 class="mt-0 mb-1 font-14">Sean Howse</h6>
+                                <div class="font-13 text-muted">
+                                    <p class="mb-0 text-truncate">It will seem like simplified English.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="javascript: void(0);" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                            <div class="position-relative me-2">
+                                <span class="user-status busy"></span>
+                                <img src="assets/images/users/avatar-7.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                            </div>
+                            <div class="flex-1 overflow-hidden">
+                                <h6 class="mt-0 mb-1 font-14">Dean Coward</h6>
+                                <div class="font-13 text-muted">
+                                    <p class="mb-0 text-truncate">The new common language will be more simple.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="javascript: void(0);" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                            <div class="position-relative me-2">
+                                <span class="user-status away"></span>
+                                <img src="assets/images/users/avatar-8.jpg" class="rounded-circle avatar-sm" alt="user-pic">
+                            </div>
+                            <div class="flex-1 overflow-hidden">
+                                <h6 class="mt-0 mb-1 font-14">Hayley East</h6>
+                                <div class="font-13 text-muted">
+                                    <p class="mb-0 text-truncate">One could refuse to pay expensive translators.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="text-center mt-3">
+                        <a href="javascript:void(0);" class="btn btn-sm btn-white">
+                            <i class="mdi mdi-spin mdi-loading me-2"></i>
+                            Load more
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="right-bar">
+    <div data-simplebar class="h-100">
+        <div class="tab-content pt-0">
+            <div class="tab-pane active" id="settings-tab" role="tabpanel">
+                <h6 class="fw-medium px-3 m-0 py-2 font-13 text-uppercase bg-light">
+                    <span class="d-block py-1">Settings</span>
+                </h6>
+
+                <div class="p-3">
+                    <h6 class="fw-medium font-14 mt-2">Color Scheme</h6>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked>
+                        <label class="form-check-label" for="light-mode-check">Light Mode</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
+                        <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
+                    </div>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Width</h6>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check" checked>
+                        <label class="form-check-label" for="fluid-check">Fluid</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
+                        <label class="form-check-label" for="boxed-check">Boxed</label>
+                    </div>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Topbar</h6>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="topbar-color" value="dark" id="darktopbar-check" checked>
+                        <label class="form-check-label" for="darktopbar-check">Dark</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="topbar-color" value="light" id="lighttopbar-check">
+                        <label class="form-check-label" for="lighttopbar-check">Light</label>
+                    </div>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="menus-position" value="scrollable" id="scrollable-check">
+                        <label class="form-check-label" for="scrollable-check">Scrollable</label>
+                    </div>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Left Sidebar Color</h6>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-color" value="light" id="light-check" checked>
+                        <label class="form-check-label" for="light-check">Light</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-color" value="dark" id="dark-check">
+                        <label class="form-check-label" for="dark-check">Dark</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-color" value="brand" id="brand-check">
+                        <label class="form-check-label" for="brand-check">Brand</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-color" value="gradient" id="gradient-check">
+                        <label class="form-check-label" for="gradient-check">Gradient</label>
+                    </div>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Left Sidebar Size</h6>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-size" value="default" id="default-size-check" checked>
+                        <label class="form-check-label" for="default-size-check">Default</label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-size" value="condensed" id="condensed-check">
+                        <label class="form-check-label" for="condensed-check">Condensed <small>(Extra Small size)</small></label>
+                    </div>
+
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-size" value="compact" id="compact-check">
+                        <label class="form-check-label" for="compact-check">Compact <small>(Small size)</small></label>
+                    </div>
+                    <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Sidebar User Info</h6>
+                    <div class="form-check form-switch mb-1">
+                        <input class="form-check-input" type="checkbox" name="leftsidebar-user" value="fixed" id="sidebaruser-check">
+                        <label class="form-check-label" for="sidebaruser-check">Enable</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

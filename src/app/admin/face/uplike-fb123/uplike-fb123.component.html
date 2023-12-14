@@ -11,7 +11,7 @@
                             </div>
                             <div class="col-md-8">
                                 <input parsley-trigger="change" type="text" style="width: 100%;" id="sid" formControlName="sid" hidden/>
-                                <input parsley-trigger="change" class="m-1 p-2" type="text" id="url" formControlName="url" placeholder="Nhập link bài viết tại đây" style="width: 100%; height: 35px;">
+                                <input parsley-trigger="change" class="m-1 p-2" type="url" id="url" formControlName="url" placeholder="Nhập link bài viết tại đây" style="width: 100%; height: 35px;">
                                 <ul class="nav">
                                     <li class="nav-item">
                                         <p><span class="color">-> </span> Vui lòng nhập đúng link bài viết và bật chế độ công khai trước khi mua.</p>
@@ -54,7 +54,10 @@
                             <div class="col-md-4 text-end">
                                 <h4 class=" p-0 m-0">
                                     <a data-bs-toggle="modal" style=" font-size: 16px;" data-bs-target="#CheckOutShopping"
-                                        class="btn btn-sm btn-primary p-2" title="Thanh Toán" (click)="thanhtoan()"><i class=" bx bx-cart-alt me-1"></i>Thanh Toán </a>
+                                        class="btn btn-sm btn-primary p-2" title="Thanh Toán" (click)="thanhtoan()">
+                                        <i class=" bx bx-cart-alt me-1"></i>
+                                        Thanh Toán 
+                                    </a>
                                 </h4>
                             </div>
                         </div> 
@@ -67,8 +70,10 @@
                                         <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
                                     </div>
                                     <div class="modal-body text-center bor-nav-item">
-                                        <h4 class="mb-2">Tổng Thanh Toán : <span>{{tongthanhtoan}}</span> COIN</h4>
-                                        <p class="mb-2">Mua <span> {{fblike}} </span> với giá : 
+                                        <h4 class="mb-2">Tổng Thanh Toán : <span>{{tongthanhtoan}}</span>đ</h4>
+                                        <p class="mb-2">Mua 
+                                            <span> {{fblike}} </span> 
+                                            <span> với giá : </span>
                                             <span> {{dongia}} </span>
                                             <span>  x </span>
                                             <span> {{soluong}} </span>
@@ -93,6 +98,17 @@
                 <div class="col-md-12">
                     <h4 class="text-center border-1 p-2"><i class=" fe-youtube"></i>  Video Hướng Dẫn Sử Dụng</h4>
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HzfrfyRxX-Y?si=yXZy8PNEzQitLL3-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="border-top bor-nav-item">
+                    <h4 class="text-center m-2"><i class="fa-solid fa-triangle-exclamation"></i> Lưu Ý </h4>
+                </div>
+                <div class=" m-2">
+                    <p>- Không cài 2 đơn cùng 1 Link ( ID ) tại 1 thời điểm. Vui lòng đợi đơn cũ chạy xong để tránh bị thiếu.</p>
+                    <p>- Vui lòng lấy đúng ID Bài viết, mở Công khai all đều Like được và kiểm tra kỹ trước khi tạo đơn hàng.  Bài viết đã chỉnh sửa có thể không chạy. Vui lòng cân nhắc.</p>
+                    <p>- Nhập ID lỗi hoặc Không mở Công khai nút Like trong thời gian chạy hoặc Xóa Bài viết đi thì hệ thống không hoàn lại tiền.</p>
                 </div>
             </div>
 

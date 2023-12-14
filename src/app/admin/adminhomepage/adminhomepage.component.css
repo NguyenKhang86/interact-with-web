@@ -6,7 +6,7 @@
     cursor: pointer;
 }
 .color {
-    color: #0056C1;
+    color: #0056C1 !important;
 }
 .bor-nav-item {
     border-bottom: 1px solid #0056C1;
@@ -147,7 +147,16 @@
     box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2), 0 1px 3px 1px rgba(0,0,0,0.2);
 }
 .menu-left:hover {
-    background-color: #ced4da;
+    background-color: rgb(226,237,254);
     border-radius: 3px;
     cursor: pointer;
 }
+.left-side-menu #sidebar-menu>ul>li>a span {
+    padding-left: 0 !important;
+}
+/* #sidebar-menu .menuitem-active > a {
+    color: #0056c1;
+}
+#sidebar-menu .menuitem-active .active {
+    color: #0056c1;
+} */

@@ -12,10 +12,8 @@ import { ApiDataservice } from 'src/app/service/api-dataservice';
 })
 export class UplikeFb123Component {
 
-  fblike!: any;
-  dongia!: any;
-  a!: any;
-  b!: any;
+  fblike!: any; dongia!: any;
+  a!: any; b!: any;
   tongthanhtoan!: number;
   soluong!: number;
   Orderform1!: FormGroup;
@@ -46,7 +44,6 @@ export class UplikeFb123Component {
           url: [''],
           quantity: 100,
         })
-        // this.b = res.price;
       })
       this.fblike = red[0].service[0].title;
       this.dongia = red[0].service[0].price;
@@ -58,7 +55,6 @@ export class UplikeFb123Component {
     this.soluong = a;
     this.tongthanhtoan = this.soluong*this.dongia;
   }
-
   onSubmitOrder() {
     this.ever.post('Order/Add', this.Orderform1.value).subscribe( red => {
       if (red.status == false) {

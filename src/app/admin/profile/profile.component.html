@@ -60,43 +60,52 @@
                 <h3 class="color title m-0 p-2" style="font-weight: 400;">Thông tin cá nhân</h3>
                 <div class="card border-top">
                     <div class="mt-0">
-                        <div class="border-1">
-                            <h4 class=" m-2">Tài Khoản</h4>
-                        </div>
-                        <div class="profile-block text-start border-1">
-                            <div class="table-responsive m-3 mt-0 mb-0">
-                                <table class="table table-borderless table-sm p-0 m-0">
-                                    <tbody>
-                                        <tr>
-                                            <th class="col-md-4" scope="row"><h4>Họ & Tên :</h4></th>
-                                            <td class="text-muted"><h4>{{userprofile.fullname}}</h4></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-4" scope="row"><h4>SĐT:</h4></th>
-                                            <td class="text-muted"><h4>{{userprofile.phone}}</h4></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-4" scope="row"><h4>Tuổi :</h4></th>
-                                            <td class="text-muted"><h4>{{userprofile.gender}}</h4></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-4" scope="row"><h4>Giới Tính :</h4></th>
-                                            <td class="text-muted"><h4>{{userprofile.address}}</h4></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-4" scope="row"><h4>Vị Trí :</h4></th>
-                                            <td class="text-muted"><h4>Khách Hàng</h4></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="col-md-4" scope="row"><h4>Số Dư :</h4></th>
-                                            <td class="text-muted"><h4>{{userprofile.money}}</h4></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="border-1 text-center">
+                            <!-- <h4 class=" m-2">Tài Khoản</h4> -->
+                            <div class=" pt-1">
+                                <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
+                                    class="rounded-circle avatar-md" style="">
+                            </div>
+                            <div class="">
+                                <a class=" m-1 p-0">
+                                    <span class="">
+                                        <span class=""><p class="mb-0 pt-1"> Khách Hàng </p></span>
+                                        <span class=""><h5 class="m-0"> {{userprofile.fullname}} </h5></span>
+                                        <span><h5 class=" p-1 m-0">Số Dư : <span> {{userprofile.money}} </span></h5></span>
+                                    </span>
+                                </a>
                             </div>
                         </div>
-                        <form  role="form" class="parsley-examples m-3 mt-1 mb-1" [formGroup] = "changePasswordForm" (ngSubmit)="changePassword()"> 
 
+                        <div class="profile-block text-start border-1">
+                            <div class="table-responsive m-0" style="display: flex;">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-8">
+                                    <table class="table table-borderless table-sm p-0 m-0">
+                                        <tbody>
+                                            <tr>
+                                                <th class="col-md-5" scope="row"><h4>Họ & Tên :</h4></th>
+                                                <td class="text-muted"><h4>{{userprofile.fullname}}</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="col-md-5" scope="row"><h4>SĐT:</h4></th>
+                                                <td class="text-muted"><h4>{{userprofile.phone}}</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="col-md-5" scope="row"><h4>Tuổi :</h4></th>
+                                                <td class="text-muted"><h4>{{userprofile.gender}}</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="col-md-5" scope="row"><h4>Giới Tính :</h4></th>
+                                                <td class="text-muted"><h4>{{userprofile.address}}</h4></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form  role="form" class="parsley-examples m-3 mt-1 mb-1" [formGroup] = "changePasswordForm" (ngSubmit)="changePassword()"> 
                             <div class="mb-2">
                                 <label for="oldPassword" class="form-label">Mật Khẩu Cũ<span class="text-danger">*</span></label>
                                 <div class="input-group input-group-merge">
@@ -112,19 +121,18 @@
                                 <label for="password2" class="form-label">Mật Khẩu Mới<span class="text-danger">*</span></label>
                                 <input type="password" id="password2" required minlength="6" class="form-control" placeholder="Enter password">
                             </div>
-
                             <div class="mb-2">
                                 <label for="newPassword" class="form-label">Nhập Lại Mật Khẩu<span class="text-danger">*</span></label>
                                 <input data-parsley-equalto="#password2" type="password" id="newPassword" required minlength="6" class="form-control" placeholder="Enter password" formControlName="newPassword">
                             </div>
-                            <div class="p-2 col-md-12" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                            <div class="col-md-12" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
                                 <div class="text-center p-1 col-md-6 col-xl-6">
                                     <button data-bs-toggle="modal" style="width: 100%; font-size: 14px; background-color: green;" type="submit"
                                     class="btn btn-sm btn-success p-2 " title="Thanh Toán"> Đổi Mật Khẩu </button>
                                 </div>
                                 <div class="text-center p-1 col-md-6 col-xl-6">
                                     <a data-bs-toggle="modal" style="width: 100%; font-size: 14px;" data-bs-target="#profileEditfile"
-                                    class="btn btn-sm btn-primary p-2 " (click)="onEditClick()" title="Thanh Toán"> Đổi Thông Tin </a>
+                                    class="btn btn-sm btn-primary p-2 " (click)="onEditClick()" title="Thanh Toán"> Sửa Thông Tin </a>
                                 </div>
                             </div>
                         </form>

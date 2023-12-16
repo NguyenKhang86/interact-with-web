@@ -25,6 +25,7 @@ import { UpviewFbComponent } from './admin/face/upview-fb/upview-fb.component';
 import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.component';
 import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
 import { TermsServicesComponent } from './admin/terms-services/terms-services.component';
+import { TemplateComponent } from './admin/template/template.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { TermsServicesComponent } from './admin/terms-services/terms-services.co
     UpviewFbComponent,
     UplikeFb123Component,
     TermsServicesComponent,
+    TemplateComponent,
   ],
   imports: [
     BrowserModule,

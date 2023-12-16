@@ -1,7 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Block } from '@angular/compiler';
-import { Component, Inject, Renderer2 } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Transaction01, UserProfile, lichsumuahang } from 'src/app/model/access';
 import { ApiDataservice } from 'src/app/service/api-dataservice';
 import { LoadefaultService } from 'src/app/service/loadefault.service';
@@ -14,16 +11,13 @@ import { LoadefaultService } from 'src/app/service/loadefault.service';
 })
 export class DepositMoneyComponent {
 
-  statuscolor!: string;
-  username!: string;
+  destroy!: any;  processing!: any;  success!: any; withdrawmoney!: any; bankmoney!: any;
+  statuscolor!: string;  username!: string;
   userprofile!: UserProfile;
   lichsumuahang!: lichsumuahang[];
   moneybank!: Transaction01[];
   
-  constructor(
-    private ever: ApiDataservice ) {}
-
-    
+  constructor( private ever: ApiDataservice ) {}
     
   ngOnInit(): void {
     this.userprofile = new UserProfile;
@@ -34,32 +28,30 @@ export class DepositMoneyComponent {
     // trang thai don hang
     this.ever.get('Order').subscribe( res => {
       this.lichsumuahang = res
-      // const list = res;
-      // console.log(list.join());
-      
+
       let statuscolor = res[0].status;
       if (statuscolor == 1) {
-        alert('1')
+        // alert('1')
       } else if (statuscolor == 2) {
-        alert('2')
+        this.destroy = true;
       } else if (statuscolor == 3) {
-        console.log('3');
+        this.processing = true;
       } else if (statuscolor == 4) {
-        // console.log('4');
+        this.success = true;
       }
     });
   }
-
-  myColor() {
-    // let mycolor = ['Thành Công','Đang SỬ Lý', 'Đã Hủy'];
-    // let statuscolor = document.getElementById('#myColor');
-    // console.log(statuscolor);
-  }
   Delete() {}
   private GetAccountTransaction() {
-    // lich su nap rut
+    // lich su nap rut~
     this.ever.get('Account/Transaction').subscribe( res => {
       this.moneybank = res
+      let money = res[0].action;
+      if (money == "rut") {
+        this.bankmoney = true;
+      } else if(money == "nap"){
+        this.withdrawmoney = true;
+      }
     })
   }
   private GetAccountInfo() {

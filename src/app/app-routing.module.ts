@@ -19,6 +19,7 @@ import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.com
 import { PageNotFoundComponentComponent } from './admin/page-not-found-component/page-not-found-component.component';
 import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
 import { TermsServicesComponent } from './admin/terms-services/terms-services.component';
+import { TemplateComponent } from './admin/template/template.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -62,6 +63,9 @@ const routes: Routes = [
     },
     {
       path: 'terms-services', component: TermsServicesComponent
+    },
+    {
+      path: 'home', component: TemplateComponent
     },
     {
       path: '**', component: PageNotFoundComponentComponent

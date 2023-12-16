@@ -155,8 +155,8 @@
     padding-left: 0 !important;
 }
 /* #sidebar-menu .menuitem-active > a {
-    color: #0056c1;
-}
-#sidebar-menu .menuitem-active .active {
-    color: #0056c1;
+    color: #0056c1 !important;
+} */
+/* #sidebar-menu .menuitem-active .active {
+    color: #0056c1 !important;
 } */

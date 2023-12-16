@@ -45,14 +45,8 @@
                         <span class="badge bg-danger rounded-circle noti-icon-badge">5</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-lg">
-                        <div class="dropdown-item noti-title border-1">
-                            <h5 class="m-0">
-                                <span class="float-end">
-                                    <a routerLink="#javascript:void(0);" class="text-dark">
-                                        <small>Xem Thêm</small>
-                                    </a>
-                                </span>Thông báo
-                            </h5>
+                        <div class="dropdown-item noti-title border-1 p-2">
+                            <h5 class="m-0 p-0"> Thông báo </h5>
                         </div>
                         <div class="noti-scroll border-1" data-simplebar>
                             <a href="javascript:void(0);" class="dropdown-item notify-item active">
@@ -105,10 +99,12 @@
                                 </p>
                             </a>
                         </div>
-                        <a class="dropdown-item text-center">
-                            Xem Thêm
-                            <i class="fa-solid fa-angles-right"></i>
-                        </a>
+                        <div class="m-1">
+                            <a class="dropdown-item text-center menu-left right-bar-toggle">
+                                Xem Thêm
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </li>
 
@@ -176,42 +172,23 @@
         <div class="h-100 menuitem-active" data-simplebar>
             <div id="sidebar-menu">
                 <ul id="side-menu">
-                    <div class="text-center">
+                    <div routerLink="profile" title="Thông tin cá nhân" style="cursor: pointer;" class="text-center">
                         <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
                             class="rounded-circle avatar-md" style="">
                     </div>
-                    
                     <li class="border-1" data-bs-toggle="dropdown">
-                        <a class=" m-1 p-0" style="cursor: pointer;">
-
+                        <a routerLink="profile" title="Thông tin cá nhân" class=" m-1 p-0">
                             <span class="">
                                 <span class="text-center"><p class="mb-0 pt-1"> Khách Hàng </p></span>
                                 <span class="text-center"><h5 class="m-0"> {{userprofile.fullname}} </h5></span>
-                                <span><h5 class="p-1 m-0">Số Dư : <span style="float: right;"> {{userprofile.money}} </span></h5></span>
+                                <span><h5 class="p-1 m-0">Số Dư : <span style="float: right;"> {{userprofile.money}} <i class=" fe-dollar-sign"></i></span></h5></span>
                             </span>
-
-                            <!-- <div class="dropdown-menu user-pro-dropdown card-1-1 mt-1">
-                                <p class="border-1 p-1 m-0">WelCom Back!!!</p>
-                                <a routerLink="profile" class="dropdown-item notify-item menu-left">
-                                    <i class="ri-account-circle-line"></i>
-                                    <span>Hồ sơ cá nhân</span>
-                                </a>
-                          
-                                <a routerLink="javascript:void(0)" class="dropdown-item notify-item border-1 menu-left">
-                                    <i class=" ri-bank-card-line"></i>
-                                    <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
-                                </a>
-                                <a routerLink="javascript:void(0);" class="dropdown-item notify-item menu-left" (click)="logout()">
-                                    <i class="fe-log-out me-1"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </div> -->
                         </a>
                     </li>
                     <li class="menu-title mt-1 p-2 color pb-0">Menu</li>
 
                     <li class="">
-                        <a class="menu-left" routerLink="#">
+                        <a class="menu-left" routerLink="home">
                             <i class="ri-home-2-line"></i>
                             <span> Trang Chủ </span>
                         </a>
@@ -308,22 +285,17 @@
                 </a>
             </div>
         </div>
-    </div> -->
+    </div> 
+-->
 </div>
-<!-- 
+
 <div class="right-bar">
     <div data-simplebar class="h-100">
-        <ul class="nav nav-tabs nav-bordered nav-justified" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link py-2" data-bs-toggle="tab" href="#chat-tab" role="tab">
-                    <i class="mdi mdi-message-text-outline d-block font-22 my-1"></i>
-                </a>
-            </li>
-        </ul>
         <div class="tab-content pt-0">
-            <div class="tab-pane" id="chat-tab" role="tabpanel">
-                <h6 class="fw-medium px-3 mt-3 text-uppercase">Thông Báo</h6>
-
+            <div>
+                <div class="border-1 border-top">
+                    <h6 class="fw-medium px-3 mt-3 text-uppercase">Thông Báo</h6>
+                </div>
                 <div class="p-2 pb-4">
                     <a href="javascript: void(0);" class="text-reset notification-item">
                         <div class="d-flex align-items-start">
@@ -425,10 +397,10 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 
-<div class="right-bar">
+<!-- <div class="right-bar">
     <div data-simplebar class="h-100">
         <div class="tab-content pt-0">
             <div class="tab-pane active" id="settings-tab" role="tabpanel">
@@ -515,4 +487,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

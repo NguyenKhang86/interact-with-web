@@ -37,8 +37,9 @@
                                 <div class="pb-2">
                                     <div class="col-12 p-0 m-0">
                                         <div class="card-bodyp-0 col-12">
-                                            <h5>Bạn vui lòng chuyển khoản chính xác nội dung chuyển tiền bên dưới, hệ thống sẽ tự động cộng tiền cho bạn sau vài phút.
-                                                Nếu sau 10 phút từ khi tiền trong tài khoản của bạn bị trừ mà vẫn chưa được cộng tiền vui lòng <a href="#"><strong style="color: red; cursor: pointer;">liên hệ</strong></a> chúng tôi.</h5>
+                                            <h5>Xin Chào Quý Khách hàng !!!</h5>
+                                            <h5>Quý khách vui lòng chuyển khoản chính xác nội dung chuyển tiền bên dưới, hệ thống sẽ tự động cộng tiền cho bạn sau vài phút.
+                                                Thời gian nạp 10 -20 phút từ khi tiền trong tài khoản của bạn bị trừ mà vẫn chưa được cộng tiền, xin vui lòng <a href="#"><strong style="color: red; cursor: pointer;">LIÊN HỆ</strong></a> chúng tôi để được tư vấn (<strong class="color">Xin Cám Ơn</strong>).</h5>
                                         </div>
                                     </div>
 
@@ -153,11 +154,13 @@
                             <div class="col-12">
                                 <div class="">
                                     <ul class="nav m-0 col-md-12" style="display: flex; justify-content: space-between;">
-                                        <li class="nav-item">
-
-                                        </li>
-                                        <li class="nav-item text-md-end col-md-6">
+                                        <li class="nav-item col-md-6">
                                             <h5 class="header-title"> SHOW: <input class="p-1" type="number" value="10"></h5>
+                                        </li>
+                                        <li class="nav-item text-md-end">
+                                            <a>Thông tin Rút/Nạp tiền : </a>
+                                            <span class="badge p-1" style="color: #fff; background-color: #04AA6D;">Rút Tiền</span>
+                                            <span class="badge p-1" style="color: #fff; background-color: #0056C1;">Nạp Tiền </span>
                                         </li>
                                     </ul>
                                     <div class="">
@@ -166,24 +169,25 @@
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th>Ngân hàng</th>
-                                                        <th>Số Tiền</th>
-                                                        <th>Hoạt Động</th>
-                                                        <th>Thành Coin</th>
+                                                        <th class="text-center">Số Tiền</th>
+                                                        <th class="text-center">Thành Coin</th>
                                                         <th>Thời Gian</th>
+                                                        <th class="text-center">Hoạt Động</th>
                                                         <th class="text-center">Tác Vụ</th>
                                                     </tr>
                                                 </thead>
                                             
                                                 <tbody>
                                                     <tr class="tr-hover" *ngFor="let i of moneybank">
-                                                        <td>61</td>
-                                                        <td>61</td>
+                                                        <td>VietComBank</td>
+                                                        <td class="text-center">61</td>
+                                                        <td class="text-center">{{i.money}}</td>
+                                                        <td >{{i.created}}</td>
                                                         <!-- <td>{{i.action}}</td> -->
-                                                        <td>
-                                                            <span class="badge p-1" style="color: #fff; background-color: #0056C1;">{{i.action}}</span>
+                                                        <td class="text-center">
+                                                            <span *ngIf="bankmoney" class="badge p-1" style="color: #fff; background-color: #04AA6D;">Rút Tiền</span>
+                                                            <span *ngIf="withdrawmoney" class="badge p-1" style="color: #fff; background-color: #0056C1;">Nạp Tiền </span>
                                                         </td>
-                                                        <td>{{i.money}}</td>
-                                                        <td>{{i.created}}</td>
                                                         <td class="text-center">
                                                             <a class="bx bx-trash p-1" href="" data-bs-target="#Delete" data-bs-toggle="modal"
                                                             data-bs-dismiss="modal" title="Xóa"></a>
@@ -200,11 +204,14 @@
                             <div class="col-12">
                                 <div class="">
                                     <ul class="nav  m-0 col-md-12" style="display: flex; justify-content: space-between;">
-                                        <li class="nav-item">
-
+                                        <li class="nav-item col-md-6">
+                                            <h5 class="header-title"> SHOW: <input class="p-1" type="number" value="10"></h5>
                                         </li>
-                                        <li class="nav-item text-md-end col-md-6">
-                                            <h5 class="header-title"> SHOW: <input class="p-1" type="number" value="20"></h5>
+                                        <li class="nav-item text-md-end">
+                                            <a>Thông tin trang thái : </a>
+                                            <span class="badge p-1" style="color: #fff; background-color: #0056C1;">Thành Công</span>
+                                            <span class="badge p-1" style="color: #fff; background-color: #04AA6D;">Đang Sử Lý</span>
+                                            <span class="badge p-1" style="color: #fff; background-color: #DC3545;">Thất Bại</span>
                                         </li>
                                     </ul>
                                     <div class="">
@@ -213,11 +220,11 @@
                                                 <thead class="table-light">
                                                     <tr>
                                                         <th>Hình Thức Mua</th>
-                                                        <th>Số Lượng</th>
-                                                        <th>Đơn Giá</th>
-                                                        <th>Thanh Toán</th>
+                                                        <th class="text-center">Số Lượng</th>
+                                                        <th class="text-center">Đơn Giá</th>
+                                                        <th class="text-center">Thanh Toán</th>
                                                         <th>Thời Gian</th>
-                                                        <th>Trạng Thái</th>
+                                                        <th class="text-center">Trạng Thái</th>
                                                         <th class="text-center">Tác Vụ</th>
                                                     </tr>
                                                 </thead>
@@ -225,14 +232,14 @@
                                                 <tbody>
                                                     <tr class="tr-hover" *ngFor="let i of lichsumuahang">
                                                         <td>{{i.title}}</td>
-                                                        <td>{{i.quantity}}</td>
-                                                        <td>{{i.price}}</td>
-                                                        <td>{{i.money}}</td>
+                                                        <td class="text-center">{{i.quantity}}</td>
+                                                        <td class="text-center">{{i.price}}</td>
+                                                        <td class="text-center">{{i.money}}</td>
                                                         <td>{{i.created}}</td>
-                                                        <td>
-                                                            <span id="myColor" class="badge p-1" style="color: #fff; background-color: #0056C1;">Thành Công {{i.status}}</span>
-                                                            <!-- <span id="myColor" class="badge p-1" style="color: #fff; background-color: #04AA6D;">Đang Sử Lý</span>
-                                                            <span id="myColor" class="badge p-1" style="color: #fff; background-color: #DC3545;">Thất Bại</span> -->
+                                                        <td class="text-center">
+                                                            <span *ngIf="success" class="badge p-1" style="color: #fff; background-color: #0056C1;">Thành Công</span>
+                                                            <span *ngIf="processing" class="badge p-1" style="color: #fff; background-color: #04AA6D;">Đang Sử Lý</span>
+                                                            <span *ngIf="destroy" class="badge p-1" style="color: #fff; background-color: #DC3545;">Thất Bại</span>
                                                         </td>
                                                         <td class="text-center">
                                                             <a class="bx bx-trash p-1" href="" data-bs-target="#Delete" data-bs-toggle="modal"

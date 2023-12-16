@@ -7,3 +7,7 @@
 .color {
     color: #0056C1;
 }
+.card {
+    box-shadow: 0 0 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}

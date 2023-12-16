@@ -28,7 +28,6 @@ export class DepositMoneyComponent {
     // trang thai don hang
     this.ever.get('Order').subscribe( res => {
       this.lichsumuahang = res
-
       let statuscolor = res[0].status;
       if (statuscolor == 1) {
         // alert('1')

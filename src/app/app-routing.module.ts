@@ -22,16 +22,15 @@ import { TermsServicesComponent } from './admin/terms-services/terms-services.co
 import { TemplateComponent } from './admin/template/template.component';
 
 const routes: Routes = [
-  {path: '', component: HomepageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'recover-password', component: RecoverpasswordComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'admin', component: AdminhomepageComponent},
+  {path: '', component: AdminhomepageComponent},
 
 
 
   
-  {path: "",  component: AdminhomepageComponent, canActivate: [AlwaysAuthGuardGuard],
+  {path: "",  component: AdminhomepageComponent,
   children: [
     {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'}, 
     {

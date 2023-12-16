@@ -107,8 +107,8 @@
                         </div>
                     </div>
                 </li>
-
-                <li class="dropdown d-none d-lg-inline-block menu-hover p-0">
+          
+                <li class="dropdown d-lg-inline-block menu-hover p-0" *ngIf="!login">
                     <a class="nav-link waves-effect waves-light he-60 font-13" data-bs-toggle="dropdown">
                         <i class="fe-user"></i>
                         <span class="menu-arrow" style="position: static !important;"></span> 
@@ -137,6 +137,13 @@
                             <span>Đăng xuất</span>
                         </a>
                     </div>
+                </li>
+
+                <li class="dropdown d-lg-inline-block menu-hover p-0" *ngIf="login" style="margin-top: 18px;">
+                    <a href="login" class="btn btn-secondary ">
+                        <i class=" ri-login-box-lines"></i>
+                        <span> Đăng Nhập </span>
+                    </a>
                 </li>
 
             </ul>
@@ -180,9 +187,9 @@
                     <li class="border-1" data-bs-toggle="dropdown">
                         <a routerLink="profile" title="Thông tin cá nhân" class=" m-1 p-0">
                             <span class="">
-                                <span class="text-center"><p class="mb-0 pt-1"> Khách Hàng </p></span>
+                                <span class="text-center"><h6 class="mb-0 pt-1"> Khách Hàng </h6></span>
                                 <span class="text-center"><h5 class="m-0"> {{userprofile.fullname}} </h5></span>
-                                <span><h5 class="p-1 m-0">Số Dư : <span style="float: right;"> {{userprofile.money}} <i class=" fe-dollar-sign"></i></span></h5></span>
+                                <span class=""><h5 class="p-1 m-0 color">Số Dư : <span style="float: right;"> {{userprofile.money}}  <span class="fe-dollar-sign" style="border: 1px solid; border-radius: 50%;"></span></span></h5></span>
                             </span>
                         </a>
                     </li>

@@ -14,9 +14,9 @@
                     </ul>
                     <div *ngFor="let menu of menu">
                         <div class="tab-content p-0">
-                            <div class="tab-pane mt-3" id="Product{{menu.id}}" style="border: none;">
+                            <div class="tab-pane mt-2" id="Product{{menu.id}}" style="border: none;">
                                 <div class="col-12">
-                                    <h4 class="m-1">Dịch Vụ {{menu.platfrom}}</h4>
+                                    <h4 class="m-1 ps-2">Dịch Vụ {{menu.platfrom}}</h4>
                                     <div class="table-responsive">
                                         <table class="table table-centered mb-0" id="inline-editable">
                                             <thead class="table-light">
@@ -29,7 +29,6 @@
                                             </thead>
                                         
                                             <tbody>
-                                            
                                                 <tr class="tr-hover" *ngFor="let menu of menu.service">
                                                     <th class="text-center">
                                                         <a href="{{menu.path}}" title="Shoppping">
@@ -40,7 +39,6 @@
                                                     <td>{{menu.path}}</td>
                                                     <td class="text-center">{{menu.price}}</td>
                                                 </tr>
-                                            
                                             </tbody>
                                         </table>
                                     </div>

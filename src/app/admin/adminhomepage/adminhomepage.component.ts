@@ -13,7 +13,9 @@ import { LoadefaultService } from 'src/app/service/loadefault.service';
 })
 export class AdminhomepageComponent implements OnInit{
 
-  tokken: string = '';
+  login!: any; 
+  isUnchanged = false;
+  tokken!: string;
   username!: string;
   Menuform!: FormGroup;
   menu!: Menu[];
@@ -30,7 +32,10 @@ export class AdminhomepageComponent implements OnInit{
     this.loadScript();
     this.GetAccountMenu();
     this.GetAccountInfo();
-    this.tokken = this.ever.getCookie(ApiDataservice.AccessRole)
+    this.tokken = this.ever.getCookie(ApiDataservice.CookieName);
+    if (this.tokken == "") {
+      this.login = true;
+    }
   }
   public GetAccountMenu() {
     this.ever.get('Account/Menu').subscribe( res => {
@@ -39,7 +44,7 @@ export class AdminhomepageComponent implements OnInit{
   }
   logout() {
     this.ever.deleteCookie(ApiDataservice.CookieName)
-    window.location.href = 'login';
+    window.location.href = "/";
   }
   public GetAccountInfo() {
     // thông tin cá nhân

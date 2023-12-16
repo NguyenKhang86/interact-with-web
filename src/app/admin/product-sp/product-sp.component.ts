@@ -41,8 +41,6 @@ export class ProductSpComponent {
     // thông tin cá nhân
     this.ever.get('Account/Info').subscribe( res => {
       this.userprofile = res;
-      console.log(res);
-      
     })
   }
 }

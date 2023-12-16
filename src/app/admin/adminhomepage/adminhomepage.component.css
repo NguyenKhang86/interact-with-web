@@ -73,10 +73,10 @@
     animation-fill-mode: both;
 }
 .navbar-hotro {
-    right: 75px;
-    bottom: 75px;
+    right: 55px;
+    bottom: 55px;
     display: flex;
-    z-index: 99999;
+    z-index: 999;
     position: fixed;
     transition: all 250ms ease-in-out 0s;
     flex-direction: column-reverse;

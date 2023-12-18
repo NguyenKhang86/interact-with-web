@@ -13,8 +13,8 @@ import { LoadefaultService } from 'src/app/service/loadefault.service';
 })
 export class AdminhomepageComponent implements OnInit{
 
+  shouldDisplay: boolean = true;
   login!: any; 
-  isUnchanged = false;
   tokken!: string;
   username!: string;
   Menuform!: FormGroup;
@@ -37,6 +37,13 @@ export class AdminhomepageComponent implements OnInit{
       this.login = true;
     }
   }
+  hide(): void {
+    this.shouldDisplay = false;
+  }
+  show(): void {
+    this.shouldDisplay = true;
+  }
+  // hideDiv(div: { style: { display: string; }; }) { div.style.display = "none";}
   public GetAccountMenu() {
     this.ever.get('Account/Menu').subscribe( res => {
       this.menu = res;

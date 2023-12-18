@@ -1,5 +1,3 @@
-<script>
-</script>
 <div id="wrapper">
     <div class="navbar-custom">
         <div class="container-fluid">
@@ -18,8 +16,8 @@
                         </span>
                         <span class="">Select Language</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end card-1-1">
-                        <div class="col-md-12 m-1" style="display: flex; flex-wrap: wrap; width: 350px;">
+                    <div class="dropdown-menu dropdown-menu-end card-1-1" style="background-color: #fff !important;">
+                        <div class="col-md-12 m-1 menu-language" style=" width: 350px;">
                             <a href="javascript:void(0);" class="col-md-6 p-1 menu-left">
                                 <img src="https://minsocial.vn/assets/images/s3_groups/vietnamese.svg" alt="user-image" class="me-1" height="14"> <span class="align-middle" style="color: #333;">Việt Nam</span>
                             </a>
@@ -44,12 +42,12 @@
                         <i class="fe-bell noti-icon"></i>
                         <span class="badge bg-danger rounded-circle noti-icon-badge">5</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+                    <div class="dropdown-menu dropdown-menu-end dropdown-lg" style="background-color: #fff !important;">
                         <div class="dropdown-item noti-title border-1 p-2">
                             <h5 class="m-0 p-0"> Thông báo </h5>
                         </div>
                         <div class="noti-scroll border-1" data-simplebar>
-                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                            <a href="javascript:void(0);" class="dropdown-item notify-item menu-left active">
                                 <div class="notify-icon bg-soft-primary text-primary">
                                     <i class="mdi mdi-comment-account-outline"></i>
                                 </div>
@@ -57,7 +55,7 @@
                                     <small class="text-muted">1 min ago</small>
                                 </p>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="javascript:void(0);" class="dropdown-item notify-item menu-left">
                                 <div class="notify-icon">
                                     <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" /> </div>
                                 <p class="notify-details">Mario Drummond</p>
@@ -65,7 +63,7 @@
                                     <small>Hi, How are you? What about our next meeting</small>
                                 </p>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="javascript:void(0);" class="dropdown-item notify-item menu-left">
                                 <div class="notify-icon">
                                     <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
                                 <p class="notify-details">Karen Robinson</p>
@@ -73,7 +71,7 @@
                                     <small>Wow ! this admin looks good and awesome design</small>
                                 </p>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="javascript:void(0);" class="dropdown-item notify-item menu-left">
                                 <div class="notify-icon bg-soft-warning text-warning">
                                     <i class="mdi mdi-account-plus"></i>
                                 </div>
@@ -81,7 +79,7 @@
                                     <small class="text-muted">5 hours ago</small>
                                 </p>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="javascript:void(0);" class="dropdown-item notify-item menu-left">
                                 <div class="notify-icon bg-info">
                                     <i class="mdi mdi-comment-account-outline"></i>
                                 </div>
@@ -89,7 +87,7 @@
                                     <small class="text-muted">4 days ago</small>
                                 </p>
                             </a>
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a href="javascript:void(0);" class="dropdown-item notify-item menu-left">
                                 <div class="notify-icon bg-secondary">
                                     <i class="mdi mdi-heart"></i>
                                 </div>
@@ -100,7 +98,7 @@
                             </a>
                         </div>
                         <div class="m-1">
-                            <a class="dropdown-item text-center menu-left right-bar-toggle">
+                            <a class="dropdown-item text-center menu-left right-bar-toggle font-12 p-1">
                                 Xem Thêm
                                 <i class="fa-solid fa-angles-right"></i>
                             </a>
@@ -113,7 +111,7 @@
                         <i class="fe-user"></i>
                         <span class="menu-arrow" style="position: static !important;"></span> 
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12 card-1-1">
+                    <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12 card-1-1" style="background-color: #fff !important;">
                         <p class="border-1 p-1 m-0">WelCom Back!!!</p>
                         <a routerLink="profile" class="dropdown-item notify-item menu-left">
                             <i class="ri-account-circle-line"></i>
@@ -140,7 +138,7 @@
                 </li>
 
                 <li class="dropdown d-lg-inline-block menu-hover p-0" *ngIf="login" style="margin-top: 18px;">
-                    <a href="login" class="btn btn-secondary ">
+                    <a href="login" class="btn btn-white">
                         <i class=" ri-login-box-lines"></i>
                         <span> Đăng Nhập </span>
                     </a>
@@ -149,20 +147,21 @@
             </ul>
 
             <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
-                <li class="he-55">
-                    <button class="button-menu-mobile waves-effect waves-light he-55">
-                        <div class="menu-hover" style="margin-top: -16px; height: 60px;">
-                            <i class="ri-indent-decrease font-18"></i>
-                        </div>
-                    </button>
-<!-- 
-                    <button class="button-menu-mobile waves-effect waves-light he-55">
-                        <div class="menu-hover" style="margin-top: -16px; height: 60px;">
-                            <i class="ri-indent-increase font-18"></i>
-                        </div>
-                    </button> -->
-                </li>
+                <button class="button-menu-mobile waves-effect waves-light he-55">
+                    <div *ngIf="!shouldDisplay" class="he-60" style="margin-top: -14px;">
+                        <a (click)="show()" class="" style="padding: 10px 18px;">
+                            <i class="ri-indent-increase he-55 font-18"></i>
+                        </a>
+                    </div>
+                    <div *ngIf="shouldDisplay" class="he-60" style="margin-top: -15px;">
+                        <a (click)="hide()" class="" style="padding: 10px 18px;">
+                            <i class="ri-indent-decrease he-55 font-18"></i>
+                        </a>
+                    </div>
+
+                </button>
             </ul>
+            
         </div>
     </div>
     <div class="left-side-menu" style="padding-top: 55px !important;">
@@ -178,21 +177,27 @@
         </div>
         <div class="h-100 menuitem-active" data-simplebar>
             <div id="sidebar-menu">
+                
                 <ul id="side-menu">
-                    <div routerLink="profile" title="Thông tin cá nhân" style="cursor: pointer;" class="text-center">
+                    <div routerLink="profile" title="Thông tin cá nhân" style="cursor: pointer;" class="text-center p-1">
                         <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
                             class="rounded-circle avatar-md" style="">
                     </div>
-
                     <li class="border-1" data-bs-toggle="dropdown">
-                        <a routerLink="profile" title="Thông tin cá nhân" class=" m-1 p-0">
-                            <span class="">
-                                <span class="text-center"><h6 class="mb-0 pt-1"> Khách Hàng </h6></span>
+                        <a routerLink="profile" title="Thông tin cá nhân" class=" m-0 p-0" *ngIf="!login">
+                            <div class="p-2">
+                                <span class="text-center"><h6 class="m-0 p-0"> Khách Hàng </h6></span>
                                 <span class="text-center"><h5 class="m-0"> {{userprofile.fullname}} </h5></span>
-                                <span class=""><h5 class="p-1 m-0 color">Số Dư : <span style="float: right;"> {{userprofile.money}}  <span class="fe-dollar-sign" style="border: 1px solid; border-radius: 50%;"></span></span></h5></span>
-                            </span>
+                                <span class="">
+                                    <h5 class="p-1 m-0 color">Số Dư : 
+                                        <span style="float: right;"> {{userprofile.money}}  
+                                            <span class="fe-dollar-sign" style="border: 1px solid; border-radius: 50%;"></span></span>
+                                    </h5>
+                                    </span>
+                            </div>
                         </a>
                     </li>
+                    
                     <li class="menu-title mt-1 p-2 color pb-0">Menu</li>
 
                     <li class="">
@@ -304,9 +309,9 @@
                 <div class="border-1 border-top">
                     <h6 class="fw-medium px-3 mt-3 text-uppercase">Thông Báo</h6>
                 </div>
-                <div class="p-2 pb-4">
+                <div class="border-1 p-2">
                     <a href="javascript: void(0);" class="text-reset notification-item">
-                        <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start menu-left ">
                             <div class="position-relative me-2">
                                 <span class="user-status online"></span>
                                 <img src="assets/images/users/avatar-2.jpg" class="rounded-circle avatar-sm" alt="user-pic">
@@ -321,7 +326,7 @@
                     </a>
 
                     <a href="javascript: void(0);" class="text-reset notification-item">
-                        <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start menu-left">
                             <div class="position-relative me-2">
                                 <span class="user-status away"></span>
                                 <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-sm" alt="user-pic">
@@ -336,7 +341,7 @@
                     </a>
 
                     <a href="javascript: void(0);" class="text-reset notification-item">
-                        <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start menu-left">
                             <div class="position-relative me-2">
                                 <span class="user-status online"></span>
                                 <img src="assets/images/users/avatar-5.jpg" class="rounded-circle avatar-sm" alt="user-pic">
@@ -351,7 +356,7 @@
                     </a>
 
                     <a href="javascript: void(0);" class="text-reset notification-item">
-                        <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start menu-left">
                             <div class="position-relative me-2">
                                 <span class="user-status online"></span>
                                 <img src="assets/images/users/avatar-6.jpg" class="rounded-circle avatar-sm" alt="user-pic">
@@ -366,7 +371,7 @@
                     </a>
 
                     <a href="javascript: void(0);" class="text-reset notification-item">
-                        <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start menu-left">
                             <div class="position-relative me-2">
                                 <span class="user-status busy"></span>
                                 <img src="assets/images/users/avatar-7.jpg" class="rounded-circle avatar-sm" alt="user-pic">
@@ -381,7 +386,7 @@
                     </a>
 
                     <a href="javascript: void(0);" class="text-reset notification-item">
-                        <div class="d-flex align-items-start">
+                        <div class="d-flex align-items-start menu-left">
                             <div class="position-relative me-2">
                                 <span class="user-status away"></span>
                                 <img src="assets/images/users/avatar-8.jpg" class="rounded-circle avatar-sm" alt="user-pic">
@@ -394,13 +399,13 @@
                             </div>
                         </div>
                     </a>
-
-                    <div class="text-center mt-3">
-                        <a href="javascript:void(0);" class="btn btn-sm btn-white">
-                            <i class="mdi mdi-spin mdi-loading me-2"></i>
-                            Load more
-                        </a>
-                    </div>
+                </div>
+                <div class="text-center mt-1">
+                    <button href="javascript:void(0);" type="reset" class="btn btn-sm menu-left" style="border: 1px solid;">
+                        <span class="spinner-border spinner-border-sm me-2" style="margin-bottom: -2px;"></span>
+                        <!-- <i class="mdi mdi-spin mdi-loading me-2"></i> -->
+                        Load reset
+                    </button>
                 </div>
             </div>
         </div>

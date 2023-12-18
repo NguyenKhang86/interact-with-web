@@ -14,6 +14,7 @@ export class UplikeFb123Component {
 
   fblike!: any; dongia!: any;
   a!: any; b!: any;
+  tokken!: string;
   tongthanhtoan!: number;
   soluong!: number;
   Orderform1!: FormGroup;
@@ -34,7 +35,6 @@ export class UplikeFb123Component {
     })
     this.GetAccountMenuID();
   }
-
   private GetAccountMenuID() {
     this.ever.get('Account/Menu').subscribe( red => {
       this.ever.get(`Id?Id=${red[0].service[0].id}`).subscribe( res => {
@@ -49,22 +49,27 @@ export class UplikeFb123Component {
       this.dongia = red[0].service[0].price;
     })
   }
-
   thanhtoan() {
     var a = this.Orderform1.value.quantity;
     this.soluong = a;
     this.tongthanhtoan = this.soluong*this.dongia;
   }
   onSubmitOrder() {
-    this.ever.post('Order/Add', this.Orderform1.value).subscribe( red => {
-      if (red.status == false) {
-        this.toastr.error('Nội Dung Không Hợp Lệ, Xin Vui Lòng Thử lại.')
-      } else if (this.soluong >= 1000) {
-        this.toastr.error('Đơn Hàng Quá Lớn, Xin Vui Lòng Nhập Lại.')
-      } else {
-        this.toastr.success('Thanh Toán Thành Công.')
-        this.GetAccountMenuID();
-      } 
-    })
+    this.tokken = this.ever.getCookie(ApiDataservice.RoleCookieName);
+    if (this.tokken == '') {
+      alert('Bạn Muốn Đăng Nhập Để Tiếp Tục')
+      window.location.href = 'login';
+    } else {
+      this.ever.post('Order/Add', this.Orderform1.value).subscribe( red => {
+        if (red.status == false) {
+          this.toastr.error('Nội Dung Không Hợp Lệ, Xin Vui Lòng Thử lại.')
+        } else if (this.soluong >= 1000) {
+          this.toastr.error('Đơn Hàng Quá Lớn, Xin Vui Lòng Nhập Lại.')
+        } else {
+          this.toastr.success('Thanh Toán Thành Công.')
+          this.GetAccountMenuID();
+        } 
+      })
+    }
   }
 }

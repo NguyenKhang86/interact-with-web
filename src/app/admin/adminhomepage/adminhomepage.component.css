@@ -73,8 +73,8 @@
     animation-fill-mode: both;
 }
 .navbar-hotro {
-    right: 55px;
-    bottom: 55px;
+    right: 35px;
+    bottom: 85px;
     display: flex;
     z-index: 999;
     position: fixed;
@@ -147,7 +147,7 @@
     box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2), 0 1px 3px 1px rgba(0,0,0,0.2);
 }
 .menu-left:hover {
-    background-color: rgb(226,237,254);
+    background-color: rgb(226,237,254) !important;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -160,3 +160,25 @@
 /* #sidebar-menu .menuitem-active .active {
     color: #0056c1 !important;
 } */
+.menu-language {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: stretch;
+}
+.btn-white {
+    color: #fff;
+}
+.btn-white:hover {
+    background-color: #fff;
+    color: black;
+    font-weight: bolder;
+}
+.left-side-menu #sidebar-menu>ul>li>a:hover {
+    background-color: rgb(226,237,254);
+    border-radius: 3px;
+    cursor: pointer;
+}
+.border-top {
+    border-top: 3px solid #0056C1 !important;
+}

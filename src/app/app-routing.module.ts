@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { HomepageComponent } from './home/homepage/homepage.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 import { AdminhomepageComponent } from './admin/adminhomepage/adminhomepage.component';
@@ -22,10 +21,11 @@ import { TermsServicesComponent } from './admin/terms-services/terms-services.co
 import { TemplateComponent } from './admin/template/template.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'}, 
+  {path: '', component: AdminhomepageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'recover-password', component: RecoverpasswordComponent},
   {path: 'register', component: RegisterComponent},
-  {path: '', component: AdminhomepageComponent},
 
 
 
@@ -33,42 +33,18 @@ const routes: Routes = [
   {path: "",  component: AdminhomepageComponent,
   children: [
     {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'}, 
-    {
-      path: 'profile', component: ProfileComponent
-    },
-    {
-      path: 'changepassword', component: ChangepasswordComponent
-    },
-    {
-      path: 'deposit-money', component: DepositMoneyComponent
-    },
-    {
-      path: 'Facebook-view', component: UpviewFbComponent
-    },
-    {
-      path: 'Facebook-like', component: UplikeFb123Component
-    },
-    {
-      path: 'user-collaborators', component: CollaboratorsComponent
-    },
-    {
-      path: 'shopping', component: ShoppingCartComponent
-    },
-    {
-      path: 'service-getbyplatfrom', component: ProductSpComponent
-    },
-    {
-      path: 'like-tt', component: UpliketiktokComponent
-    },
-    {
-      path: 'terms-services', component: TermsServicesComponent
-    },
-    {
-      path: 'home', component: TemplateComponent
-    },
-    {
-      path: '**', component: PageNotFoundComponentComponent
-    },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'changepassword', component: ChangepasswordComponent },
+    { path: 'deposit-money', component: DepositMoneyComponent },
+    { path: 'Facebook-view', component: UpviewFbComponent },
+    { path: 'Facebook-like', component: UplikeFb123Component },
+    { path: 'user-collaborators', component: CollaboratorsComponent },
+    { path: 'shopping', component: ShoppingCartComponent },
+    { path: 'service-getbyplatfrom', component: ProductSpComponent },
+    { path: 'like-tt', component: UpliketiktokComponent },
+    { path: 'terms-services', component: TermsServicesComponent },
+    { path: 'home', component: TemplateComponent },
+    { path: '**', component: PageNotFoundComponentComponent },
   ]
  },
 ];

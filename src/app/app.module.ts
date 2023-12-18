@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './home/register/register.component';
 import { LoginComponent } from './home/login/login.component';
-import { HomepageComponent } from './home/homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminhomepageComponent } from './admin/adminhomepage/adminhomepage.component';
 import { ProfileComponent } from './admin/profile/profile.component';
@@ -32,7 +31,6 @@ import { TemplateComponent } from './admin/template/template.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    HomepageComponent,
     AdminhomepageComponent,
     ProfileComponent,
     ChangepasswordComponent,

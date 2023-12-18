@@ -15,6 +15,7 @@ import { LoadefaultService } from 'src/app/service/loadefault.service';
 export class ProfileComponent implements OnInit{
 
   kientra!: string;
+  username!: string;
   profileeditform!: FormGroup;
   userprofile!: UserProfile;
   changePasswordForm!: FormGroup;
@@ -28,6 +29,7 @@ export class ProfileComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+    this.username = localStorage.getItem('username') || '';
     this.userprofile = new UserProfile;
     this.profileGet();
     this.loadScript();  

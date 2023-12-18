@@ -4,18 +4,60 @@
         <div class="col-lg-9">
             <div class="card border-top">
                 <div class="m-0 mb-1">
+
                     <ul class="nav bor-nav-item p-1 pb-0">
                         <li class="nav-item" *ngFor="let menu of menu">
-                            <a class="nav-link" data-bs-toggle="tab" href="#Product{{menu.id}}" aria-expanded="false" aria-controls="Product"> {{menu.platfrom}} </a>
+                            <a class="nav-link" (click)="hidden()" data-bs-toggle="tab" href="#Product{{menu.id}}" aria-expanded="false" aria-controls="Product"> {{menu.platfrom}} </a>
                         </li>
                     </ul>
+
+                    <div *ngIf="ishide">
+                        <div class="tab-content p-0">
+                            <div class=" mt-2"style="border: none;">
+                                <div class="col-12 p-2">
+                                    <div>
+                                        <h4 class="m-1 ps-2">Dịch Vụ {{face.platfrom}}</h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-centered mb-0" id="inline-editable">
+                                            
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="text-center">Tác Vụ</th>
+                                                    <th>Loại Dịch Vụ</th>
+                                                    <th>Hoạt Động</th>
+                                                    <th class="text-center">Đơn Giá</th>
+                                                </tr>
+                                            </thead>
+                                        
+                                            <tbody>
+                                                <tr class="tr-hover" *ngFor="let i of menufb">
+                                                    <th class="text-center">
+                                                        <a href="{{i.path}}" title="Shoppping">
+                                                            <i class="fe-shopping-cart p-2" ></i>
+                                                        </a>
+                                                    </th>
+                                                    <td>{{i.title}}</td>
+                                                    <td>{{i.path}}</td>
+                                                    <td class="text-center">{{i.price}}</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div *ngFor="let menu of menu">
                         <div class="tab-content p-0">
-                            <div class="tab-pane mt-2" id="Product{{menu.id}}" style="border: none;">
+                            <div class="tab-pane m-0" id="Product{{menu.id}}" style="border: none;">
                                 <div class="col-12 p-2">
                                     <h4 class="m-1 ps-2">Dịch Vụ {{menu.platfrom}}</h4>
                                     <div class="table-responsive">
                                         <table class="table table-centered mb-0" id="inline-editable">
+
                                             <thead class="table-light">
                                                 <tr>
                                                     <th class="text-center">Tác Vụ</th>
@@ -37,12 +79,14 @@
                                                     <td class="text-center">{{menu.price}}</td>
                                                 </tr>
                                             </tbody>
+
                                         </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -51,8 +95,8 @@
             <div class="card text-center border-top">
                 <div class="">
                     <div class="modal-colored-header p-1" style="height: 82px; background-color: #0056C1;">
-                        <p class="m-0 p-0 modal-colored-header">welcome !!!</p>
-                        <h4 class="m-0 modal-colored-header">{{username}}</h4>
+                        <p class="m-0 p-0 modal-colored-header">Welcome Back !!!</p>
+                        <h4 class="m-0 modal-colored-header">{{userprofile.fullname}}</h4>
                     </div>
                     <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
                             class="rounded-circle avatar-md" style="margin-top: -36px;">

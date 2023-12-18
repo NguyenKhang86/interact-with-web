@@ -117,10 +117,10 @@
                             <i class="ri-account-circle-line"></i>
                             <span>Hồ sơ cá nhân</span>
                         </a>
-                        <a class="dropdown-item notify-item menu-left right-bar-toggle">
+                        <!-- <a class="dropdown-item notify-item menu-left right-bar-toggle">
                             <i class=" fe-settings"></i>
                             <span>Cài Đặt</span>
-                        </a>
+                        </a> -->
                         <a routerLink="javascript:void(0)" class="dropdown-item notify-item menu-left">
                             <i class=" ri-bank-card-line"></i>
                             <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
@@ -130,7 +130,7 @@
                             <span>Đổi Mật Khẩu</span>
                         </a>
                         <div class="border-1"></div>
-                        <a routerLink="#" class="dropdown-item notify-item menu-left" (click)="logout()">
+                        <a routerLink="javascript:void(0)" class="dropdown-item notify-item menu-left" (click)="logout()">
                             <i class="bx bx-log-out"></i>
                             <span>Đăng xuất</span>
                         </a>
@@ -175,14 +175,15 @@
                 </span>
             </a>
         </div>
-        <div class="h-100 menuitem-active" data-simplebar>
+        <div class="h-100" data-simplebar>
             <div id="sidebar-menu">
-                
+
                 <ul id="side-menu">
                     <div routerLink="profile" title="Thông tin cá nhân" style="cursor: pointer;" class="text-center p-1">
                         <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
                             class="rounded-circle avatar-md" style="">
                     </div>
+                    
                     <li class="border-1" data-bs-toggle="dropdown">
                         <a routerLink="profile" title="Thông tin cá nhân" class=" m-0 p-0" *ngIf="!login">
                             <div class="p-2">
@@ -274,7 +275,7 @@
 
         <router-outlet></router-outlet>
        
-        <footer class="footer card m-0" style="background-color: #fff; box-shadow: 0 1px 3px 1px rgba(0,0,0,0.2), 0 1px 3px 1px rgba(0,0,0,0.2);">
+        <footer class="footer card-1-1 m-0" style="">
             <div class="container-fluid">
                 <div class="row font-12">
                     <div class="col-md-6">

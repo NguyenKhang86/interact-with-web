@@ -12,11 +12,11 @@ import { ApiDataservice } from 'src/app/service/api-dataservice';
 })
 export class UplikeFb123Component {
 
-  fblike!: any; dongia!: any; angular!: any;
+  fblike!: any; dongia!: any;
   a!: any; b!: any;
-  tokken!: string;
   tongthanhtoan!: number;
   soluong!: number;
+  tokken!: string;
   Orderform1!: FormGroup;
   menu!: Menu[];
   
@@ -25,7 +25,6 @@ export class UplikeFb123Component {
     private ever: ApiDataservice,
     private formBuilder: FormBuilder,
   ) {}
-
   ngOnInit(): void {
     this.Orderform1 = this.formBuilder.group({
       id: [''],

@@ -30,7 +30,7 @@ const routes: Routes = [
 
 
   
-  {path: "",  component: AdminhomepageComponent,
+  {path: '',  component: AdminhomepageComponent,
   children: [
     {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'}, 
     { path: 'profile', component: ProfileComponent },
@@ -45,7 +45,7 @@ const routes: Routes = [
     { path: 'terms-services', component: TermsServicesComponent },
     { path: 'home', component: TemplateComponent },
     { path: '**', component: PageNotFoundComponentComponent },
-  ]
+  ],
  },
 ];
 

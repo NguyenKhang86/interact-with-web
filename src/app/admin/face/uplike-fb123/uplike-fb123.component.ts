@@ -12,7 +12,7 @@ import { ApiDataservice } from 'src/app/service/api-dataservice';
 })
 export class UplikeFb123Component {
 
-  fblike!: any; dongia!: any;
+  fblike!: any; dongia!: any; angular!: any;
   a!: any; b!: any;
   tokken!: string;
   tongthanhtoan!: number;
@@ -57,16 +57,15 @@ export class UplikeFb123Component {
   onSubmitOrder() {
     this.tokken = this.ever.getCookie(ApiDataservice.RoleCookieName);
     if (this.tokken == '') {
-      alert('Bạn Muốn Đăng Nhập Để Tiếp Tục')
       window.location.href = 'login';
     } else {
       this.ever.post('Order/Add', this.Orderform1.value).subscribe( red => {
         if (red.status == false) {
-          this.toastr.error('Nội Dung Không Hợp Lệ, Xin Vui Lòng Thử lại.')
+          this.toastr.error('Nội Dung Không Hợp Lệ, Xin Vui Lòng Thử lại.');
         } else if (this.soluong >= 1000) {
-          this.toastr.error('Đơn Hàng Quá Lớn, Xin Vui Lòng Nhập Lại.')
+          this.toastr.error('Đơn Hàng Quá Lớn, Xin Vui Lòng Nhập Lại.');
         } else {
-          this.toastr.success('Thanh Toán Thành Công.')
+          this.toastr.success('Thanh Toán Thành Công.');
           this.GetAccountMenuID();
         } 
       })

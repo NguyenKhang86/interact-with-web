@@ -42,9 +42,9 @@
                         <i class="fe-bell noti-icon"></i>
                         <span class="badge bg-danger rounded-circle noti-icon-badge">5</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-lg" style="background-color: #fff !important;">
-                        <div class="dropdown-item noti-title border-1 p-2">
-                            <h5 class="m-0 p-0"> Thông báo </h5>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-lg p-0" style="background-color: #fff !important;">
+                        <div class="border-1">
+                            <p class="p-0 m-2">Thông Báo</p>
                         </div>
                         <div class="noti-scroll border-1" data-simplebar style="height: 400px;">
                             <a href="javascript:void(0);" class="dropdown-item notify-item menu-left active">
@@ -111,8 +111,10 @@
                         <span class="menu-arrow" style="position: static !important;"></span> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-end profile-dropdown font-12 card-1-1" style="background-color: #fff !important;">
-                        <p class="border-1 p-1 m-0">WelCom Back!!!</p>
-                        <a routerLink="profile" class="dropdown-item notify-item menu-left">
+                        <div class="border-1">
+                            <p class="p-0 m-1">WelCom Back!!!</p>
+                        </div>
+                        <a href="profile" class="dropdown-item notify-item menu-left">
                             <i class="ri-account-circle-line"></i>
                             <span>Hồ sơ cá nhân</span>
                         </a>
@@ -120,16 +122,16 @@
                             <i class=" fe-settings"></i>
                             <span>Cài Đặt</span>
                         </a> -->
-                        <a routerLink="javascript:void(0)" class="dropdown-item notify-item menu-left">
+                        <a href="javascript:void(0)" class="dropdown-item notify-item menu-left">
                             <i class=" ri-bank-card-line"></i>
                             <span>Nâng cấp tài khoản <span id="flash">Up</span></span>
                         </a>
-                        <a routerLink="changepassword" class="dropdown-item notify-item menu-left">
+                        <a href="profile" class="dropdown-item notify-item menu-left">
                             <i class="ri-account-circle-line"></i>
                             <span>Đổi Mật Khẩu</span>
                         </a>
                         <div class="border-1"></div>
-                        <a routerLink="javascript:void(0)" class="dropdown-item notify-item menu-left" (click)="logout()">
+                        <a href="javascript:void(0)" class="dropdown-item notify-item menu-left" (click)="logout()">
                             <i class="bx bx-log-out"></i>
                             <span>Đăng xuất</span>
                         </a>
@@ -177,25 +179,29 @@
             <div id="sidebar-menu">
 
                 <ul id="side-menu">
-                    <div routerLink="profile" title="Thông tin cá nhân" style="cursor: pointer;" class="text-center p-1">
+                    <div class="text-center p-1">
                         <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
                             class="rounded-circle avatar-md" style="">
                     </div>
-                    
-                    <li class="border-1" data-bs-toggle="dropdown">
-                        <a routerLink="profile" title="Thông tin cá nhân" class=" m-0 p-0" *ngIf="!login">
+                    <div style="margin-bottom: -30px;" title="Thông tin cá nhân" *ngIf="shouldDisplay">
+                        <a href="profile" class="m-1" style="padding: 62px 114px;"></a>
+                    </div>
+                    <li class="" data-bs-toggle="dropdown" *ngIf="shouldDisplay">
+                        <div class=" m-0 p-0" *ngIf="!login">
                             <div class="p-2">
-                                <span class="text-center"><h6 class="m-0 p-0"> Khách Hàng </h6></span>
+                                <span class="text-center"><p class="m-0 p-0"> Khách Hàng </p></span>
                                 <span class="text-center"><h5 class="m-0"> {{userprofile.fullname}} </h5></span>
                                 <span class="">
                                     <h5 class="p-1 m-0 color">Số Dư : 
                                         <span style="float: right;"> {{userprofile.money}}  
                                             <span class="fe-dollar-sign" style="border: 1px solid; border-radius: 50%;"></span></span>
                                     </h5>
-                                    </span>
+                                </span>
                             </div>
-                        </a>
+                        </div>
                     </li>
+
+                    <div class="border-1"></div>
                     
                     <li class="menu-title mt-1 p-2 color pb-0">Menu</li>
 
@@ -212,8 +218,8 @@
                             <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="Dashboards{{menu.id}}">
-                            <ul class="nav-second-level p-2 pt-0 pb-0">
-                                <li class="menu-hover-li" *ngFor="let service of menu.service">
+                            <ul class="nav-second-level" id="menu-left-barid">
+                                <li class="" *ngFor="let service of menu.service">
                                     <a class="menu-left" [routerLink]=[service.path]> {{service?.title}} </a>
                                 </li>
                     
@@ -305,7 +311,7 @@
         <div class="tab-content pt-0">
             <div>
                 <div class="border-1 border-top">
-                    <h6 class="fw-medium px-3 mt-3 text-uppercase">Thông Báo</h6>
+                    <p class="p-0 m-2">Thông Báo</p>
                 </div>
                 <div class="border-1 p-2">
                     <a href="javascript: void(0);" class="text-reset notification-item">

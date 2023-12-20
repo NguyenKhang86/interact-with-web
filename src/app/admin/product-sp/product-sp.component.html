@@ -1,54 +1,15 @@
 <div class="container-fluid">
-    <div class="row">
-        <h2 class="color title m-0 p-2" style="font-weight: 400;">Bảng Giá Sản Phẩm</h2>
+    <div class="row mt-2">
+        <h1 class="color fw-light col-md-12">Dịch Vụ & Sản Phẩm</h1>
         <div class="col-lg-9">
             <div class="card border-top">
-                <div class="m-0 mb-1">
+                <div class="m-0">
 
-                    <ul class="nav bor-nav-item p-1 pb-0">
-                        <li class="nav-item" *ngFor="let menu of menu">
+                    <ul class="nav border-1 p-1 pb-0">
+                        <li class="nav-item tr-hover" *ngFor="let menu of menu">
                             <a class="nav-link" (click)="hidden()" data-bs-toggle="tab" href="#Product{{menu.id}}" aria-expanded="false" aria-controls="Product"> {{menu.platfrom}} </a>
                         </li>
                     </ul>
-
-                    <div *ngIf="ishide">
-                        <div class="tab-content p-0">
-                            <div class=" mt-2"style="border: none;">
-                                <div class="col-12 p-2">
-                                    <div>
-                                        <h4 class="m-1 ps-2">Dịch Vụ {{face.platfrom}}</h4>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-centered mb-0" id="inline-editable">
-                                            
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th class="text-center">Tác Vụ</th>
-                                                    <th>Loại Dịch Vụ</th>
-                                                    <th>Hoạt Động</th>
-                                                    <th class="text-center">Đơn Giá</th>
-                                                </tr>
-                                            </thead>
-                                        
-                                            <tbody>
-                                                <tr class="tr-hover" *ngFor="let i of menufb">
-                                                    <th class="text-center">
-                                                        <a href="{{i.path}}" title="Shoppping">
-                                                            <i class="fe-shopping-cart p-2" ></i>
-                                                        </a>
-                                                    </th>
-                                                    <td>{{i.title}}</td>
-                                                    <td>{{i.path}}</td>
-                                                    <td class="text-center">{{i.price}}</td>
-                                                </tr>
-                                            </tbody>
-
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div *ngFor="let menu of menu">
                         <div class="tab-content p-0">
@@ -87,6 +48,46 @@
                         </div>
                     </div>
 
+                    
+                    <div *ngIf="ishide">
+                        <div class="tab-content p-0">
+                            <div class="mt-0"style="border: none;">
+                                <div class="col-12 p-2">
+                                    <div>
+                                        <h4 class="m-1 ps-2">Dịch Vụ {{face.platfrom}}</h4>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-centered mb-0" id="inline-editable">
+                                            
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="text-center">Tác Vụ</th>
+                                                    <th>Loại Dịch Vụ</th>
+                                                    <th>Hoạt Động</th>
+                                                    <th class="text-center">Đơn Giá</th>
+                                                </tr>
+                                            </thead>
+                                        
+                                            <tbody>
+                                                <tr class="tr-hover" *ngFor="let i of menufb">
+                                                    <th class="text-center">
+                                                        <a href="{{i.path}}" title="Shoppping">
+                                                            <i class="fe-shopping-cart p-2" ></i>
+                                                        </a>
+                                                    </th>
+                                                    <td>{{i.title}}</td>
+                                                    <td>{{i.path}}</td>
+                                                    <td class="text-center">{{i.price}}</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -114,11 +115,11 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Vị Trí :</th>
-                                        <td class="text-muted">Cộng Tác Viên</td>
+                                        <td class="text-muted">khách Hàng</td>
                                     </tr>
                                     <tr class="color">
                                         <th scope="row">Số Dư Hiện Tại:</th>
-                                        <td>$<span class="ps-1">{{userprofile.money}} </span></td>
+                                        <td><span class="text-muted color mr-1">{{userprofile.money}}  <span class="fe-dollar-sign" style="border: 1px solid; border-radius: 50%;"></span></span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -127,11 +128,11 @@
                 </div>
             </div> 
 
-            <div class="card">
-                <div class="border-top bor-nav-item">
+            <div class="card border-top">
+                <div class="border-1">
                     <h4 class="text-center m-2"><i class="fa-solid fa-triangle-exclamation"></i> Lưu Ý </h4>
                 </div>
-                <div class=" m-2">
+                <div class="m-2 mb-0">
                     <p>- Không cài 2 đơn cùng 1 Link ( ID ) tại 1 thời điểm. Vui lòng đợi đơn cũ chạy xong để tránh bị thiếu.</p>
                     <p>- Vui lòng lấy đúng ID Bài viết, mở Công khai all đều Like được và kiểm tra kỹ trước khi tạo đơn hàng.  Bài viết đã chỉnh sửa có thể không chạy. Vui lòng cân nhắc.</p>
                     <p>- Nhập ID lỗi hoặc Không mở Công khai nút Like trong thời gian chạy hoặc Xóa Bài viết đi thì hệ thống không hoàn lại tiền.</p>

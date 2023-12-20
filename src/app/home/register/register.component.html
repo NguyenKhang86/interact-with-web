@@ -1,36 +1,25 @@
-<div class="account-pages mt-5 mb-5" style="background-color: #F0F0F0;">
+<div class="account-pages mt-5 mb-5" style="background-color: #fff;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="col-xl-4">
                 <div class="card">
-
                     <div class="card-body p-4" style="background-color: #fff;">
-                        
                         <div class="text-center w-75 m-auto">
-                            <!-- <div class="auth-logo">
-                                <a href="index.html" class="logo logo-dark text-center">
-                                    <span class="logo-lg">
-                                        <h3>LOGO</h3>
-                                    </span>
-                                </a>
-                            </div> -->
                             <p class="text-muted mb-4 mt-3">Bạn chưa có tài khoản? Tạo tài khoản của riêng bạn, chỉ mất chưa đầy một phút.</p>
                         </div>
 
                         <form role="form" class="parsley-examples" [formGroup] = "registerF" (ngSubmit)="register()">
 
                             <div class="mb-2">
-                                <label for="username" class="form-label">Name<span class="text-danger">*</span></label>
+                                <label for="username" class="form-label"> Name <span class="text-danger">*</span></label>
                                 <input class="form-control" type="text" id="username" placeholder="Enter name" required minlength="6" formControlName="username">
                             </div>
-                            
                             <div class="mb-2">
-                                <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+                                <label for="email" class="form-label"> Email <span class="text-danger">*</span></label>
                                 <input class="form-control" type="email" id="email" required email placeholder="Enter email" formControlName="email">
                             </div>
-                        
                             <div class="mb-2">
-                                <label for="password" class="form-label">Password</label>
+                                <label for="password" class="form-label"> Password <span class="text-danger">*</span></label>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" placeholder="Enter your password"  formControlName="password">
                                     
@@ -39,7 +28,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="mb-3">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="checkbox-signup">
@@ -47,7 +35,6 @@
                                         I accept <a href="javascript: void(0);" class="text-dark">Terms and Conditions</a>
                                     </label>
                                 </div>
-                                    
                             </div>
                             <div class="d-grid text-center">
                                 <button class="btn btn-primary" type="submit"> Reset Password </button>
@@ -84,9 +71,8 @@
         </div>
     </div>
 </div>
-
 <div class="container">
-    <footer class="footer footer-alt" style="text-align: center;">
+    <footer class="footer footer-alt card-1-1" style="text-align: center;">
         <script>document.write(new Date().getFullYear())</script> &copy; <a href="" class="text-dark">2023 INSOLTECH</a> 
     </footer>
 </div>

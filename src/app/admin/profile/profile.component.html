@@ -8,18 +8,16 @@
 </style>
 
 <div class="container-fluid">
-   
     <div class="">
         <div class="row">
-            <div class="col-lg-12 col-xl-1"></div>
+            <div class="col-lg-12 col-xl-1 mt-2"></div>
 
             <div class="col-lg-12 col-xl-10">
-                <h3 class="color title m-0 p-2" style="font-weight: 400;">Thông tin cá nhân</h3>
+                <h1 class="color fw-light col-md-12">Thông tin cá nhân</h1>
                 <div class="card border-top">
                     <div class="mt-0">
-                        <div class="border-1 text-center">
-                            <!-- <h4 class=" m-2">Tài Khoản</h4> -->
-                            <div class=" pt-2">
+                        <div class="border-1 text-center p-1">
+                            <div class="p-0">
                                 <img src="https://e7.pngegg.com/pngimages/705/224/png-clipart-user-computer-icons-avatar-miscellaneous-heroes.png"
                                     class="rounded-circle avatar-md" style="">
                             </div>
@@ -28,37 +26,40 @@
                                     <div class="">
                                         <span class=""><h6 class="mb-0 p-0"> Khách Hàng </h6></span>
                                         <span class=""><h5 class="m-0"> {{userprofile.fullname}} </h5></span>
-                                        <span><h5 class=" p-1 m-0 color">Số Dư :   <span> {{userprofile.money}} </span><i class=" fe-dollar-sign"  style="border: 1px solid; border-radius: 50%;"></i></h5></span>
+                                        <span><h5 class="m-0">Số Dư : <span> {{userprofile.money}} </span><i class=" fe-dollar-sign"  style="border: 1px solid; border-radius: 50%;"></i></h5></span>
                                     </div>
                                 </a>
                             </div>
                         </div>
 
                         <div class="profile-block text-start border-1">
-                            <div class="table-responsive m-0" style="display: flex;">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-8">
+                            <div class="table-responsive m-0" style="text-align: -webkit-center;">
+                                <div class="col-md-6 text-center">
                                     <table class="table table-borderless table-sm p-0 m-0">
                                         <tbody>
                                             <tr>
-                                                <th class="col-md-5" scope="row"><h4>Tên Đăng Nhập :</h4></th>
-                                                <td class="text-muted"><h4>{{username}}</h4></td>
+                                                <th class="col-md-6" scope="row"><h5>Tên Đăng Nhập :</h5></th>
+                                                <td class="text-muted"><p>{{username}}</p></td>
                                             </tr>
                                             <tr>
-                                                <th class="col-md-5" scope="row"><h4>Họ & Tên :</h4></th>
-                                                <td class="text-muted"><h4>{{userprofile.fullname}}</h4></td>
+                                                <th class="col-md-6" scope="row"><h5>Họ & Tên :</h5></th>
+                                                <td class="text-muted"><p>{{userprofile.fullname}}</p></td>
                                             </tr>
                                             <tr>
-                                                <th class="col-md-5" scope="row"><h4>SĐT:</h4></th>
-                                                <td class="text-muted"><h4>{{userprofile.phone}}</h4></td>
+                                                <th class="col-md-6" scope="row"><h5>SĐT:</h5></th>
+                                                <td class="text-muted"><p>{{userprofile.phone}}</p></td>
                                             </tr>
                                             <tr>
-                                                <th class="col-md-5" scope="row"><h4>Tuổi :</h4></th>
-                                                <td class="text-muted"><h4>{{userprofile.gender}}</h4></td>
+                                                <th class="col-md-6" scope="row"><h5>Tuổi :</h5></th>
+                                                <td class="text-muted"><p>{{userprofile.gender}}</p></td>
                                             </tr>
                                             <tr>
-                                                <th class="col-md-5" scope="row"><h4>Giới Tính :</h4></th>
-                                                <td class="text-muted"><h4>{{userprofile.address}}</h4></td>
+                                                <th class="col-md-6" scope="row"><h5>Vị Trí :</h5></th>
+                                                <td class="text-muted"><p>Khách Hàng</p></td>
+                                            </tr>
+                                            <tr>
+                                                <th class="col-md-6" scope="row"><h5>Giới Tính :</h5></th>
+                                                <td class="text-muted"><p>{{userprofile.address}}</p></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -68,82 +69,37 @@
                         
                         <form  role="form" class="parsley-examples m-3 mt-1 mb-1" [formGroup] = "changePasswordForm" (ngSubmit)="changePassword()"> 
                             <div class="mb-2">
-                                <label for="oldPassword" class="form-label">Mật Khẩu Cũ<span class="text-danger">*</span></label>
-                                <div class="input-group input-group-merge">
+                                <label for="oldPassword" class="form-label">Mật Khẩu Cũ<span class="text-danger"> * </span></label>
+                                <div class="input-group">
                                     <input type="password" id="oldPassword" class="form-control" placeholder="Enter Password" formControlName="oldPassword">
-                                    
-                                    <div class="input-group-text" data-password="false">
+                                    <a class="input-group-text" data-password="false">
                                         <span class="password-eye"></span>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
 
                             <div class="mb-2">
-                                <label for="password2" class="form-label">Mật Khẩu Mới<span class="text-danger">*</span></label>
+                                <label for="password2" class="form-label">Mật Khẩu Mới<span class="text-danger"> * </span></label>
                                 <input type="password" id="password2" required minlength="6" class="form-control" placeholder="Enter password">
                             </div>
                             <div class="mb-2">
-                                <label for="newPassword" class="form-label">Nhập Lại Mật Khẩu<span class="text-danger">*</span></label>
+                                <label for="newPassword" class="form-label">Nhập Lại Mật Khẩu<span class="text-danger"> * </span></label>
                                 <input data-parsley-equalto="#password2" type="password" id="newPassword" required minlength="6" class="form-control" placeholder="Enter password" formControlName="newPassword">
                             </div>
-                            <div class="col-md-12" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-                                <div class="text-center p-1 col-md-6 col-xl-6">
+                            <div class="col-12" style="display: flex; justify-content: space-around;">
+                                <div class="text-center col-lg-6 col-sm-12">
                                     <button data-bs-toggle="modal" style="width: 100%; font-size: 14px; background-color: green;" type="submit"
                                     class="btn btn-sm btn-success p-2 " title="Thanh Toán"> Đổi Mật Khẩu </button>
                                 </div>
-                                <div class="text-center p-1 col-md-6 col-xl-6">
+                                    <div class="text-center col-lg-6 col-sm-12">
                                     <a data-bs-toggle="modal" style="width: 100%; font-size: 14px;" data-bs-target="#profileEditfile"
                                     class="btn btn-sm btn-primary p-2 " (click)="onEditClick()" title="Thanh Toán"> Sửa Thông Tin </a>
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div> 
-            </div>
-
-            <div class="col-lg-12 col-xl-1">
-                <div class="card">
-                    <!-- <div class="border-top border-1">
-                        <div class="border-1">
-                            <h4 class="m-2">Cấp Bậc</h4>
-                        </div>
-                        <div class="card-body p-0" style="display: flex;">
-                            <div class="col-md-4 m-2" style="background-color: purple; border: 1px solid purple; border-radius: 5px;">
-                                <h4 class="text-center p-3" style="color: #fff;">Lever 1 </h4>
-                            </div>
-                            <div class="col-md-8 m-2">
-                                <h5>Tân Thủ Sơ Cấp</h5>
-                                <h5>Hạng Nick : </h5>
-                                <h5>1,0000 <span>Nick</span></h5>
-                            </div>
-                        </div>
-                        <div class="card-body p-0" style="display: flex;">
-                            <div class="col-md-4 m-2" style="background-color: green; border: 1px solid green; border-radius: 5px;">
-                                <h4 class="text-center p-3" style="color: #fff;">Lever 2 </h4>
-                            </div>
-                            <div class="col-md-8 m-2">
-                                <h5>Hạng Trung Cấp</h5>
-                                <h5>Hạng Nick : </h5>
-                                <h5>5,0000 <span>Nick</span></h5>
-                            </div>
-                        </div>
-                        <div class="card-body p-0" style="display: flex;">
-                            <div class="col-md-4 m-2" style="background-color: #0056C1; border: 1px solid #0056C1; border-radius: 5px;">
-                                <h4 class="text-center p-3" style="color: #fff;">Lever 3 </h4>
-                            </div>
-                            <div class="col-md-8 m-2">
-                                <h5>Hạng VIP</h5>
-                                <h5>Hạng Nick : </h5>
-                                <h5>10,0000 <span>Nick</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-danger m-1">
-                        <h4 class="text-danger p-1"><i class="fa-solid fa-triangle-exclamation"></i>  Chú Ý  </h4>
-                        <p>- Hệ thống sẽ tự động cập nhật sau khoang 5 phút kể từ khi tài khoản thay đổi hoặc thêm thông tin.</p>
-                        <p>- Mỗi Levers sẽ có bảng giá riêng cho từng dịch vụ và nhiều ưu đãi đặc biệt khác.</p>
-                    </div> -->
-                </div>
             </div>
         </div>
     </div>
@@ -154,7 +110,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-1 p-2">
-                <h4 class="modal-title color" id="exampleModalToggleLabel">Sửa Thông Tin Cá Nhân</h4>
+                <h5 class="modal-title color" id="exampleModalToggleLabel">Sửa Thông Tin Cá Nhân</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-0">
@@ -216,7 +172,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header border-1">
-                <h4 class="modal-title color" id="exampleModalToggleLabel">Cảnh báo</h4>
+                <h5 class="modal-title color" id="exampleModalToggleLabel">Cảnh báo</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body border-1">Bạn có chắc chắn muốn xóa hết dữ liệu?</div>

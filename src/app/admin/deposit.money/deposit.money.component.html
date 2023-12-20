@@ -1,10 +1,4 @@
 <style>
-    /* td {
-    padding: 0px !important;
-   }
-   th {
-    padding-left: 0px !important;
-   } */
     td {
         vertical-align: middle !important;
     }
@@ -15,23 +9,23 @@
     }
 </style>
 <div class="container-fluid">
-    <div class="row">
-        <h2 class="color title m-0 p-2" style="font-weight: 400;">Nạp Tiền Tài Khoản</h2>
+    <div class="row mt-2">
+        <h1 class="color fw-light col-md-12">Nạp Tiền Tài Khoản</h1>
         <div class="col-lg-9">
             <div class="card border-top">
                 <div class="m-0 mb-1">
-                    <ul class="nav bor-nav-item p-1 pb-0">
-                        <li class="nav-item">
+                    <ul class="nav border-1 p-1 pb-0">
+                        <li class="nav-item tr-hover">
                             <a class="nav-link active" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BankManey">Ngân hàng</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item tr-hover">
                             <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BinnanceManey">Lịch Sử Nạp/Rút</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item tr-hover">
                             <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#PurchaseHistory">Lịch Sử Mua Hàng</a>
                         </li>
                     </ul>
-                    <div class="tab-content twitter-bs-wizard-tab-content m-3 mt-1 p-0">
+                    <div class="tab-content twitter-bs-wizard-tab-content m-3 mb-0 p-0">
                         <div class="tab-pane active"  style="border: none" id="BankManey">
                             <div class="column">
                                 <div class="pb-2">
@@ -44,7 +38,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-12 mt-2">
                                         <div class="mb-2" style="display: flex; flex-wrap: wrap;">
                                             <div class="col-lg-3 col-xl-3">
                                                 <h4 class="color" style="">Số Tài Khoản 1</h4>
@@ -96,7 +90,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-12 mt-2">
                                         <div class="mb-2" style="display: flex; flex-wrap: wrap;">
                                             <div class="col-lg-3 col-xl-3">
                                                 <h4 class="color" style="">Số Tài Khoản 2</h4>
@@ -281,11 +275,11 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Vị Trí :</th>
-                                        <td class="text-muted">Cộng Tác Viên</td>
+                                        <td class="text-muted">Khách Hàng</td>
                                     </tr>
                                     <tr class="color">
                                         <th scope="row">Số Dư Hiện Tại:</th>
-                                        <td>$<span class="ps-1">{{userprofile.money}} </span></td>
+                                        <td><span class="text-muted color mr-1">{{userprofile.money}}  <span class="fe-dollar-sign" style="border: 1px solid; border-radius: 50%;"></span></span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -294,11 +288,11 @@
                 </div>
             </div> 
 
-            <div class="card">
-                <div class="border-top bor-nav-item">
+            <div class="card border-top">
+                <div class="border-1">
                     <h4 class="text-center m-2"><i class="fa-solid fa-triangle-exclamation"></i> Lưu Ý </h4>
                 </div>
-                <div class=" m-2">
+                <div class="m-2 mb-0">
                     <p>- Không cài 2 đơn cùng 1 Link ( ID ) tại 1 thời điểm. Vui lòng đợi đơn cũ chạy xong để tránh bị thiếu.</p>
                     <p>- Vui lòng lấy đúng ID Bài viết, mở Công khai all đều Like được và kiểm tra kỹ trước khi tạo đơn hàng.  Bài viết đã chỉnh sửa có thể không chạy. Vui lòng cân nhắc.</p>
                     <p>- Nhập ID lỗi hoặc Không mở Công khai nút Like trong thời gian chạy hoặc Xóa Bài viết đi thì hệ thống không hoàn lại tiền.</p>
@@ -312,11 +306,11 @@
 <div class="modal fade" id="Delete" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header bor-nav-item">
+            <div class="modal-header border-1">
                 <h4 class="modal-title color" id="exampleModalToggleLabel">Cảnh báo</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body bor-nav-item">Bạn có chắc chắn muốn xóa hết dữ liệu?</div>
+            <div class="modal-body border-1">Bạn có chắc chắn muốn xóa hết dữ liệu?</div>
             <div class="modal-footer p-0">
                 <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                     data-bs-dismiss="modal" (click)="Delete()">

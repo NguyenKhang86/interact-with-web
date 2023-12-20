@@ -12,13 +12,14 @@ import { ApiDataservice } from 'src/app/service/api-dataservice';
 })
 export class UplikeFb123Component {
 
-  fblike!: any; dongia!: any;
+  dongia!: any; facebook!: any;
   a!: any; b!: any;
   tongthanhtoan!: number;
   soluong!: number;
   tokken!: string;
   Orderform1!: FormGroup;
   menu!: Menu[];
+face: any;
   
   constructor(
     private toastr: ToastrService,
@@ -44,7 +45,7 @@ export class UplikeFb123Component {
           quantity: 100,
         })
       })
-      this.fblike = red[0].service[0].title;
+      this.facebook = red[0].service[0].title;
       this.dongia = red[0].service[0].price;
     })
   }

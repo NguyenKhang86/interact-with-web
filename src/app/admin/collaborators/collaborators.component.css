@@ -2,7 +2,7 @@
     color: #0056C1;
 }
 .bor-nav-item {
-    border-bottom: 2px solid #0056C1;
+    border-top: 3px solid #0056C1;
 }
 .bor-nav-maneybank {
     border: 1px solid #0056C1;
@@ -13,10 +13,13 @@
     height: 30px;
 }
 .tr-hover:hover {
-    background-color: #dee2e6;
+    background-color: #dee2e6 !important;
 }
 .bx:hover {
     color: #fff;
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: #0056C1;
+}
+.nav-link {
+    color: black !important;
 }

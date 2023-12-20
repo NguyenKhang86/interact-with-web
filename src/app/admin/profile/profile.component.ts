@@ -63,7 +63,6 @@ export class ProfileComponent implements OnInit{
       this.userprofile = res;
    })
   }
-
   profileedit() {
     this.ever.put('Account/Edit', this.profileeditform.value).subscribe( res => {
       if (res.status == false) {
@@ -87,12 +86,10 @@ export class ProfileComponent implements OnInit{
         this.toastr.error('Mật khẩu không chính xác,  xin vui lòng thử lại !.')
       } else {
         window.location.href = 'service-getbyplatfrom';
-        // this.toastr.success('Mật khẩu thay đổi thành công.')
 
       }
     })
   }
-  
   public loadScript() {
     const scripts = [
       "assets/libs/parsleyjs/parsley.min.js",

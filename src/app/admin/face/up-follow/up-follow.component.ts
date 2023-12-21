@@ -1,17 +1,15 @@
-import { DOCUMENT } from '@angular/common';
-import { ToastrService } from 'ngx-toastr';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Menu } from 'src/app/model/access';
 import { ApiDataservice } from 'src/app/service/api-dataservice';
 
 @Component({
-  selector: 'app-uplike-fb123',
-  templateUrl: './uplike-fb123.component.html',
-  styleUrls: ['./uplike-fb123.component.css']
+  selector: 'app-up-follow',
+  templateUrl: './up-follow.component.html',
+  styleUrls: ['./up-follow.component.css']
 })
-export class UplikeFb123Component {
-
+export class UpFollowComponent {
   dongia!: any; facebook!: any; data!: any;
   a!: any; b!: any;
   tongthanhtoan!: number;
@@ -36,7 +34,9 @@ export class UplikeFb123Component {
   }
   private GetAccountMenuID() {
     this.ever.get('Account/Menu').subscribe( red => {
-      this.ever.get(`Id?Id=${red[0].service[0].id}`).subscribe( res => {
+      console.log(red);
+      
+      this.ever.get(`Id?Id=${red[0].service[2].id}`).subscribe( res => {
         this.Orderform1 = this.formBuilder.group({
           id: [''],
           sid: [res.id],
@@ -44,8 +44,8 @@ export class UplikeFb123Component {
           quantity: 100,
         })
       })
-      this.facebook = red[0].service[0].title;
-      this.dongia = red[0].service[0].price; 
+      this.facebook = red[0].service[2].title;
+      this.dongia = red[0].service[2].price; 
     })
   }
   thanhtoan() {

@@ -86,7 +86,6 @@ export class ProfileComponent implements OnInit{
         this.toastr.error('Mật khẩu không chính xác,  xin vui lòng thử lại !.')
       } else {
         window.location.href = 'service-getbyplatfrom';
-
       }
     })
   }

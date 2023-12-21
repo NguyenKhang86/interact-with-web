@@ -19,6 +19,7 @@ import { PageNotFoundComponentComponent } from './admin/page-not-found-component
 import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
 import { TermsServicesComponent } from './admin/terms-services/terms-services.component';
 import { TemplateComponent } from './admin/template/template.component';
+import { UpFollowComponent } from './admin/face/up-follow/up-follow.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'service-getbyplatfrom', pathMatch: 'full'}, 
@@ -38,6 +39,7 @@ const routes: Routes = [
     { path: 'deposit-money', component: DepositMoneyComponent },
     { path: 'Facebook-view', component: UpviewFbComponent },
     { path: 'Facebook-like', component: UplikeFb123Component },
+    { path: 'Facebook-follow', component: UpFollowComponent },
     { path: 'user-collaborators', component: CollaboratorsComponent },
     { path: 'shopping', component: ShoppingCartComponent },
     { path: 'service-getbyplatfrom', component: ProductSpComponent },

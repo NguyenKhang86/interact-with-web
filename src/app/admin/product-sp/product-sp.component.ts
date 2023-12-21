@@ -39,6 +39,7 @@ export class ProductSpComponent {
   private ServiceGet() {
     this.ever.get('Service').subscribe( res => {
       this.service = res;
+      
     })
   }
   private AccountMenu() {

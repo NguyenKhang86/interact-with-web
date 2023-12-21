@@ -22,7 +22,7 @@
                             <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#BinnanceManey">Lịch Sử Nạp/Rút</a>
                         </li>
                         <li class="nav-item tr-hover">
-                            <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#PurchaseHistory">Lịch Sử Mua Hàng</a>
+                            <a class="nav-link" role="tab" data-bs-toggle="tab" data-toggle="tab" href="#PurchaseHistory">Lịch Sử Đặt Hàng</a>
                         </li>
                     </ul>
                     <div class="tab-content twitter-bs-wizard-tab-content m-3 mb-0 p-0">
@@ -149,17 +149,22 @@
                             <div class="col-12">
                                 <div class="">
                                     <ul class="nav m-0 col-md-12" style="display: flex; justify-content: space-between;">
-                                        <li class="nav-item col-md-6">
-                                            <h5 class="header-title"> SHOW: <input class="p-1" type="number" value="10"></h5>
+                                        <li class="nav-item col-lg-4 mb-1" style="display: flex; flex-wrap: wrap;" >
+                                            <p class="header-title m-0 p-1"> Show : </p>
+                                            <select (change)="handlePageSizeChange($event)" class="form-control" style="width: 80% !important;">
+                                                <input type="number">
+                                                <option *ngFor="let size of tableSizes"> {{ size }} </option>
+                                                </select>
+                                            
                                         </li>
-                                        <li class="nav-item text-md-end">
-                                            <a>Thông tin Rút/Nạp tiền : </a>
-                                            <span class="badge p-1" style="color: #fff; background-color: #04AA6D;">Rút Tiền</span>
-                                            <span class="badge p-1" style="color: #fff; background-color: #0056C1;">Nạp Tiền </span>
+                                        <li class="nav-item text-md-end mt-2">
+                                            <a>Thông tin Hoạt Động : </a>
+                                            <span class="badge p-1" style="color: #333; background-color: #28a74687;">Rút Tiền</span>
+                                            <span class="badge p-1" style="color: #333; background-color: #0057c17a;">Nạp Tiền </span>
                                         </li>
                                     </ul>
-                                    <div class="">
-                                        <div class="table-responsive">
+                                    <div class="table-responsive">
+                                        <div class="" style="height: 600px;" data-simplebar>
                                             <table class="table table-centered mb-0" id="inline-editable">
                                                 <thead class="table-light">
                                                     <tr>
@@ -173,14 +178,14 @@
                                                 </thead>
                                             
                                                 <tbody>
-                                                    <tr class="tr-hover" *ngFor="let i of moneybank">
+                                                    <tr class="tr-hover" *ngFor="let i of moneybank | paginate : { itemsPerPage: tableSize,  currentPage: page, totalItems: count };">
                                                         <td>VietComBank</td>
                                                         <td class="text-center">61</td>
                                                         <td class="text-center">{{i.money}}</td>
                                                         <td >{{i.created}}</td>
                                                         <td class="text-center">
-                                                            <span *ngIf="bankmoney" class="badge p-1" style="color: #fff; background-color: #04AA6D;">Rút Tiền</span>
-                                                            <span *ngIf="withdrawmoney" class="badge p-1" style="color: #fff; background-color: #0056C1;">Nạp Tiền </span>
+                                                            <span *ngIf="bankmoney" class="badge p-1" style="color: #333; background-color: #28a74687;">Rút Tiền</span>
+                                                            <span *ngIf="withdrawmoney" class="badge p-1" style="color: #333; background-color: #0057c17a;">Nạp Tiền </span>
                                                         </td>
                                                         <td class="text-center">
                                                             <a class="bx bx-trash p-1" href="" data-bs-target="#Delete" data-bs-toggle="modal"
@@ -192,24 +197,38 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-12 text-md-end">
+                                <pagination-controls
+                                  previousLabel="Back"
+                                  nextLabel="Next"
+                                  (pageChange)="paginationOrder($event)"
+                                ></pagination-controls>
+                            </div>
                         </div>
                     
                         <div class="tab-pane"  style="border: none" id="PurchaseHistory">
                             <div class="col-12">
-                                <div class="">
-                                    <ul class="nav  m-0 col-md-12" style="display: flex; justify-content: space-between;">
-                                        <li class="nav-item col-md-6">
-                                            <h5 class="header-title"> SHOW: <input class="p-1" type="number" value="10"></h5>
+                                <div class="mb-2">
+                                    <ul class="nav m-0" style="display: flex; justify-content: space-between;">
+                                        <li class="nav-item col-lg-4 mb-1" style="display: flex; flex-wrap: wrap;" >
+                                            <p class="header-title m-0 p-1"> Show : </p>
+                                                <select (change)="handlePageSizeChange($event)" class="form-control" style="width: 80% !important;">
+                                                    <input type="number">
+                                                    <option *ngFor="let size of tableSizes"> {{ size }} </option>
+                                                  </select>
+                                            
                                         </li>
-                                        <li class="nav-item text-md-end">
+                                        <li class="nav-item text-md-end mt-2">
                                             <a>Thông tin trang thái : </a>
-                                            <span class="badge p-1" style="color: #fff; background-color: #0056C1;">Thành Công</span>
-                                            <span class="badge p-1" style="color: #fff; background-color: #04AA6D;">Đang Sử Lý</span>
-                                            <span class="badge p-1" style="color: #fff; background-color: #DC3545;">Thất Bại</span>
+                                            <span class="badge p-1" style="color: #333; background-color: #0057c17a;">Thành Công</span>
+                                            <span class="badge p-1" style="color: #333; background-color: #17a3b87d;">Đang Xác Nhận</span>
+                                            <span class="badge p-1" style="color: #333; background-color: #28a74687;">Đang Xử Lý</span>
+                                            <span class="badge p-1" style="color: #333; background-color: #ffc10784;">Đơn Quy Mô Lớn</span>
+                                            <span class="badge p-1" style="color: #333; background-color: #6c757d80;">Nội Dung Không Hợp Lệ</span>
                                         </li>
                                     </ul>
-                                    <div class="">
-                                        <div class="table-responsive">
+                                    <div  class="table-responsive">
+                                        <div style="height: 600px;" data-simplebar>
                                             <table class="table table-centered mb-0" id="inline-editable">
                                                 <thead class="table-light">
                                                     <tr>
@@ -224,16 +243,18 @@
                                                 </thead>
                                             
                                                 <tbody>
-                                                    <tr class="tr-hover" *ngFor="let i of lichsumuahang">
+                                                    <tr class="tr-hover" *ngFor="let i of lichsumuahang | paginate : { itemsPerPage: tableSize,  currentPage: page, totalItems: count };">
                                                         <td>{{i.title}}</td>
                                                         <td class="text-center">{{i.quantity}}</td>
                                                         <td class="text-center">{{i.price}}</td>
                                                         <td class="text-center">{{i.money}}</td>
                                                         <td>{{i.created}}</td>
                                                         <td class="text-center">
-                                                            <span *ngIf="success" class="badge p-1" style="color: #fff; background-color: #0056C1;">Thành Công</span>
-                                                            <span *ngIf="processing" class="badge p-1" style="color: #fff; background-color: #04AA6D;">Đang Sử Lý</span>
-                                                            <span *ngIf="destroy" class="badge p-1" style="color: #fff; background-color: #DC3545;">Thất Bại</span>
+                                                            <span *ngIf="success" class="badge p-1" style="color: #333; background-color: #0057c17a;">Thành Công</span>
+                                                            <span *ngIf="orderbig" class="badge p-1" style="color: #333; background-color: #ffc10784;">Đơn Hàng Quy Mô Lớn</span>
+                                                            <span *ngIf="illegal" class="badge p-1" style="color: #333; background-color: #6c757d80;">Nội Dung Không Hợp Lệ</span>
+                                                            <span *ngIf="confirming" class="badge p-1" style="color: #333; background-color: #28a74687;">Đang Xử Lý</span>
+                                                            <span *ngIf="forconfirmation" class="badge p-1" style="color: #333; background-color: #17a3b87d;">Đang Xác Nhận</span>
                                                         </td>
                                                         <td class="text-center">
                                                             <a class="bx bx-trash p-1" href="" data-bs-target="#Delete" data-bs-toggle="modal"
@@ -245,6 +266,14 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-12 text-md-end">
+                                <pagination-controls
+                                limit="3"
+                                    previousLabel="Back"
+                                    nextLabel="Next"
+                                    (pageChange)="paginationOrder($event)">
+                                </pagination-controls>
                             </div>
                         </div>
                     </div>

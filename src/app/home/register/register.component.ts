@@ -34,14 +34,21 @@ export class RegisterComponent implements OnInit{
 
   register() {
     this.ever.post('Account/Register', this.registerF.value).subscribe( res => {
-      if (res.status == false) {
-        this.toastr.success('Đăng Kí Thất bại Xin Vui Lòng Thử Lại.');
+      if (res.data == 101) {
+        this.toastr.error('Tên đăng nhập đã được sử dụng.');
+      } else  if (res.data == 102) {
+        this.toastr.error('Email đã được sử dụng.');
+      }  else  if (res.data == 103) {
+        this.toastr.error('Email không đúng định dạng.');
+      } else  if (res.data == 104) {
+        this.toastr.error('Tài khoản đang bị cấm đăng nhập.');
+      } else  if (res.data == 105) {
+        this.toastr.error('Đăng ký với Platfrom không đúng.');
       } else {
         window.location.href = 'login';
       }
     })
   }
-
   private loadScript() {
     const scripts = [
       "assets/libs/parsleyjs/parsley.min.js",

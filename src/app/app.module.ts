@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule  } from 'ngx-pagination';
 
 
 
@@ -25,6 +26,7 @@ import { UplikeFb123Component } from './admin/face/uplike-fb123/uplike-fb123.com
 import { AlwaysAuthGuardGuard } from './shared/always-auth-guard.guard';
 import { TermsServicesComponent } from './admin/terms-services/terms-services.component';
 import { TemplateComponent } from './admin/template/template.component';
+import { UpFollowComponent } from './admin/face/up-follow/up-follow.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { TemplateComponent } from './admin/template/template.component';
     UplikeFb123Component,
     TermsServicesComponent,
     TemplateComponent,
+    UpFollowComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { TemplateComponent } from './admin/template/template.component';
     ReactiveFormsModule,  
     HttpClientModule,
     AppRoutingModule,
+    NgxPaginationModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({ })
   ],
